@@ -1,6 +1,6 @@
 """HTTP backend for DineGraph.
 
-Run:  uvicorn dinegraph.api:app --reload
+Run from the backend folder:  uvicorn dinegraph.api:app --reload
 
 Each session is one LangGraph thread. Starting a session runs the graph until it
 pauses for the first order. Sending a message resumes the paused graph with the
@@ -13,9 +13,10 @@ the graph to pause; if it is still running, the session comes back with busy=tru
 and the client polls GET /sessions/{id}. Busy sessions are tracked in memory, so
 run a single server process.
 
-Environment variables:
+Settings come from environment variables, or from backend/.env (see .env.example):
   DINEGRAPH_OFFLINE=1        use the rule-based LLM instead of Claude
-  DINEGRAPH_DB=path.sqlite   where sessions are saved (default dinegraph.sqlite)
+  DATABASE_URL               Postgres database, e.g. postgresql://user:pass@host:5432/dinegraph
+  DINEGRAPH_DB=path.sqlite   SQLite file used when DATABASE_URL is not set (default dinegraph.sqlite)
   DINEGRAPH_CORS_ORIGINS     comma-separated frontend origins (default the Vite dev server)
   DINEGRAPH_MODEL            Claude model (default claude-opus-5)
   DINEGRAPH_ADMIN_TOKEN      if set, /admin routes need the header X-Admin-Token with this value
@@ -43,9 +44,9 @@ from pydantic import BaseModel, Field
 
 from .graph import Outcome, build_graph, random_outcome
 from .llm import ClaudeLLM, OrderLLM, RuleBasedLLM
-from .main import welcome_text
+from .main import load_env, welcome_text
 from .state import MAX_DISHES, Status, initial_state
-from .store import Store
+from .store import Store, make_engine
 
 RECURSION_LIMIT = 100
 
@@ -200,16 +201,34 @@ def describe(step: str, update: dict, values: dict) -> str | None:
 
 # --------------------------------------------------------------------------- app
 
+def postgres_checkpointer(url: str):
+    """A LangGraph checkpointer that keeps sessions in Postgres, creating its tables if needed."""
+    from langgraph.checkpoint.postgres import PostgresSaver
+    from psycopg.rows import dict_row
+    from psycopg_pool import ConnectionPool
+
+    url = url.replace("postgresql+psycopg://", "postgresql://", 1)
+    pool = ConnectionPool(url, open=True, max_size=10,
+                          kwargs={"autocommit": True, "prepare_threshold": 0, "row_factory": dict_row})
+    saver = PostgresSaver(pool)
+    saver.setup()
+    return saver
+
+
 def create_app(
     llm: OrderLLM | None = None,
     outcome: Outcome | None = None,
     db_path: str | None = None,
+    database_url: str | None = None,
     menu: dict[str, int] | None = None,
     prices: dict[str, int] | None = None,
     kitchen_seconds: float | None = None,
     wait_seconds: float | None = None,
 ) -> FastAPI:
-    """`menu` and `prices` seed the menu table the first time a database is created."""
+    """`menu` and `prices` seed the menu table the first time a database is created.
+
+    Uses Postgres when `database_url` (or DATABASE_URL) is set, otherwise the SQLite file `db_path`.
+    """
     if llm is None:
         llm = RuleBasedLLM() if os.environ.get("DINEGRAPH_OFFLINE") == "1" else ClaudeLLM()
     if kitchen_seconds is None:
@@ -217,17 +236,20 @@ def create_app(
     if wait_seconds is None:
         wait_seconds = float(os.environ.get("DINEGRAPH_WAIT_SECONDS", "15"))
 
-    path = db_path or os.environ.get("DINEGRAPH_DB", "dinegraph.sqlite")
-
-    def connect() -> sqlite3.Connection:
+    if database_url is None and db_path is None:  # an explicit argument wins over the environment
+        database_url = os.environ.get("DATABASE_URL")
+    if database_url:
+        store = Store(make_engine(database_url), seed_menu=menu, seed_prices=prices)
+        checkpointer = postgres_checkpointer(database_url)
+    else:
+        path = db_path or os.environ.get("DINEGRAPH_DB", "dinegraph.sqlite")
+        store = Store(make_engine(f"sqlite:///{path}"), seed_menu=menu, seed_prices=prices)
         conn = sqlite3.connect(path, check_same_thread=False, timeout=30)
         conn.execute("PRAGMA journal_mode=WAL")  # readers don't block the writer
-        return conn
-
-    store = Store(connect(), seed_menu=menu, seed_prices=prices)
+        checkpointer = SqliteSaver(conn)
     pace = (lambda stage: time.sleep(kitchen_seconds)) if kitchen_seconds > 0 else None
     graph = build_graph(llm, outcome=outcome or random_outcome(), inventory=store,
-                        checkpointer=SqliteSaver(connect()), pace=pace)
+                        checkpointer=checkpointer, pace=pace)
     admin_token = os.environ.get("DINEGRAPH_ADMIN_TOKEN")
     locks: defaultdict[str, threading.Lock] = defaultdict(threading.Lock)
     workers: dict[str, threading.Thread] = {}  # session -> background run still going
@@ -345,7 +367,8 @@ def create_app(
 
     @app.get("/health")
     def health() -> dict:
-        return {"ok": True, "llm": type(llm).__name__, "kitchen_seconds": kitchen_seconds}
+        return {"ok": True, "llm": type(llm).__name__, "kitchen_seconds": kitchen_seconds,
+                "database": store.engine.dialect.name}
 
     @app.get("/menu", response_model=MenuView)
     def get_menu() -> MenuView:
@@ -455,6 +478,7 @@ def __getattr__(name: str):
     # build the app lazily so importing this module (e.g. in tests) needs no API key
     if name == "app":
         global app
+        load_env()
         app = create_app()
         return app
     raise AttributeError(name)

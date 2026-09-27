@@ -2,7 +2,7 @@
 
 Run it once you have a key:
 
-    export ANTHROPIC_API_KEY=sk-ant-...
+    export ANTHROPIC_API_KEY=sk-ant-...     # or put it in backend/.env
     python scripts/live_check.py            # uses DINEGRAPH_MODEL or claude-opus-5
 
 It sends about 15 short requests (a few cents), prints one line per check,
@@ -20,6 +20,7 @@ from langgraph.types import Command  # noqa: E402
 
 from dinegraph.graph import build_graph  # noqa: E402
 from dinegraph.llm import ClaudeLLM  # noqa: E402
+from dinegraph.main import load_env  # noqa: E402
 from dinegraph.menu import MENU, PRICES  # noqa: E402
 from dinegraph.state import initial_state  # noqa: E402
 
@@ -70,8 +71,9 @@ def full_order(llm) -> tuple[bool, str]:
 
 
 def main() -> int:
+    load_env()
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY is not set. Export your key and run this again.")
+        print("ANTHROPIC_API_KEY is not set. Export it or add it to backend/.env, then run this again.")
         return 2
     llm = ClaudeLLM()
     print(f"Model: {llm.model}\n")

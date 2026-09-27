@@ -14,12 +14,12 @@ MENU = {"Veg Biryani": 10, "Cold Coffee": 2, "Masala Dosa": 6}
 PRICES = {"Veg Biryani": 220, "Cold Coffee": 150, "Masala Dosa": 120}
 
 
-def make_client(tmp_path, outcomes=(), llm=None, **options):
+def make_client(db, outcomes=(), llm=None, **options):
     script = list(outcomes)
     app = create_app(
         llm=llm or RuleBasedLLM(),
         outcome=lambda stage: script.pop(0)[1],
-        db_path=str(tmp_path / "test.sqlite"),
+        **db.options,
         menu=MENU,
         prices=PRICES,
         **options,
@@ -33,16 +33,17 @@ def say(client, sid, text, expect=200):
     return r.json()
 
 
-def test_health_and_menu(tmp_path):
-    c = make_client(tmp_path)
-    assert c.get("/health").json() == {"ok": True, "llm": "RuleBasedLLM", "kitchen_seconds": 0.0}
+def test_health_and_menu(db):
+    c = make_client(db)
+    assert c.get("/health").json() == {"ok": True, "llm": "RuleBasedLLM", "kitchen_seconds": 0.0,
+                                    "database": db.kind}
     menu = c.get("/menu").json()
     assert menu["max_dishes"] == 3
     assert {"dish": "Veg Biryani", "available": 10, "price": 220} in menu["items"]
 
 
-def test_full_session_over_http(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True), ("pay", True)])
+def test_full_session_over_http(db):
+    c = make_client(db, [("cook", True), ("serve", True), ("pay", True)])
     s = c.post("/sessions").json()
     sid = s["session_id"]
     assert s["waiting_for"] == "order" and not s["done"]
@@ -65,8 +66,8 @@ def test_full_session_over_http(tmp_path):
     say(c, sid, "one more thing", expect=409)
 
 
-def test_partial_order_decision_over_http(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True)])
+def test_partial_order_decision_over_http(db):
+    c = make_client(db, [("cook", True), ("serve", True)])
     sid = c.post("/sessions").json()["session_id"]
     s = say(c, sid, "5 Cold Coffee")
     assert s["waiting_for"] == "decision"
@@ -79,19 +80,19 @@ def test_partial_order_decision_over_http(tmp_path):
     assert s["final_result"] == "COMPLETED" and s["bill_total"] == 300
 
 
-def test_unknown_session_and_empty_text(tmp_path):
-    c = make_client(tmp_path)
+def test_unknown_session_and_empty_text(db):
+    c = make_client(db)
     assert c.get("/sessions/nope").status_code == 404
     assert c.post("/sessions/nope/messages", json={"text": "hi"}).status_code == 404
     sid = c.post("/sessions").json()["session_id"]
     assert c.post(f"/sessions/{sid}/messages", json={"text": ""}).status_code == 422
 
 
-def test_sessions_survive_an_app_restart(tmp_path):
-    c1 = make_client(tmp_path)
+def test_sessions_survive_an_app_restart(db):
+    c1 = make_client(db)
     sid = c1.post("/sessions").json()["session_id"]
     say(c1, sid, "tell me a joke")
-    c2 = make_client(tmp_path)  # new app, same database file
+    c2 = make_client(db)  # new app, same database file
     s = c2.get(f"/sessions/{sid}").json()
     assert s["counters"]["order_retries"] == 2
     assert s["waiting_for"] == "order"
@@ -111,8 +112,8 @@ class FlakyLLM(RuleBasedLLM):
         return super().parse_order(text, menu_names)
 
 
-def test_llm_failure_can_be_retried(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True)], llm=FlakyLLM())
+def test_llm_failure_can_be_retried(db):
+    c = make_client(db, [("cook", True), ("serve", True)], llm=FlakyLLM())
     sid = c.post("/sessions").json()["session_id"]
     r = c.post(f"/sessions/{sid}/messages", json={"text": "1 Masala Dosa"})
     assert r.status_code == 502
@@ -135,8 +136,8 @@ def finish_order(c, text, payment="cash"):
     return sid, say(c, sid, payment)
 
 
-def test_menu_stock_goes_down_and_is_shared_between_sessions(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True)])
+def test_menu_stock_goes_down_and_is_shared_between_sessions(db):
+    c = make_client(db, [("cook", True), ("serve", True)])
     finish_order(c, "2 Cold Coffee")
     menu = {i["dish"]: i["available"] for i in c.get("/menu").json()["items"]}
     assert menu["Cold Coffee"] == 0
@@ -145,8 +146,8 @@ def test_menu_stock_goes_down_and_is_shared_between_sessions(tmp_path):
     assert s["status"] == "NOT_AVAILABLE"
 
 
-def test_orders_are_recorded(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True), ("cook", False), ("cook", False)])
+def test_orders_are_recorded(db):
+    c = make_client(db, [("cook", True), ("serve", True), ("cook", False), ("cook", False)])
     paid, _ = finish_order(c, "2 Masala Dosa")
     failed = c.post("/sessions").json()["session_id"]
     say(c, failed, "1 Veg Biryani")
@@ -164,14 +165,14 @@ def test_orders_are_recorded(tmp_path):
     assert menu["Veg Biryani"] == 10 and menu["Masala Dosa"] == 4
 
 
-def test_in_progress_session_has_an_order_record(tmp_path):
-    c = make_client(tmp_path)
+def test_in_progress_session_has_an_order_record(db):
+    c = make_client(db)
     sid = c.post("/sessions").json()["session_id"]
     assert c.get(f"/orders/{sid}").json()["status"] == "NEW"
 
 
-def test_admin_menu_changes(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True)])
+def test_admin_menu_changes(db):
+    c = make_client(db, [("cook", True), ("serve", True)])
     r = c.put("/admin/menu/Cold Coffee", json={"quantity": 20})
     assert r.json() == {"dish": "Cold Coffee", "available": 20, "price": 150}
     r = c.put("/admin/menu/cold coffee", json={"price": 170})  # case-insensitive
@@ -188,8 +189,8 @@ def test_admin_menu_changes(tmp_path):
     assert "Idli" not in [i["dish"] for i in c.get("/menu").json()["items"]]
 
 
-def test_admin_stats(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True), ("pay", True),
+def test_admin_stats(db):
+    c = make_client(db, [("cook", True), ("serve", True), ("pay", True),
                                ("cook", True), ("serve", True)])
     finish_order(c, "2 Masala Dosa", payment="upi")
     finish_order(c, "1 Veg Biryani", payment="cash")
@@ -203,9 +204,9 @@ def test_admin_stats(tmp_path):
     }
 
 
-def test_admin_token(tmp_path, monkeypatch):
+def test_admin_token(db, monkeypatch):
     monkeypatch.setenv("DINEGRAPH_ADMIN_TOKEN", "secret")
-    c = make_client(tmp_path)
+    c = make_client(db)
     assert c.get("/admin/stats").status_code == 401
     assert c.get("/admin/stats", headers={"X-Admin-Token": "wrong"}).status_code == 401
     assert c.get("/admin/stats", headers={"X-Admin-Token": "secret"}).status_code == 200
@@ -213,18 +214,18 @@ def test_admin_token(tmp_path, monkeypatch):
     assert c.get("/menu").status_code == 200  # customer routes stay open
 
 
-def test_menu_seed_only_on_first_run(tmp_path):
-    c1 = make_client(tmp_path)
+def test_menu_seed_only_on_first_run(db):
+    c1 = make_client(db)
     c1.put("/admin/menu/Veg Biryani", json={"quantity": 1})
-    c2 = make_client(tmp_path)  # restart: the edited menu is kept, not reseeded
+    c2 = make_client(db)  # restart: the edited menu is kept, not reseeded
     menu = {i["dish"]: i["available"] for i in c2.get("/menu").json()["items"]}
     assert menu["Veg Biryani"] == 1
 
 
 # --------------------------------------------------------------------- tables, notes, kitchen, tracking
 
-def test_table_and_dish_notes(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True)])
+def test_table_and_dish_notes(db):
+    c = make_client(db, [("cook", True), ("serve", True)])
     s = c.post("/sessions", json={"table": 7}).json()
     assert s["table"] == 7
     sid = s["session_id"]
@@ -236,8 +237,8 @@ def test_table_and_dish_notes(tmp_path):
     assert c.post("/sessions", json={"table": 0}).status_code == 422
 
 
-def test_order_events_track_the_order(tmp_path):
-    c = make_client(tmp_path, [("cook", False), ("cook", True), ("serve", True)])
+def test_order_events_track_the_order(db):
+    c = make_client(db, [("cook", False), ("cook", True), ("serve", True)])
     sid = c.post("/sessions", json={"table": 2}).json()["session_id"]
     say(c, sid, "1 Veg Biryani")
     say(c, sid, "cash")
@@ -250,8 +251,8 @@ def test_order_events_track_the_order(tmp_path):
     assert c.get("/orders/nope/events").status_code == 404
 
 
-def test_kitchen_screen_follows_a_slow_kitchen(tmp_path):
-    c = make_client(tmp_path, [("cook", True), ("serve", True)], kitchen_seconds=0.3)
+def test_kitchen_screen_follows_a_slow_kitchen(db):
+    c = make_client(db, [("cook", True), ("serve", True)], kitchen_seconds=0.3)
     sid = c.post("/sessions", json={"table": 4}).json()["session_id"]
     s = c.post(f"/sessions/{sid}/messages", params={"wait": 0}, json={"text": "1 Masala Dosa (no onion)"}).json()
     assert s["busy"] and not s["stalled"]

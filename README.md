@@ -15,6 +15,7 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 - [How the graph works](#how-the-graph-works)
 - [Project layout](#project-layout)
 - [Getting started](#getting-started)
+- [Database](#database)
 - [Menu](#menu)
 - [Tests](#tests)
 - [Roadmap](#roadmap)
@@ -28,7 +29,7 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 - **Payment.** The customer sees an itemized bill and pays by cash, card or UPI.
 - **Retry limits.** Orders get 3 attempts, cooking 2, serving 2 and payment 2.
 - **Live stock.** Confirmed orders use up stock, shared by every customer. Orders that are never served put their stock back.
-- **HTTP backend.** A FastAPI server exposes the agent, with sessions, the menu and order history saved in SQLite.
+- **HTTP backend.** A FastAPI server exposes the agent, with sessions, the menu and order history saved in SQLite or Postgres.
 - **Tables and dish notes.** Orders can come from a numbered table, and each dish can carry a note such as "extra spicy" or "no onion".
 - **Live kitchen screen.** Orders move through cooking, ready to serve and awaiting payment as the graph runs, with a configurable time for each kitchen step.
 - **Order tracking.** Every order keeps a timestamped activity log, from seating through cooking, serving, the bill and payment.
@@ -39,9 +40,9 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 
 | Part | Built with |
 |---|---|
-| Agent | LangGraph `StateGraph` with `interrupt()` pauses and a SQLite checkpointer |
+| Agent | LangGraph `StateGraph` with `interrupt()` pauses and a SQLite or Postgres checkpointer |
 | Language model | Claude through the Anthropic Python SDK, using structured outputs for parsing and classification |
-| Backend | FastAPI and SQLite (WAL mode) for the menu, stock, orders and order events |
+| Backend | FastAPI, with SQLAlchemy over SQLite (the default) or Postgres for the menu, stock, orders and order events |
 | Frontend | React 19, TypeScript and Vite, with Lucide icons |
 | Tests | pytest, with a rule-based stand-in for Claude and a fake Anthropic API |
 
@@ -134,27 +135,31 @@ An order counts as COMPLETED only when it has been served and paid.
 ## Project layout
 
 ```
-dinegraph/
-  state.py    LangGraph state, statuses and retry limits
-  menu.py     menu quantities and prices
-  llm.py      Claude calls and the offline rule-based stand-in
-  graph.py    nodes, routing and graph wiring
-  inventory.py  stock interface and the in-memory version used by the command line
-  store.py    SQLite menu, stock, order records and order events for the backend
-  main.py     command-line chat
-  api.py      FastAPI backend
-frontend/     React + Vite web app (order chat, kitchen screen, order history, admin)
-  src/api.ts          typed client for the backend
-  src/components/     OrderView, OrderPanel, KitchenView, OrdersView, AdminView
+backend/
+  dinegraph/            the Python package
+    state.py            LangGraph state, statuses and retry limits
+    menu.py             menu quantities and prices
+    llm.py              Claude calls and the offline rule-based stand-in
+    graph.py            nodes, routing and graph wiring
+    inventory.py        stock interface and the in-memory version used by the command line
+    store.py            menu, stock, order records and order events (SQLite or Postgres)
+    main.py             command-line chat
+    api.py              FastAPI backend
+  tests/
+    test_scenarios.py   every branch of the graph
+    test_api.py         the HTTP backend, on SQLite and optionally Postgres
+    test_claude_wiring.py  the Claude calls, against a fake API
+    conftest.py         the database fixture for the API tests
+  scripts/
+    live_check.py       checks against the real Claude API
+  requirements.txt
+  .env.example          every setting, with comments; copy to .env
+frontend/               React + Vite web app (order chat, kitchen screen, order history, admin)
+  src/api.ts            typed client for the backend
+  src/components/       OrderView, OrderPanel, KitchenView, OrdersView, AdminView
 design-system/dinegraph/MASTER.md   colours, fonts and UI rules the frontend follows
-tests/
-  test_scenarios.py   every branch of the graph
-  test_api.py         the HTTP backend
-  test_claude_wiring.py  the Claude calls, against a fake API
-scripts/
-  live_check.py       checks against the real Claude API
-docs/         screenshots used in this README
-approch.md    original design notes
+docs/                   screenshots used in this README
+approch.md              original design notes
 ```
 
 The repository also carries tooling for AI-assisted development. `graphify-out/` is a knowledge graph of the code built with [graphify](https://github.com/Graphify-Labs/graphify); refresh it with `graphify update .` after changing code. `.claude/skills/` holds the graphify and ui-ux-pro-max skills for Claude Code.
@@ -165,11 +170,13 @@ You need Python 3.10 or later.
 
 ```bash
 git clone https://github.com/Adityacrypto-del/DineGraph.git
-cd DineGraph
+cd DineGraph/backend
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-export ANTHROPIC_API_KEY=your-key   # skip this to use offline mode
+cp .env.example .env    # then set ANTHROPIC_API_KEY, or DINEGRAPH_OFFLINE=1 to run without a key
 ```
+
+All backend commands below run from the `backend/` folder. Settings come from `backend/.env`; anything set in your shell wins over the file.
 
 ### Command-line chat
 
@@ -204,7 +211,7 @@ Interactive API docs are served at http://localhost:8000/docs.
 
 | Endpoint | What it does |
 |---|---|
-| `GET /health` | Shows the server is up and which LLM it uses. |
+| `GET /health` | Shows the server is up, which LLM it uses and which database (`sqlite` or `postgresql`). |
 | `GET /menu` | Lists dishes with available quantity and price. |
 | `POST /sessions` | Starts a session and returns the welcome message. Send `{"table": 7}` to seat it at a table. |
 | `GET /sessions/{id}` | Returns messages, status, order, retry counters, bill, table and whether the graph is still running. |
@@ -249,7 +256,8 @@ The web app lives in `frontend/`. It needs Node 20 or newer.
 
 ```bash
 # terminal 1: the backend
-DINEGRAPH_OFFLINE=1 uvicorn dinegraph.api:app --port 8000
+cd backend
+DINEGRAPH_OFFLINE=1 .venv/bin/uvicorn dinegraph.api:app --port 8000
 
 # terminal 2: the frontend
 cd frontend
@@ -272,20 +280,41 @@ The visual design comes from `design-system/dinegraph/MASTER.md`, generated with
 
 ### Configuration
 
+Every setting is listed with comments in [backend/.env.example](backend/.env.example). Copy it to `backend/.env` and edit it, or set the variables in your shell.
+
 | Variable | Purpose | Default |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Claude API key. | none |
 | `DINEGRAPH_MODEL` | Claude model. | `claude-opus-5` |
 | `DINEGRAPH_OFFLINE` | Set to `1` to use the rule-based stand-in in the backend. | off |
-| `DINEGRAPH_DB` | SQLite file where backend sessions are saved. | `dinegraph.sqlite` |
+| `DATABASE_URL` | Postgres database, for example `postgresql://user:pass@host:5432/dinegraph`. When set, it is used instead of SQLite. | none, SQLite is used |
+| `DINEGRAPH_DB` | SQLite file used when `DATABASE_URL` is not set. | `dinegraph.sqlite` |
 | `DINEGRAPH_ADMIN_TOKEN` | Token required by the admin endpoints. | none, admin is open |
 | `DINEGRAPH_CORS_ORIGINS` | Frontend origins allowed to call the backend, comma separated. | the Vite dev server |
 | `DINEGRAPH_KITCHEN_SECONDS` | Seconds each cook and serve attempt takes. Try `4` to watch orders move on the kitchen screen. | `0` |
 | `DINEGRAPH_WAIT_SECONDS` | How long a request waits for the graph to pause before it answers with `busy: true`. | `15` |
 
+## Database
+
+The backend stores the menu, stock, orders, order events and LangGraph sessions in one database.
+
+- **SQLite (default).** A single file, `backend/dinegraph.sqlite`, created on first start. Nothing to install.
+- **Postgres.** Set `DATABASE_URL` and the backend creates its tables on first start. Stock is taken with conditional updates in one transaction, so two customers can never both get the last dish.
+
+To try Postgres locally with Docker:
+
+```bash
+docker run -d --name dinegraph-db -e POSTGRES_PASSWORD=dinegraph -e POSTGRES_DB=dinegraph \
+  -p 5432:5432 postgres:17-alpine
+# in backend/.env
+DATABASE_URL=postgresql://postgres:dinegraph@localhost:5432/dinegraph
+```
+
+`GET /health` reports which database is in use. Older SQLite files from earlier versions are upgraded automatically at startup, with their data and menu order kept. The backend still needs a single server process, because busy sessions are tracked in memory.
+
 ## Menu
 
-The starting menu and prices live in [dinegraph/menu.py](dinegraph/menu.py). A dish with quantity 0 is on the menu but sold out. The backend copies this menu into its database the first time it starts. After that, change the menu through the admin endpoints.
+The starting menu and prices live in [backend/dinegraph/menu.py](backend/dinegraph/menu.py). A dish with quantity 0 is on the menu but sold out. The backend copies this menu into its database the first time it starts. After that, change the menu through the admin endpoints.
 
 | Dish | Available | Price (Rs) |
 |---|---|---|
@@ -301,21 +330,27 @@ The starting menu and prices live in [dinegraph/menu.py](dinegraph/menu.py). A d
 ## Tests
 
 ```bash
+cd backend
 .venv/bin/python -m pytest -q
+```
+
+The API tests run on SQLite. To run them on Postgres as well, point them at a server; each test creates and drops its own database:
+
+```bash
+DINEGRAPH_TEST_DATABASE_URL=postgresql://postgres:dinegraph@localhost:5432/postgres .venv/bin/python -m pytest -q
 ```
 
 ### Live check with Claude
 
-The normal tests never call Claude. `tests/test_claude_wiring.py` runs the real Claude code against a fake API to check the requests it sends and how it handles replies, including refusals. To check the real model, set your key and run the live script. It sends about 15 short requests and prints one line per check.
+The normal tests never call Claude. `backend/tests/test_claude_wiring.py` runs the real Claude code against a fake API to check the requests it sends and how it handles replies, including refusals. To check the real model, set your key and run the live script. It sends about 15 short requests and prints one line per check.
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-python scripts/live_check.py
+.venv/bin/python scripts/live_check.py   # reads ANTHROPIC_API_KEY from your shell or backend/.env
 ```
 
 The tests use the offline stand-in and fix the kitchen and payment results in advance, so they need no API key and give the same result on every run. They cover every branch of the graph and every backend endpoint, including stock sharing between customers, restart persistence, recovery from a failed Claude call, tables and dish notes, the order activity log, and the kitchen screen following a slow kitchen.
 
 ## Roadmap
 
-- **Production deploy.** Postgres alongside SQLite, Docker images for the backend and frontend, a Docker Compose setup, and a hosted deployment.
-- **Live Claude run.** Run `scripts/live_check.py` with a real API key to confirm the Claude path end to end, including dish notes.
+- **Production deploy.** Docker images for the backend and frontend, a Docker Compose setup with Postgres, and a hosted deployment. Postgres support itself is done.
+- **Live Claude run.** Run `backend/scripts/live_check.py` with a real API key to confirm the Claude path end to end, including dish notes.

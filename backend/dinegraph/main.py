@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import argparse
 import uuid
+from pathlib import Path
 
+from dotenv import load_dotenv
 from langchain_core.messages import AIMessage
 from langgraph.types import Command
 
@@ -22,7 +24,13 @@ def welcome_text(dishes: list[str] | None = None) -> str:
     )
 
 
+def load_env() -> None:
+    """Read backend/.env if it exists. Variables already set in the shell take precedence."""
+    load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+
+
 def main() -> None:
+    load_env()
     parser = argparse.ArgumentParser(description="DineGraph restaurant ordering agent")
     parser.add_argument("--offline", action="store_true", help="use the rule-based parser instead of Claude")
     parser.add_argument("--seed", type=int, default=None, help="seed the cook/serve failure chance")
