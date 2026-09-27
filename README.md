@@ -29,7 +29,7 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 - **Payment.** The customer sees an itemized bill and pays by cash, card or UPI.
 - **Retry limits.** Orders get 3 attempts, cooking 2, serving 2 and payment 2.
 - **Live stock.** Confirmed orders use up stock, shared by every customer. Orders that are never served put their stock back.
-- **HTTP backend.** A FastAPI server exposes the agent, with sessions, the menu and order history saved in SQLite or Postgres.
+- **HTTP backend.** A FastAPI server exposes the agent, with sessions, the menu and order history saved in Postgres.
 - **Tables and dish notes.** Orders can come from a numbered table, and each dish can carry a note such as "extra spicy" or "no onion".
 - **Live kitchen screen.** Orders move through cooking, ready to serve and awaiting payment as the graph runs, with a configurable time for each kitchen step.
 - **Order tracking.** Every order keeps a timestamped activity log, from seating through cooking, serving, the bill and payment.
@@ -40,9 +40,9 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 
 | Part | Built with |
 |---|---|
-| Agent | LangGraph `StateGraph` with `interrupt()` pauses and a SQLite or Postgres checkpointer |
+| Agent | LangGraph `StateGraph` with `interrupt()` pauses and a Postgres checkpointer |
 | Language model | Claude through the Anthropic Python SDK, using structured outputs for parsing and classification |
-| Backend | FastAPI, with SQLAlchemy over SQLite (the default) or Postgres for the menu, stock, orders and order events |
+| Backend | FastAPI, with SQLAlchemy and Postgres for the menu, stock, orders and order events |
 | Frontend | React 19, TypeScript and Vite, with Lucide icons |
 | Tests | pytest, with a rule-based stand-in for Claude and a fake Anthropic API |
 
@@ -142,17 +142,16 @@ backend/
     llm.py              Claude calls and the offline rule-based stand-in
     graph.py            nodes, routing and graph wiring
     inventory.py        stock interface and the in-memory version used by the command line
-    store.py            menu, stock, order records and order events (SQLite or Postgres)
+    store.py            menu, stock, order records and order events in Postgres
     main.py             command-line chat
     api.py              FastAPI backend
   tests/
     test_scenarios.py   every branch of the graph
-    test_api.py         the HTTP backend, on SQLite and optionally Postgres
+    test_api.py         the HTTP backend, on Postgres
     test_claude_wiring.py  the Claude calls, against a fake API
-    conftest.py         the database fixture for the API tests
+    conftest.py         gives each API test a fresh Postgres database
   scripts/
     live_check.py       checks against the real Claude API
-    sqlite_to_postgres.py  copies a SQLite database into Postgres
   requirements.txt
   .env.example          every setting, with comments; copy to .env
 frontend/               React + Vite web app (order chat, kitchen screen, order history, admin)
@@ -167,7 +166,7 @@ The repository also carries tooling for AI-assisted development. `graphify-out/`
 
 ## Getting started
 
-You need Python 3.10 or later.
+You need Python 3.10 or later, and Docker (or any Postgres 14+ server) for the database.
 
 ```bash
 git clone https://github.com/Adityacrypto-del/DineGraph.git
@@ -175,6 +174,11 @@ cd DineGraph/backend
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 cp .env.example .env    # then set ANTHROPIC_API_KEY, or DINEGRAPH_OFFLINE=1 to run without a key
+
+# start Postgres (see Database below)
+docker run -d --name dinegraph-db --restart unless-stopped \
+  -e POSTGRES_PASSWORD=dinegraph -e POSTGRES_DB=dinegraph \
+  -v dinegraph-pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:17-alpine
 ```
 
 All backend commands below run from the `backend/` folder. Settings come from `backend/.env`; anything set in your shell wins over the file.
@@ -212,7 +216,7 @@ Interactive API docs are served at http://localhost:8000/docs.
 
 | Endpoint | What it does |
 |---|---|
-| `GET /health` | Shows the server is up, which LLM it uses and which database (`sqlite` or `postgresql`). |
+| `GET /health` | Shows the server is up, which LLM it uses and the kitchen timing. |
 | `GET /menu` | Lists dishes with available quantity and price. |
 | `POST /sessions` | Starts a session and returns the welcome message. Send `{"table": 7}` to seat it at a table. |
 | `GET /sessions/{id}` | Returns messages, status, order, retry counters, bill, table and whether the graph is still running. |
@@ -288,8 +292,7 @@ Every setting is listed with comments in [backend/.env.example](backend/.env.exa
 | `ANTHROPIC_API_KEY` | Claude API key. | none |
 | `DINEGRAPH_MODEL` | Claude model. | `claude-opus-5` |
 | `DINEGRAPH_OFFLINE` | Set to `1` to use the rule-based stand-in in the backend. | off |
-| `DATABASE_URL` | Postgres database, for example `postgresql://user:pass@host:5432/dinegraph`. When set, it is used instead of SQLite. | none, SQLite is used |
-| `DINEGRAPH_DB` | SQLite file used when `DATABASE_URL` is not set. | `dinegraph.sqlite` |
+| `DATABASE_URL` | Postgres database, for example `postgresql://user:pass@host:5432/dinegraph`. Required. | none |
 | `DINEGRAPH_ADMIN_TOKEN` | Token required by the admin endpoints. | none, admin is open |
 | `DINEGRAPH_CORS_ORIGINS` | Frontend origins allowed to call the backend, comma separated. | the Vite dev server |
 | `DINEGRAPH_KITCHEN_SECONDS` | Seconds each cook and serve attempt takes. Try `4` to watch orders move on the kitchen screen. | `0` |
@@ -297,29 +300,17 @@ Every setting is listed with comments in [backend/.env.example](backend/.env.exa
 
 ## Database
 
-The backend stores the menu, stock, orders, order events and LangGraph sessions in one database.
+The backend stores the menu, stock, orders, order events and LangGraph sessions in Postgres. Set `DATABASE_URL` (the `.env.example` value matches the Docker command below) and the backend creates its tables on first start. It will not start without it.
 
-- **SQLite (default).** A single file, `backend/dinegraph.sqlite`, created on first start. Nothing to install.
-- **Postgres.** Set `DATABASE_URL` and the backend creates its tables on first start. Stock is taken with conditional updates in one transaction, so two customers can never both get the last dish.
-
-To try Postgres locally with Docker:
+Run Postgres locally with Docker. The named volume keeps the data when the container is removed or recreated:
 
 ```bash
-docker run -d --name dinegraph-db -e POSTGRES_PASSWORD=dinegraph -e POSTGRES_DB=dinegraph \
-  -p 5432:5432 postgres:17-alpine
-# in backend/.env
-DATABASE_URL=postgresql://postgres:dinegraph@localhost:5432/dinegraph
+docker run -d --name dinegraph-db --restart unless-stopped \
+  -e POSTGRES_PASSWORD=dinegraph -e POSTGRES_DB=dinegraph \
+  -v dinegraph-pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:17-alpine
 ```
 
-To move an existing SQLite database into an empty Postgres database, stop the backend and run:
-
-```bash
-.venv/bin/python scripts/sqlite_to_postgres.py dinegraph.sqlite postgresql://postgres:dinegraph@localhost:5432/dinegraph
-```
-
-It copies the menu, orders, order events and saved sessions, so orders in progress carry on. The SQLite file is left unchanged.
-
-`GET /health` reports which database is in use. Older SQLite files from earlier versions are upgraded automatically at startup, with their data and menu order kept. The backend still needs a single server process, because busy sessions are tracked in memory.
+Stock is taken with conditional updates in one transaction, so two customers can never both get the last dish, even with several connections. The backend still needs a single server process, because busy sessions are tracked in memory. For a hosted deployment, point `DATABASE_URL` at a managed Postgres such as Neon, Supabase, Railway or Render.
 
 ## Menu
 
@@ -343,10 +334,10 @@ cd backend
 .venv/bin/python -m pytest -q
 ```
 
-The API tests run on SQLite. To run them on Postgres as well, point them at a server; each test creates and drops its own database:
+The API tests need Postgres running. Each test creates its own empty database and drops it afterwards, so your data is never touched. They use the local Docker server by default; point them at another server with:
 
 ```bash
-DINEGRAPH_TEST_DATABASE_URL=postgresql://postgres:dinegraph@localhost:5432/postgres .venv/bin/python -m pytest -q
+DINEGRAPH_TEST_DATABASE_URL=postgresql://user:pass@host:5432/postgres .venv/bin/python -m pytest -q
 ```
 
 ### Live check with Claude
@@ -361,5 +352,5 @@ The tests use the offline stand-in and fix the kitchen and payment results in ad
 
 ## Roadmap
 
-- **Production deploy.** Docker images for the backend and frontend, a Docker Compose setup with Postgres, and a hosted deployment. Postgres support itself is done.
+- **Production deploy.** Docker images for the backend and frontend, a Docker Compose setup with Postgres, and a hosted deployment.
 - **Live Claude run.** Run `backend/scripts/live_check.py` with a real API key to confirm the Claude path end to end, including dish notes.

@@ -15,8 +15,7 @@ run a single server process.
 
 Settings come from environment variables, or from backend/.env (see .env.example):
   DINEGRAPH_OFFLINE=1        use the rule-based LLM instead of Claude
-  DATABASE_URL               Postgres database, e.g. postgresql://user:pass@host:5432/dinegraph
-  DINEGRAPH_DB=path.sqlite   SQLite file used when DATABASE_URL is not set (default dinegraph.sqlite)
+  DATABASE_URL               Postgres database (required), e.g. postgresql://user:pass@host:5432/dinegraph
   DINEGRAPH_CORS_ORIGINS     comma-separated frontend origins (default the Vite dev server)
   DINEGRAPH_MODEL            Claude model (default claude-opus-5)
   DINEGRAPH_ADMIN_TOKEN      if set, /admin routes need the header X-Admin-Token with this value
@@ -27,7 +26,6 @@ Settings come from environment variables, or from backend/.env (see .env.example
 from __future__ import annotations
 
 import os
-import sqlite3
 import threading
 import time
 import uuid
@@ -38,7 +36,6 @@ import anthropic
 from fastapi import Depends, FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_core.messages import AIMessage, BaseMessage
-from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.types import Command
 from pydantic import BaseModel, Field
 
@@ -218,7 +215,6 @@ def postgres_checkpointer(url: str):
 def create_app(
     llm: OrderLLM | None = None,
     outcome: Outcome | None = None,
-    db_path: str | None = None,
     database_url: str | None = None,
     menu: dict[str, int] | None = None,
     prices: dict[str, int] | None = None,
@@ -227,7 +223,7 @@ def create_app(
 ) -> FastAPI:
     """`menu` and `prices` seed the menu table the first time a database is created.
 
-    Uses Postgres when `database_url` (or DATABASE_URL) is set, otherwise the SQLite file `db_path`.
+    Data is kept in the Postgres database `database_url`, or DATABASE_URL when it is not given.
     """
     if llm is None:
         llm = RuleBasedLLM() if os.environ.get("DINEGRAPH_OFFLINE") == "1" else ClaudeLLM()
@@ -236,17 +232,12 @@ def create_app(
     if wait_seconds is None:
         wait_seconds = float(os.environ.get("DINEGRAPH_WAIT_SECONDS", "15"))
 
-    if database_url is None and db_path is None:  # an explicit argument wins over the environment
-        database_url = os.environ.get("DATABASE_URL")
-    if database_url:
-        store = Store(make_engine(database_url), seed_menu=menu, seed_prices=prices)
-        checkpointer = postgres_checkpointer(database_url)
-    else:
-        path = db_path or os.environ.get("DINEGRAPH_DB", "dinegraph.sqlite")
-        store = Store(make_engine(f"sqlite:///{path}"), seed_menu=menu, seed_prices=prices)
-        conn = sqlite3.connect(path, check_same_thread=False, timeout=30)
-        conn.execute("PRAGMA journal_mode=WAL")  # readers don't block the writer
-        checkpointer = SqliteSaver(conn)
+    database_url = database_url or os.environ.get("DATABASE_URL")
+    if not database_url:
+        raise RuntimeError("DATABASE_URL is not set. Point it at a Postgres database, "
+                           "e.g. in backend/.env (see .env.example).")
+    store = Store(make_engine(database_url), seed_menu=menu, seed_prices=prices)
+    checkpointer = postgres_checkpointer(database_url)
     pace = (lambda stage: time.sleep(kitchen_seconds)) if kitchen_seconds > 0 else None
     graph = build_graph(llm, outcome=outcome or random_outcome(), inventory=store,
                         checkpointer=checkpointer, pace=pace)
@@ -367,8 +358,7 @@ def create_app(
 
     @app.get("/health")
     def health() -> dict:
-        return {"ok": True, "llm": type(llm).__name__, "kitchen_seconds": kitchen_seconds,
-                "database": store.engine.dialect.name}
+        return {"ok": True, "llm": type(llm).__name__, "kitchen_seconds": kitchen_seconds}
 
     @app.get("/menu", response_model=MenuView)
     def get_menu() -> MenuView:

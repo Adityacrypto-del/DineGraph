@@ -1,7 +1,7 @@
 """Stock and prices, behind one small interface the graph can use.
 
 InMemoryInventory backs the command-line chat and the graph tests.
-The backend uses SqliteInventory from store.py, which saves to the database.
+The backend uses Store from store.py, which saves to Postgres.
 """
 
 from __future__ import annotations

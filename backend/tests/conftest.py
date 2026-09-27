@@ -1,39 +1,40 @@
-"""The `db` fixture runs each API test on SQLite and, when a Postgres server is given, on Postgres.
+"""The `db` fixture gives each API test its own fresh Postgres database, dropped afterwards.
 
-    DINEGRAPH_TEST_DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres pytest
+By default the tests use the local server from the README's Docker command. Point them
+elsewhere with DINEGRAPH_TEST_DATABASE_URL (any database on the server; it is only used
+to create and drop the test databases):
 
-Each Postgres test gets its own fresh database, dropped afterwards.
+    DINEGRAPH_TEST_DATABASE_URL=postgresql://user:pass@host:5432/postgres pytest
 """
 
 import os
 import uuid
-from dataclasses import dataclass
 
+import psycopg
 import pytest
 
-POSTGRES_URL = os.environ.get("DINEGRAPH_TEST_DATABASE_URL")
+SERVER_URL = os.environ.get("DINEGRAPH_TEST_DATABASE_URL",
+                            "postgresql://postgres:dinegraph@localhost:5432/postgres")
 
 
-@dataclass
-class Database:
-    kind: str      # "sqlite" or "postgresql"
-    options: dict  # create_app arguments that point at this database
+@pytest.fixture(scope="session")
+def postgres_server():
+    try:
+        psycopg.connect(SERVER_URL, connect_timeout=3).close()
+    except psycopg.OperationalError as exc:
+        pytest.fail(f"Cannot reach Postgres at {SERVER_URL}. Start it (see README, Database) "
+                    f"or set DINEGRAPH_TEST_DATABASE_URL.\n{exc}", pytrace=False)
+    return SERVER_URL
 
 
-@pytest.fixture(params=["sqlite", "postgresql"])
-def db(request, tmp_path):
-    if request.param == "sqlite":
-        yield Database("sqlite", {"db_path": str(tmp_path / "test.sqlite")})
-        return
-    if not POSTGRES_URL:
-        pytest.skip("set DINEGRAPH_TEST_DATABASE_URL to run the Postgres tests")
-    import psycopg
-
+@pytest.fixture
+def db(postgres_server):
+    """The URL of a new, empty database."""
     name = f"dinegraph_test_{uuid.uuid4().hex[:12]}"
-    with psycopg.connect(POSTGRES_URL, autocommit=True) as admin:
+    with psycopg.connect(postgres_server, autocommit=True) as admin:
         admin.execute(f"CREATE DATABASE {name}")
     try:
-        yield Database("postgresql", {"database_url": POSTGRES_URL.rsplit("/", 1)[0] + "/" + name})
+        yield postgres_server.rsplit("/", 1)[0] + "/" + name
     finally:
-        with psycopg.connect(POSTGRES_URL, autocommit=True) as admin:
+        with psycopg.connect(postgres_server, autocommit=True) as admin:
             admin.execute(f"DROP DATABASE {name} WITH (FORCE)")

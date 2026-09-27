@@ -17,6 +17,19 @@
       "source_location": "L33"
     },
     {
+      "id": "backend_dinegraph_llm_rulebasedllm",
+      "label": "RuleBasedLLM",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "test_scenarios.py",
+      "file_type": "code",
+      "norm_label": "rulebasedllm",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L153"
+    },
+    {
       "id": "backend_dinegraph_state_status",
       "label": "Status",
       "_callable": true,
@@ -40,7 +53,7 @@
       "file_type": "code",
       "norm_label": "chatmessage",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L56"
+      "source_location": "L53"
     },
     {
       "id": "backend_dinegraph_api_counters",
@@ -53,7 +66,7 @@
       "file_type": "code",
       "norm_label": "counters",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L68"
+      "source_location": "L65"
     },
     {
       "id": "backend_dinegraph_api_kitchenticket",
@@ -66,7 +79,7 @@
       "file_type": "code",
       "norm_label": "kitchenticket",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L143"
+      "source_location": "L140"
     },
     {
       "id": "backend_dinegraph_api_menuitem",
@@ -79,7 +92,7 @@
       "file_type": "code",
       "norm_label": "menuitem",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L104"
+      "source_location": "L101"
     },
     {
       "id": "backend_dinegraph_api_menuupdate",
@@ -92,7 +105,7 @@
       "file_type": "code",
       "norm_label": "menuupdate",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L115"
+      "source_location": "L112"
     },
     {
       "id": "backend_dinegraph_api_menuview",
@@ -105,7 +118,7 @@
       "file_type": "code",
       "norm_label": "menuview",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L110"
+      "source_location": "L107"
     },
     {
       "id": "backend_dinegraph_api_newsession",
@@ -118,7 +131,7 @@
       "file_type": "code",
       "norm_label": "newsession",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L96"
+      "source_location": "L93"
     },
     {
       "id": "backend_dinegraph_api_orderevent",
@@ -131,7 +144,7 @@
       "file_type": "code",
       "norm_label": "orderevent",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L133"
+      "source_location": "L130"
     },
     {
       "id": "backend_dinegraph_api_orderline",
@@ -144,7 +157,7 @@
       "file_type": "code",
       "norm_label": "orderline",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L61"
+      "source_location": "L58"
     },
     {
       "id": "backend_dinegraph_api_orderrecord",
@@ -157,7 +170,7 @@
       "file_type": "code",
       "norm_label": "orderrecord",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L120"
+      "source_location": "L117"
     },
     {
       "id": "backend_dinegraph_api_sessionview",
@@ -170,7 +183,7 @@
       "file_type": "code",
       "norm_label": "sessionview",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L75"
+      "source_location": "L72"
     },
     {
       "id": "backend_dinegraph_api_stats",
@@ -183,7 +196,7 @@
       "file_type": "code",
       "norm_label": "stats",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L154"
+      "source_location": "L151"
     },
     {
       "id": "backend_dinegraph_api_usermessage",
@@ -196,7 +209,7 @@
       "file_type": "code",
       "norm_label": "usermessage",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L100"
+      "source_location": "L97"
     },
     {
       "id": "backend_dinegraph_llm_claudellm",
@@ -277,19 +290,6 @@
       "source_location": "L41"
     },
     {
-      "id": "backend_dinegraph_llm_rulebasedllm",
-      "label": "RuleBasedLLM",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "code",
-      "norm_label": "rulebasedllm",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L153"
-    },
-    {
       "id": "backend_tests_test_claude_wiring_fakeapi",
       "label": "FakeAPI",
       "_callable": true,
@@ -314,45 +314,6 @@
       "norm_label": "inventory",
       "source_file": "backend/dinegraph/inventory.py",
       "source_location": "L15"
-    },
-    {
-      "id": "backend_tests_conftest_database",
-      "label": "Database",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "conftest.py",
-      "file_type": "code",
-      "norm_label": "database",
-      "source_file": "backend/tests/conftest.py",
-      "source_location": "L18"
-    },
-    {
-      "id": "backend_dinegraph_state_dinestate",
-      "label": "DineState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "initial_state",
-      "file_type": "code",
-      "norm_label": "dinestate",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L45"
-    },
-    {
-      "id": "backend_dinegraph_state_orderitem",
-      "label": "OrderItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "initial_state",
-      "file_type": "code",
-      "norm_label": "orderitem",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L38"
     },
     {
       "id": "frontend_src_api_apierror",
@@ -576,6 +537,32 @@
       "source_location": "L41"
     },
     {
+      "id": "backend_dinegraph_state_dinestate",
+      "label": "DineState",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "dinestate",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "backend_dinegraph_state_orderitem",
+      "label": "OrderItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "orderitem",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L38"
+    },
+    {
       "id": "backend_tests_test_api_flakyllm",
       "label": "FlakyLLM",
       "_callable": true,
@@ -586,7 +573,7 @@
       "file_type": "code",
       "norm_label": "flakyllm",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L101"
+      "source_location": "L100"
     },
     {
       "id": "backend_dinegraph_store_store",
@@ -599,7 +586,7 @@
       "file_type": "code",
       "norm_label": "store",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L90"
+      "source_location": "L77"
     },
     {
       "id": "backend_dinegraph_inventory_inmemoryinventory_init",
@@ -660,6 +647,30 @@
       "norm_label": ".reserve()",
       "source_file": "backend/dinegraph/inventory.py",
       "source_location": "L47"
+    },
+    {
+      "id": "backend_dinegraph_llm_claudellm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "test_scenarios.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L127"
+    },
+    {
+      "id": "backend_dinegraph_llm_rulebasedllm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "test_scenarios.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L190"
     },
     {
       "id": "backend_tests_test_scenarios_run",
@@ -828,6 +839,18 @@
       "norm_label": "test_nothing_available_three_times_ends_with_apology()",
       "source_file": "backend/tests/test_scenarios.py",
       "source_location": "L91"
+    },
+    {
+      "id": "backend_tests_test_scenarios_test_offline_parser_reads_notes_and_number_words",
+      "label": "test_offline_parser_reads_notes_and_number_words()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "test_scenarios.py",
+      "file_type": "code",
+      "norm_label": "test_offline_parser_reads_notes_and_number_words()",
+      "source_file": "backend/tests/test_scenarios.py",
+      "source_location": "L310"
     },
     {
       "id": "backend_tests_test_scenarios_test_partial_on_last_attempt_can_still_be_accepted",
@@ -1079,7 +1102,7 @@
       "file_type": "code",
       "norm_label": "create_app()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L218"
+      "source_location": "L215"
     },
     {
       "id": "backend_dinegraph_api_create_app_busy",
@@ -1091,7 +1114,7 @@
       "file_type": "code",
       "norm_label": "busy()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L306"
+      "source_location": "L297"
     },
     {
       "id": "backend_dinegraph_api_create_app_config",
@@ -1103,7 +1126,7 @@
       "file_type": "code",
       "norm_label": "config()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L263"
+      "source_location": "L254"
     },
     {
       "id": "backend_dinegraph_api_create_app_delete_dish",
@@ -1115,7 +1138,7 @@
       "file_type": "code",
       "norm_label": "delete_dish()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L466"
+      "source_location": "L456"
     },
     {
       "id": "backend_dinegraph_api_create_app_error_text",
@@ -1127,7 +1150,7 @@
       "file_type": "code",
       "norm_label": "error_text()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L310"
+      "source_location": "L301"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_menu",
@@ -1139,7 +1162,7 @@
       "file_type": "code",
       "norm_label": "get_menu()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L374"
+      "source_location": "L364"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_order",
@@ -1151,7 +1174,7 @@
       "file_type": "code",
       "norm_label": "get_order()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L428"
+      "source_location": "L418"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_session",
@@ -1163,7 +1186,7 @@
       "file_type": "code",
       "norm_label": "get_session()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L392"
+      "source_location": "L382"
     },
     {
       "id": "backend_dinegraph_api_create_app_health",
@@ -1175,7 +1198,7 @@
       "file_type": "code",
       "norm_label": "health()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L369"
+      "source_location": "L360"
     },
     {
       "id": "backend_dinegraph_api_create_app_kitchen",
@@ -1187,7 +1210,7 @@
       "file_type": "code",
       "norm_label": "kitchen()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L444"
+      "source_location": "L434"
     },
     {
       "id": "backend_dinegraph_api_create_app_list_orders",
@@ -1199,7 +1222,19 @@
       "file_type": "code",
       "norm_label": "list_orders()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L420"
+      "source_location": "L410"
+    },
+    {
+      "id": "backend_dinegraph_api_create_app_order_events",
+      "label": "order_events()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "order_events()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L425"
     },
     {
       "id": "backend_dinegraph_api_create_app_require_admin",
@@ -1211,7 +1246,7 @@
       "file_type": "code",
       "norm_label": "require_admin()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L302"
+      "source_location": "L293"
     },
     {
       "id": "backend_dinegraph_api_create_app_require_idle",
@@ -1223,7 +1258,7 @@
       "file_type": "code",
       "norm_label": "require_idle()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L362"
+      "source_location": "L353"
     },
     {
       "id": "backend_dinegraph_api_create_app_retry",
@@ -1235,7 +1270,7 @@
       "file_type": "code",
       "norm_label": "retry()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L408"
+      "source_location": "L398"
     },
     {
       "id": "backend_dinegraph_api_create_app_run",
@@ -1247,7 +1282,7 @@
       "file_type": "code",
       "norm_label": "run()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L344"
+      "source_location": "L335"
     },
     {
       "id": "backend_dinegraph_api_create_app_save",
@@ -1259,7 +1294,7 @@
       "file_type": "code",
       "norm_label": "save()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L319"
+      "source_location": "L310"
     },
     {
       "id": "backend_dinegraph_api_create_app_send_message",
@@ -1271,7 +1306,7 @@
       "file_type": "code",
       "norm_label": "send_message()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L396"
+      "source_location": "L386"
     },
     {
       "id": "backend_dinegraph_api_create_app_snapshot",
@@ -1283,19 +1318,7 @@
       "file_type": "code",
       "norm_label": "snapshot()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L266"
-    },
-    {
-      "id": "backend_dinegraph_api_create_app_start_session",
-      "label": "start_session()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "start_session()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L381"
+      "source_location": "L257"
     },
     {
       "id": "backend_dinegraph_api_create_app_stats",
@@ -1307,7 +1330,7 @@
       "file_type": "code",
       "norm_label": "stats()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L471"
+      "source_location": "L461"
     },
     {
       "id": "backend_dinegraph_api_create_app_upsert_dish",
@@ -1319,7 +1342,7 @@
       "file_type": "code",
       "norm_label": "upsert_dish()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L457"
+      "source_location": "L447"
     },
     {
       "id": "backend_dinegraph_api_create_app_view",
@@ -1331,7 +1354,7 @@
       "file_type": "code",
       "norm_label": "view()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L272"
+      "source_location": "L263"
     },
     {
       "id": "backend_dinegraph_api_create_app_work",
@@ -1343,7 +1366,7 @@
       "file_type": "code",
       "norm_label": "work()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L329"
+      "source_location": "L320"
     },
     {
       "id": "backend_dinegraph_api_describe",
@@ -1355,7 +1378,7 @@
       "file_type": "code",
       "norm_label": "describe()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L176"
+      "source_location": "L173"
     },
     {
       "id": "backend_dinegraph_api_getattr",
@@ -1367,19 +1390,19 @@
       "file_type": "code",
       "norm_label": "__getattr__()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L477"
+      "source_location": "L467"
     },
     {
-      "id": "backend_dinegraph_main_welcome_text",
-      "label": "welcome_text()",
+      "id": "backend_dinegraph_api_postgres_checkpointer",
+      "label": "postgres_checkpointer()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "api.py",
       "file_type": "code",
-      "norm_label": "welcome_text()",
-      "source_file": "backend/dinegraph/main.py",
-      "source_location": "L19"
+      "norm_label": "postgres_checkpointer()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L201"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_classify_decision",
@@ -1404,18 +1427,6 @@
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
       "source_location": "L124"
-    },
-    {
-      "id": "backend_dinegraph_llm_claudellm_compose",
-      "label": ".compose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "code",
-      "norm_label": ".compose()",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L127"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_init",
@@ -1524,18 +1535,6 @@
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
       "source_location": "L182"
-    },
-    {
-      "id": "backend_dinegraph_llm_rulebasedllm_compose",
-      "label": ".compose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "code",
-      "norm_label": ".compose()",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L190"
     },
     {
       "id": "backend_dinegraph_llm_rulebasedllm_parse_order",
@@ -1680,18 +1679,6 @@
       "norm_label": "test_refusal_is_treated_as_not_an_order()",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L67"
-    },
-    {
-      "id": "backend_tests_test_scenarios_test_offline_parser_reads_notes_and_number_words",
-      "label": "test_offline_parser_reads_notes_and_number_words()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "code",
-      "norm_label": "test_offline_parser_reads_notes_and_number_words()",
-      "source_file": "backend/tests/test_scenarios.py",
-      "source_location": "L310"
     },
     {
       "id": "backend_dinegraph_graph_random_outcome",
@@ -1970,6 +1957,18 @@
       "source_location": "L29"
     },
     {
+      "id": "backend_dinegraph_api_create_app_start_session",
+      "label": "start_session()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "start_session()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L371"
+    },
+    {
       "id": "backend_dinegraph_main_load_env",
       "label": "load_env()",
       "_callable": true,
@@ -1992,6 +1991,30 @@
       "norm_label": "main()",
       "source_file": "backend/dinegraph/main.py",
       "source_location": "L32"
+    },
+    {
+      "id": "backend_dinegraph_main_welcome_text",
+      "label": "welcome_text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "welcome_text()",
+      "source_file": "backend/dinegraph/main.py",
+      "source_location": "L19"
+    },
+    {
+      "id": "backend_dinegraph_state_initial_state",
+      "label": "initial_state()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "initial_state()",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L60"
     },
     {
       "id": "backend_scripts_live_check_full_order",
@@ -2087,19 +2110,19 @@
       "file_type": "code",
       "norm_label": "db()",
       "source_file": "backend/tests/conftest.py",
-      "source_location": "L24"
+      "source_location": "L31"
     },
     {
-      "id": "backend_dinegraph_state_initial_state",
-      "label": "initial_state()",
+      "id": "backend_tests_conftest_postgres_server",
+      "label": "postgres_server()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "initial_state",
+      "community": 19,
+      "community_name": "conftest.py",
       "file_type": "code",
-      "norm_label": "initial_state()",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L60"
+      "norm_label": "postgres_server()",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L21"
     },
     {
       "id": "frontend_src_api_apierror_constructor",
@@ -2615,7 +2638,7 @@
       "file_type": "code",
       "norm_label": "finish_order()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L133"
+      "source_location": "L132"
     },
     {
       "id": "backend_tests_test_api_flakyllm_init",
@@ -2627,7 +2650,7 @@
       "file_type": "code",
       "norm_label": ".__init__()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L104"
+      "source_location": "L103"
     },
     {
       "id": "backend_tests_test_api_flakyllm_parse_order",
@@ -2639,7 +2662,7 @@
       "file_type": "code",
       "norm_label": ".parse_order()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L107"
+      "source_location": "L106"
     },
     {
       "id": "backend_tests_test_api_make_client",
@@ -2675,7 +2698,7 @@
       "file_type": "code",
       "norm_label": "test_admin_menu_changes()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L174"
+      "source_location": "L173"
     },
     {
       "id": "backend_tests_test_api_test_admin_stats",
@@ -2687,7 +2710,7 @@
       "file_type": "code",
       "norm_label": "test_admin_stats()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L192"
+      "source_location": "L191"
     },
     {
       "id": "backend_tests_test_api_test_admin_token",
@@ -2699,7 +2722,7 @@
       "file_type": "code",
       "norm_label": "test_admin_token()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L207"
+      "source_location": "L206"
     },
     {
       "id": "backend_tests_test_api_test_full_session_over_http",
@@ -2711,7 +2734,7 @@
       "file_type": "code",
       "norm_label": "test_full_session_over_http()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L45"
+      "source_location": "L44"
     },
     {
       "id": "backend_tests_test_api_test_health_and_menu",
@@ -2735,7 +2758,7 @@
       "file_type": "code",
       "norm_label": "test_in_progress_session_has_an_order_record()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L168"
+      "source_location": "L167"
     },
     {
       "id": "backend_tests_test_api_test_kitchen_screen_follows_a_slow_kitchen",
@@ -2747,7 +2770,7 @@
       "file_type": "code",
       "norm_label": "test_kitchen_screen_follows_a_slow_kitchen()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L254"
+      "source_location": "L253"
     },
     {
       "id": "backend_tests_test_api_test_llm_failure_can_be_retried",
@@ -2759,7 +2782,7 @@
       "file_type": "code",
       "norm_label": "test_llm_failure_can_be_retried()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L115"
+      "source_location": "L114"
     },
     {
       "id": "backend_tests_test_api_test_menu_seed_only_on_first_run",
@@ -2771,7 +2794,7 @@
       "file_type": "code",
       "norm_label": "test_menu_seed_only_on_first_run()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L217"
+      "source_location": "L216"
     },
     {
       "id": "backend_tests_test_api_test_menu_stock_goes_down_and_is_shared_between_sessions",
@@ -2783,7 +2806,7 @@
       "file_type": "code",
       "norm_label": "test_menu_stock_goes_down_and_is_shared_between_sessions()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L139"
+      "source_location": "L138"
     },
     {
       "id": "backend_tests_test_api_test_order_events_track_the_order",
@@ -2795,7 +2818,7 @@
       "file_type": "code",
       "norm_label": "test_order_events_track_the_order()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L240"
+      "source_location": "L239"
     },
     {
       "id": "backend_tests_test_api_test_orders_are_recorded",
@@ -2807,7 +2830,7 @@
       "file_type": "code",
       "norm_label": "test_orders_are_recorded()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L149"
+      "source_location": "L148"
     },
     {
       "id": "backend_tests_test_api_test_partial_order_decision_over_http",
@@ -2819,7 +2842,7 @@
       "file_type": "code",
       "norm_label": "test_partial_order_decision_over_http()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L69"
+      "source_location": "L68"
     },
     {
       "id": "backend_tests_test_api_test_sessions_survive_an_app_restart",
@@ -2831,7 +2854,7 @@
       "file_type": "code",
       "norm_label": "test_sessions_survive_an_app_restart()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L91"
+      "source_location": "L90"
     },
     {
       "id": "backend_tests_test_api_test_table_and_dish_notes",
@@ -2843,7 +2866,7 @@
       "file_type": "code",
       "norm_label": "test_table_and_dish_notes()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L227"
+      "source_location": "L226"
     },
     {
       "id": "backend_tests_test_api_test_unknown_session_and_empty_text",
@@ -2855,31 +2878,7 @@
       "file_type": "code",
       "norm_label": "test_unknown_session_and_empty_text()",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L83"
-    },
-    {
-      "id": "backend_dinegraph_api_create_app_order_events",
-      "label": "order_events()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "order_events()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L435"
-    },
-    {
-      "id": "backend_dinegraph_api_postgres_checkpointer",
-      "label": "postgres_checkpointer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "postgres_checkpointer()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L204"
+      "source_location": "L82"
     },
     {
       "id": "backend_dinegraph_store_make_engine",
@@ -2891,19 +2890,7 @@
       "file_type": "code",
       "norm_label": "make_engine()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L76"
-    },
-    {
-      "id": "backend_dinegraph_store_make_engine_wal",
-      "label": "_wal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "_wal()",
-      "source_file": "backend/dinegraph/store.py",
-      "source_location": "L83"
+      "source_location": "L69"
     },
     {
       "id": "backend_dinegraph_store_now",
@@ -2915,7 +2902,7 @@
       "file_type": "code",
       "norm_label": "_now()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L63"
+      "source_location": "L56"
     },
     {
       "id": "backend_dinegraph_store_sqlalchemy_url",
@@ -2927,7 +2914,7 @@
       "file_type": "code",
       "norm_label": "sqlalchemy_url()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L68"
+      "source_location": "L61"
     },
     {
       "id": "backend_dinegraph_store_store_active_orders",
@@ -2939,7 +2926,7 @@
       "file_type": "code",
       "norm_label": ".active_orders()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L201"
+      "source_location": "L178"
     },
     {
       "id": "backend_dinegraph_store_store_add_event",
@@ -2951,7 +2938,7 @@
       "file_type": "code",
       "norm_label": ".add_event()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L210"
+      "source_location": "L187"
     },
     {
       "id": "backend_dinegraph_store_store_delete_item",
@@ -2963,7 +2950,7 @@
       "file_type": "code",
       "norm_label": ".delete_item()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L178"
+      "source_location": "L155"
     },
     {
       "id": "backend_dinegraph_store_store_events",
@@ -2975,7 +2962,7 @@
       "file_type": "code",
       "norm_label": ".events()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L215"
+      "source_location": "L192"
     },
     {
       "id": "backend_dinegraph_store_store_get_item",
@@ -2987,7 +2974,7 @@
       "file_type": "code",
       "norm_label": ".get_item()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L151"
+      "source_location": "L128"
     },
     {
       "id": "backend_dinegraph_store_store_get_order",
@@ -2999,7 +2986,7 @@
       "file_type": "code",
       "norm_label": ".get_order()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L230"
+      "source_location": "L207"
     },
     {
       "id": "backend_dinegraph_store_store_init",
@@ -3011,7 +2998,7 @@
       "file_type": "code",
       "norm_label": ".__init__()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L91"
+      "source_location": "L78"
     },
     {
       "id": "backend_dinegraph_store_store_list_orders",
@@ -3023,7 +3010,7 @@
       "file_type": "code",
       "norm_label": ".list_orders()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L221"
+      "source_location": "L198"
     },
     {
       "id": "backend_dinegraph_store_store_menu",
@@ -3035,7 +3022,7 @@
       "file_type": "code",
       "norm_label": ".menu()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L116"
+      "source_location": "L93"
     },
     {
       "id": "backend_dinegraph_store_store_menu_items",
@@ -3047,7 +3034,7 @@
       "file_type": "code",
       "norm_label": ".menu_items()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L145"
+      "source_location": "L122"
     },
     {
       "id": "backend_dinegraph_store_store_order",
@@ -3059,7 +3046,7 @@
       "file_type": "code",
       "norm_label": "._order()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L256"
+      "source_location": "L233"
     },
     {
       "id": "backend_dinegraph_store_store_prices",
@@ -3071,7 +3058,7 @@
       "file_type": "code",
       "norm_label": ".prices()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L119"
+      "source_location": "L96"
     },
     {
       "id": "backend_dinegraph_store_store_release",
@@ -3083,7 +3070,7 @@
       "file_type": "code",
       "norm_label": ".release()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L137"
+      "source_location": "L114"
     },
     {
       "id": "backend_dinegraph_store_store_reserve",
@@ -3095,7 +3082,7 @@
       "file_type": "code",
       "norm_label": ".reserve()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L122"
+      "source_location": "L99"
     },
     {
       "id": "backend_dinegraph_store_store_save_order",
@@ -3107,7 +3094,7 @@
       "file_type": "code",
       "norm_label": ".save_order()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L185"
+      "source_location": "L162"
     },
     {
       "id": "backend_dinegraph_store_store_stats",
@@ -3119,7 +3106,7 @@
       "file_type": "code",
       "norm_label": ".stats()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L235"
+      "source_location": "L212"
     },
     {
       "id": "backend_dinegraph_store_store_upsert_item",
@@ -3131,43 +3118,7 @@
       "file_type": "code",
       "norm_label": ".upsert_item()",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L161"
-    },
-    {
-      "id": "backend_scripts_sqlite_to_postgres_copy_sessions",
-      "label": "copy_sessions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "copy_sessions()",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L35"
-    },
-    {
-      "id": "backend_scripts_sqlite_to_postgres_copy_tables",
-      "label": "copy_tables()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "copy_tables()",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L23"
-    },
-    {
-      "id": "backend_scripts_sqlite_to_postgres_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L54"
+      "source_location": "L138"
     },
     {
       "id": "backend_tests_test_scenarios",
@@ -3179,6 +3130,17 @@
       "norm_label": "test_scenarios.py",
       "source_file": "backend/tests/test_scenarios.py",
       "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_154",
+      "label": "Deterministic stand-in for tests and offline runs. Understands inputs like \"2\u2026",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "test_scenarios.py",
+      "file_type": "rationale",
+      "norm_label": "deterministic stand-in for tests and offline runs. understands inputs like \"2...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L154"
     },
     {
       "id": "backend_dinegraph_state_rationale_19",
@@ -3269,7 +3231,7 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_api_rationale_177",
+      "id": "backend_dinegraph_api_rationale_174",
       "label": "A one-line activity entry for a finished graph step, or None for steps not\u2026",
       "_origin": "ast",
       "community": 1,
@@ -3277,10 +3239,21 @@
       "file_type": "rationale",
       "norm_label": "a one-line activity entry for a finished graph step, or none for steps not...",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L177"
+      "source_location": "L174"
     },
     {
-      "id": "backend_dinegraph_api_rationale_228",
+      "id": "backend_dinegraph_api_rationale_202",
+      "label": "A LangGraph checkpointer that keeps sessions in Postgres, creating its tables\u2026",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "rationale",
+      "norm_label": "a langgraph checkpointer that keeps sessions in postgres, creating its tables...",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L202"
+    },
+    {
+      "id": "backend_dinegraph_api_rationale_224",
       "label": "`menu` and `prices` seed the menu table the first time a database is created.\u2026",
       "_origin": "ast",
       "community": 1,
@@ -3288,7 +3261,7 @@
       "file_type": "rationale",
       "norm_label": "`menu` and `prices` seed the menu table the first time a database is created....",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L228"
+      "source_location": "L224"
     },
     {
       "id": "anthropic",
@@ -3300,17 +3273,6 @@
       "norm_label": "anthropic",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "backend_dinegraph_llm",
-      "label": "llm.py",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "code",
-      "norm_label": "llm.py",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L1"
     },
     {
       "id": "backend_dinegraph_llm_py_basemodel",
@@ -3366,28 +3328,6 @@
       "norm_label": "response",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "backend_dinegraph_llm_rationale_1",
-      "label": "The LLM layer. The graph talks to the LLM through three calls: parse_order user\u2026",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "rationale",
-      "norm_label": "the llm layer. the graph talks to the llm through three calls: parse_order user...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_llm_rationale_154",
-      "label": "Deterministic stand-in for tests and offline runs. Understands inputs like \"2\u2026",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "rationale",
-      "norm_label": "deterministic stand-in for tests and offline runs. understands inputs like \"2...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L154"
     },
     {
       "id": "backend_dinegraph_llm_rationale_91",
@@ -3502,6 +3442,17 @@
       "source_location": "L1"
     },
     {
+      "id": "backend_dinegraph_llm",
+      "label": "llm.py",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "llm.py",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L1"
+    },
+    {
       "id": "backend_dinegraph_main",
       "label": "main.py",
       "_origin": "ast",
@@ -3521,6 +3472,17 @@
       "file_type": "code",
       "norm_label": "live_check.py",
       "source_file": "backend/scripts/live_check.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_1",
+      "label": "The LLM layer. The graph talks to the LLM through three calls: parse_order user\u2026",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "rationale",
+      "norm_label": "the llm layer. the graph talks to the llm through three calls: parse_order user...",
+      "source_file": "backend/dinegraph/llm.py",
       "source_location": "L1"
     },
     {
@@ -3635,47 +3597,25 @@
     },
     {
       "id": "backend_tests_conftest_rationale_1",
-      "label": "The `db` fixture runs each API test on SQLite and, when a Postgres server is\u2026",
+      "label": "The `db` fixture gives each API test its own fresh Postgres database, dropped\u2026",
       "_origin": "ast",
       "community": 19,
       "community_name": "conftest.py",
       "file_type": "rationale",
-      "norm_label": "the `db` fixture runs each api test on sqlite and, when a postgres server is...",
+      "norm_label": "the `db` fixture gives each api test its own fresh postgres database, dropped...",
       "source_file": "backend/tests/conftest.py",
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_state",
-      "label": "state.py",
+      "id": "backend_tests_conftest_rationale_32",
+      "label": "The URL of a new, empty database.",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "initial_state",
-      "file_type": "code",
-      "norm_label": "state.py",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "typeddict",
-      "label": "TypedDict",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "initial_state",
-      "file_type": "code",
-      "norm_label": "typeddict",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_dinegraph_state_rationale_1",
-      "label": "The LangGraph state shared by every node.",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "initial_state",
+      "community": 19,
+      "community_name": "conftest.py",
       "file_type": "rationale",
-      "norm_label": "the langgraph state shared by every node.",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L1"
+      "norm_label": "the url of a new, empty database.",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L32"
     },
     {
       "id": "frontend_src_api",
@@ -3887,6 +3827,17 @@
       "source_location": "L1"
     },
     {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "api.ts",
+      "file_type": "concept",
+      "norm_label": "lucide-react",
+      "source_file": "frontend/package.json",
+      "source_location": "L12"
+    },
+    {
       "id": "ref_react",
       "label": "react",
       "_origin": "ast",
@@ -3896,17 +3847,6 @@
       "norm_label": "react",
       "source_file": "frontend/package.json",
       "source_location": "L13"
-    },
-    {
-      "id": "ref_react_dom",
-      "label": "react-dom",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "api.ts",
-      "file_type": "concept",
-      "norm_label": "react-dom",
-      "source_file": "frontend/package.json",
-      "source_location": "L14"
     },
     {
       "id": "frontend_package",
@@ -4140,15 +4080,15 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_lucide_react",
-      "label": "lucide-react",
+      "id": "ref_react_dom",
+      "label": "react-dom",
       "_origin": "ast",
       "community": 22,
       "community_name": "package.json",
       "file_type": "concept",
-      "norm_label": "lucide-react",
+      "norm_label": "react-dom",
       "source_file": "frontend/package.json",
-      "source_location": "L12"
+      "source_location": "L14"
     },
     {
       "id": "ref_types_node",
@@ -4641,6 +4581,28 @@
       "source_location": "L1"
     },
     {
+      "id": "backend_dinegraph_state",
+      "label": "state.py",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "state.py",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "typeddict",
+      "label": "TypedDict",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "typeddict",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "backend_dinegraph_graph_rationale_1",
       "label": "r\"\"\"The DineGraph LangGraph. START -> take_order -> parse_order ->\u2026",
       "_origin": "ast",
@@ -4685,6 +4647,17 @@
       "source_location": "L20"
     },
     {
+      "id": "backend_dinegraph_state_rationale_1",
+      "label": "The LangGraph state shared by every node.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "rationale",
+      "norm_label": "the langgraph state shared by every node.",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L1"
+    },
+    {
       "id": "backend_tests_test_api",
       "label": "test_api.py",
       "_origin": "ast",
@@ -4707,7 +4680,7 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_tests_test_api_rationale_102",
+      "id": "backend_tests_test_api_rationale_101",
       "label": "Fails the first parse_order call with an API error, then works.",
       "_origin": "ast",
       "community": 6,
@@ -4715,7 +4688,7 @@
       "file_type": "rationale",
       "norm_label": "fails the first parse_order call with an api error, then works.",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L102"
+      "source_location": "L101"
     },
     {
       "id": "backend_dinegraph_store",
@@ -4726,17 +4699,6 @@
       "file_type": "code",
       "norm_label": "store.py",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_scripts_sqlite_to_postgres",
-      "label": "sqlite_to_postgres.py",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "code",
-      "norm_label": "sqlite_to_postgres.py",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
       "source_location": "L1"
     },
     {
@@ -4751,29 +4713,18 @@
       "source_location": ""
     },
     {
-      "id": "backend_dinegraph_api_rationale_205",
-      "label": "A LangGraph checkpointer that keeps sessions in Postgres, creating its tables\u2026",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "rationale",
-      "norm_label": "a langgraph checkpointer that keeps sessions in postgres, creating its tables...",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L205"
-    },
-    {
       "id": "backend_dinegraph_store_rationale_1",
-      "label": "Database storage for the backend: the menu with stock and prices, and order\u2026",
+      "label": "Postgres storage for the backend: the menu with stock and prices, and order\u2026",
       "_origin": "ast",
       "community": 7,
       "community_name": "Store",
       "file_type": "rationale",
-      "norm_label": "database storage for the backend: the menu with stock and prices, and order...",
+      "norm_label": "postgres storage for the backend: the menu with stock and prices, and order...",
       "source_file": "backend/dinegraph/store.py",
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_store_rationale_123",
+      "id": "backend_dinegraph_store_rationale_100",
       "label": "Take stock for every dish, or for none. Safe with several server processes.",
       "_origin": "ast",
       "community": 7,
@@ -4781,10 +4732,10 @@
       "file_type": "rationale",
       "norm_label": "take stock for every dish, or for none. safe with several server processes.",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L123"
+      "source_location": "L100"
     },
     {
-      "id": "backend_dinegraph_store_rationale_162",
+      "id": "backend_dinegraph_store_rationale_139",
       "label": "Create a dish, or change its quantity and/or price. New dishes need both.",
       "_origin": "ast",
       "community": 7,
@@ -4792,10 +4743,10 @@
       "file_type": "rationale",
       "norm_label": "create a dish, or change its quantity and/or price. new dishes need both.",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L162"
+      "source_location": "L139"
     },
     {
-      "id": "backend_dinegraph_store_rationale_186",
+      "id": "backend_dinegraph_store_rationale_163",
       "label": "Upsert the order record. `stage` is the graph node that runs next ('' when\u2026",
       "_origin": "ast",
       "community": 7,
@@ -4803,10 +4754,10 @@
       "file_type": "rationale",
       "norm_label": "upsert the order record. `stage` is the graph node that runs next ('' when...",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L186"
+      "source_location": "L163"
     },
     {
-      "id": "backend_dinegraph_store_rationale_202",
+      "id": "backend_dinegraph_store_rationale_179",
       "label": "Orders still in progress, oldest first: what the kitchen screen shows.",
       "_origin": "ast",
       "community": 7,
@@ -4814,10 +4765,10 @@
       "file_type": "rationale",
       "norm_label": "orders still in progress, oldest first: what the kitchen screen shows.",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L202"
+      "source_location": "L179"
     },
     {
-      "id": "backend_dinegraph_store_rationale_69",
+      "id": "backend_dinegraph_store_rationale_62",
       "label": "Use the psycopg 3 driver for Postgres URLs given in the usual postgres:// form.",
       "_origin": "ast",
       "community": 7,
@@ -4825,29 +4776,18 @@
       "file_type": "rationale",
       "norm_label": "use the psycopg 3 driver for postgres urls given in the usual postgres:// form.",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L69"
+      "source_location": "L62"
     },
     {
-      "id": "backend_dinegraph_store_rationale_77",
-      "label": "An engine for a SQLAlchemy URL, e.g. sqlite:///dinegraph.sqlite or\u2026",
+      "id": "backend_dinegraph_store_rationale_70",
+      "label": "An engine for a Postgres URL such as postgresql://user:pass@host:5432/dinegraph.",
       "_origin": "ast",
       "community": 7,
       "community_name": "Store",
       "file_type": "rationale",
-      "norm_label": "an engine for a sqlalchemy url, e.g. sqlite:///dinegraph.sqlite or...",
+      "norm_label": "an engine for a postgres url such as postgresql://user:pass@host:5432/dinegraph.",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L77"
-    },
-    {
-      "id": "backend_scripts_sqlite_to_postgres_rationale_1",
-      "label": "Copy a DineGraph SQLite database into an empty Postgres database. python\u2026",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Store",
-      "file_type": "rationale",
-      "norm_label": "copy a dinegraph sqlite database into an empty postgres database. python...",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L1"
+      "source_location": "L70"
     },
     {
       "id": "approch",
@@ -4883,7 +4823,7 @@
       "node_kind": "heading",
       "norm_label": "backend",
       "source_file": "README.md",
-      "source_location": "L204"
+      "source_location": "L208"
     },
     {
       "id": "readme_command_line_chat",
@@ -4895,7 +4835,7 @@
       "node_kind": "heading",
       "norm_label": "command-line chat",
       "source_file": "README.md",
-      "source_location": "L182"
+      "source_location": "L186"
     },
     {
       "id": "readme_configuration",
@@ -4907,7 +4847,7 @@
       "node_kind": "heading",
       "norm_label": "configuration",
       "source_file": "README.md",
-      "source_location": "L282"
+      "source_location": "L286"
     },
     {
       "id": "readme_contents",
@@ -4931,7 +4871,7 @@
       "node_kind": "heading",
       "norm_label": "database",
       "source_file": "README.md",
-      "source_location": "L298"
+      "source_location": "L301"
     },
     {
       "id": "readme_dinegraph",
@@ -4967,7 +4907,7 @@
       "node_kind": "heading",
       "norm_label": "getting started",
       "source_file": "README.md",
-      "source_location": "L168"
+      "source_location": "L167"
     },
     {
       "id": "readme_how_the_graph_works",
@@ -4991,7 +4931,7 @@
       "node_kind": "heading",
       "norm_label": "live check with claude",
       "source_file": "README.md",
-      "source_location": "L352"
+      "source_location": "L343"
     },
     {
       "id": "readme_menu",
@@ -5003,7 +4943,7 @@
       "node_kind": "heading",
       "norm_label": "menu",
       "source_file": "README.md",
-      "source_location": "L324"
+      "source_location": "L315"
     },
     {
       "id": "readme_nodes",
@@ -5051,7 +4991,7 @@
       "node_kind": "heading",
       "norm_label": "roadmap",
       "source_file": "README.md",
-      "source_location": "L362"
+      "source_location": "L353"
     },
     {
       "id": "readme_state",
@@ -5087,7 +5027,7 @@
       "node_kind": "heading",
       "norm_label": "tests",
       "source_file": "README.md",
-      "source_location": "L339"
+      "source_location": "L330"
     },
     {
       "id": "readme_web_frontend",
@@ -5099,7 +5039,19 @@
       "node_kind": "heading",
       "norm_label": "web frontend",
       "source_file": "README.md",
-      "source_location": "L254"
+      "source_location": "L258"
+    },
+    {
+      "id": "collections",
+      "label": "collections",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "api.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "collections",
+      "source_file": "",
+      "type": "external"
     },
     {
       "id": "fastapi_middleware_cors",
@@ -5110,6 +5062,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "fastapi_middleware_cors",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pydantic",
+      "label": "pydantic",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "api.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pydantic",
       "source_file": "",
       "type": "external"
     },
@@ -5146,30 +5110,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "httpx2",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "pydantic",
-      "label": "pydantic",
-      "_origin": "semantic",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pydantic",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "re",
-      "label": "re",
-      "_origin": "semantic",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "re",
       "source_file": "",
       "type": "external"
     },
@@ -5258,6 +5198,18 @@
       "type": "external"
     },
     {
+      "id": "os",
+      "label": "os",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "main.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "os",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "pathlib",
       "label": "pathlib",
       "_origin": "semantic",
@@ -5270,26 +5222,26 @@
       "type": "external"
     },
     {
-      "id": "dataclasses",
-      "label": "dataclasses",
+      "id": "re",
+      "label": "re",
       "_origin": "semantic",
-      "community": 19,
-      "community_name": "conftest.py",
+      "community": 17,
+      "community_name": "main.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "dataclasses",
+      "norm_label": "re",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "os",
-      "label": "os",
+      "id": "sys",
+      "label": "sys",
       "_origin": "semantic",
-      "community": 19,
-      "community_name": "conftest.py",
+      "community": 17,
+      "community_name": "main.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "os",
+      "norm_label": "sys",
       "source_file": "",
       "type": "external"
     },
@@ -5318,38 +5270,14 @@
       "type": "external"
     },
     {
-      "id": "langchain_core_messages",
-      "label": "langchain_core_messages",
+      "id": "dataclasses",
+      "label": "dataclasses",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "initial_state",
+      "community_name": "dataclasses",
       "external": true,
       "file_type": "concept",
-      "norm_label": "langchain_core_messages",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "langgraph_graph_message",
-      "label": "langgraph_graph_message",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "initial_state",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "langgraph_graph_message",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "typing_extensions",
-      "label": "typing_extensions",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "initial_state",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "typing_extensions",
+      "norm_label": "dataclasses",
       "source_file": "",
       "type": "external"
     },
@@ -5378,6 +5306,18 @@
       "type": "external"
     },
     {
+      "id": "langgraph_checkpoint_sqlite",
+      "label": "langgraph_checkpoint_sqlite",
+      "_origin": "semantic",
+      "community": 23,
+      "community_name": "langgraph_checkpoint_sqlite",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "langgraph_checkpoint_sqlite",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "csv",
       "label": "csv",
       "_origin": "semantic",
@@ -5390,6 +5330,42 @@
       "type": "external"
     },
     {
+      "id": "sqlalchemy_dialects",
+      "label": "sqlalchemy_dialects",
+      "_origin": "semantic",
+      "community": 27,
+      "community_name": "sqlalchemy_dialects",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sqlalchemy_dialects",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sqlite3",
+      "label": "sqlite3",
+      "_origin": "semantic",
+      "community": 29,
+      "community_name": "sqlite3",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sqlite3",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "langchain_core_messages",
+      "label": "langchain_core_messages",
+      "_origin": "semantic",
+      "community": 3,
+      "community_name": "graph.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "langchain_core_messages",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "langgraph_graph",
       "label": "langgraph_graph",
       "_origin": "semantic",
@@ -5398,6 +5374,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "langgraph_graph",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "langgraph_graph_message",
+      "label": "langgraph_graph_message",
+      "_origin": "semantic",
+      "community": 3,
+      "community_name": "graph.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "langgraph_graph_message",
       "source_file": "",
       "type": "external"
     },
@@ -5422,6 +5410,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "typing",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "typing_extensions",
+      "label": "typing_extensions",
+      "_origin": "semantic",
+      "community": 3,
+      "community_name": "graph.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "typing_extensions",
       "source_file": "",
       "type": "external"
     },
@@ -5474,18 +5474,6 @@
       "type": "external"
     },
     {
-      "id": "collections",
-      "label": "collections",
-      "_origin": "semantic",
-      "community": 7,
-      "community_name": "Store",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "collections",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "datetime",
       "label": "datetime",
       "_origin": "semantic",
@@ -5510,18 +5498,6 @@
       "type": "external"
     },
     {
-      "id": "langgraph_checkpoint_sqlite",
-      "label": "langgraph_checkpoint_sqlite",
-      "_origin": "semantic",
-      "community": 7,
-      "community_name": "Store",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "langgraph_checkpoint_sqlite",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "sqlalchemy",
       "label": "sqlalchemy",
       "_origin": "semantic",
@@ -5530,42 +5506,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "sqlalchemy",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sqlalchemy_dialects",
-      "label": "sqlalchemy_dialects",
-      "_origin": "semantic",
-      "community": 7,
-      "community_name": "Store",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sqlalchemy_dialects",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sqlite3",
-      "label": "sqlite3",
-      "_origin": "semantic",
-      "community": 7,
-      "community_name": "Store",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sqlite3",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sys",
-      "label": "sys",
-      "_origin": "semantic",
-      "community": 7,
-      "community_name": "Store",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sys",
       "source_file": "",
       "type": "external"
     },
@@ -5580,6 +5520,28 @@
       "norm_label": "math",
       "source_file": "",
       "type": "external"
+    },
+    {
+      "id": "psycopg",
+      "label": "psycopg",
+      "community": 19,
+      "community_name": "conftest.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "psycopg",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sqlalchemy_dialects_postgresql",
+      "label": "sqlalchemy_dialects_postgresql",
+      "community": 7,
+      "community_name": "Store",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sqlalchemy_dialects_postgresql",
+      "source_file": "",
+      "type": "external"
     }
   ],
   "links": [
@@ -5592,7 +5554,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L233",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -5604,7 +5566,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L233",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -5616,7 +5578,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L242",
+      "source_location": "L239",
       "weight": 1.0
     },
     {
@@ -5628,7 +5590,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L242",
+      "source_location": "L239",
       "weight": 1.0
     },
     {
@@ -5640,7 +5602,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L243",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -5652,7 +5614,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L251",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -5664,7 +5626,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L251",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -5676,7 +5638,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -5688,7 +5650,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -5700,7 +5662,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L375",
+      "source_location": "L365",
       "weight": 1.0
     },
     {
@@ -5712,7 +5674,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L376",
+      "source_location": "L366",
       "weight": 1.0
     },
     {
@@ -5724,7 +5686,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L393",
+      "source_location": "L383",
       "weight": 1.0
     },
     {
@@ -5736,7 +5698,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L447",
+      "source_location": "L437",
       "weight": 1.0
     },
     {
@@ -5748,7 +5710,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L363",
+      "source_location": "L354",
       "weight": 1.0
     },
     {
@@ -5760,7 +5722,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L410",
+      "source_location": "L400",
       "weight": 1.0
     },
     {
@@ -5772,95 +5734,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L411",
+      "source_location": "L401",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_api_create_app_retry",
-      "target": "backend_dinegraph_api_create_app_run",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L414",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_retry",
-      "target": "backend_dinegraph_api_create_app_view",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L415",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_run",
-      "target": "backend_dinegraph_api_create_app_error_text",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L357",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_save",
-      "target": "backend_dinegraph_api_create_app_config",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L321",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_save",
-      "target": "backend_dinegraph_api_describe",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L325",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_send_message",
-      "target": "backend_dinegraph_api_create_app_snapshot",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L398",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_send_message",
-      "target": "backend_dinegraph_api_create_app_require_idle",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L399",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_send_message",
       "target": "backend_dinegraph_api_create_app_run",
       "relation": "calls",
       "_origin": "ast",
@@ -5872,7 +5750,7 @@
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_create_app_send_message",
+      "source": "backend_dinegraph_api_create_app_retry",
       "target": "backend_dinegraph_api_create_app_view",
       "relation": "calls",
       "_origin": "ast",
@@ -5884,6 +5762,90 @@
       "weight": 1.0
     },
     {
+      "source": "backend_dinegraph_api_create_app_run",
+      "target": "backend_dinegraph_api_create_app_error_text",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L348",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_save",
+      "target": "backend_dinegraph_api_create_app_config",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_save",
+      "target": "backend_dinegraph_api_describe",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L316",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_send_message",
+      "target": "backend_dinegraph_api_create_app_snapshot",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L388",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_send_message",
+      "target": "backend_dinegraph_api_create_app_require_idle",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L389",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_send_message",
+      "target": "backend_dinegraph_api_create_app_run",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L394",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_send_message",
+      "target": "backend_dinegraph_api_create_app_view",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L395",
+      "weight": 1.0
+    },
+    {
       "source": "backend_dinegraph_api_create_app_snapshot",
       "target": "backend_dinegraph_api_create_app_config",
       "relation": "calls",
@@ -5892,7 +5854,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L267",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -5904,7 +5866,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -5916,7 +5878,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -5928,7 +5890,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -5940,7 +5902,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L389",
+      "source_location": "L379",
       "weight": 1.0
     },
     {
@@ -5952,7 +5914,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L463",
+      "source_location": "L453",
       "weight": 1.0
     },
     {
@@ -5964,7 +5926,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L273",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -5976,7 +5938,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L279",
+      "source_location": "L270",
       "weight": 1.0
     },
     {
@@ -5988,7 +5950,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L280",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -6000,7 +5962,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L286",
+      "source_location": "L277",
       "weight": 1.0
     },
     {
@@ -6012,7 +5974,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L289",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -6024,7 +5986,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L292",
+      "source_location": "L283",
       "weight": 1.0
     },
     {
@@ -6036,7 +5998,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L293",
+      "source_location": "L284",
       "weight": 1.0
     },
     {
@@ -6048,7 +6010,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L333",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -6060,7 +6022,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L337",
+      "source_location": "L328",
       "weight": 1.0
     },
     {
@@ -6072,7 +6034,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L481",
+      "source_location": "L471",
       "weight": 1.0
     },
     {
@@ -6084,7 +6046,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L482",
+      "source_location": "L472",
       "weight": 1.0
     },
     {
@@ -6492,7 +6454,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L78",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -6504,7 +6466,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L206",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -6516,7 +6478,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L212",
+      "source_location": "L189",
       "weight": 1.0
     },
     {
@@ -6528,7 +6490,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L233",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -6540,7 +6502,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L228",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -6552,7 +6514,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L117",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -6564,7 +6526,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L120",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -6576,7 +6538,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L187",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -6588,7 +6550,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L164",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -6652,78 +6614,6 @@
       "weight": 1.0
     },
     {
-      "source": "backend_scripts_sqlite_to_postgres_copy_sessions",
-      "target": "backend_dinegraph_api_postgres_checkpointer",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_main",
-      "target": "backend_dinegraph_store_make_engine",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L62",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_main",
-      "target": "backend_dinegraph_store_store",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L62",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_main",
-      "target": "backend_scripts_sqlite_to_postgres_copy_tables",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L70",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_main",
-      "target": "backend_scripts_sqlite_to_postgres_copy_sessions",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L71",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_tests_conftest_db",
-      "target": "backend_tests_conftest_database",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/tests/conftest.py",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
       "source": "backend_tests_test_api_finish_order",
       "target": "backend_tests_test_api_say",
       "relation": "calls",
@@ -6732,7 +6622,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L135",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -6744,7 +6634,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L112",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -6780,7 +6670,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L175",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -6792,7 +6682,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L184",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -6804,7 +6694,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L193",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -6816,7 +6706,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L195",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -6828,7 +6718,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L198",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -6840,7 +6730,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L209",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -6852,7 +6742,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L46",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -6864,7 +6754,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L53",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -6888,7 +6778,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L169",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -6900,7 +6790,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L255",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -6912,7 +6802,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L259",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -6924,7 +6814,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L116",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -6936,7 +6826,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L116",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -6948,7 +6838,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L122",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -6960,12 +6850,24 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L218",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
       "source": "backend_tests_test_api_test_menu_stock_goes_down_and_is_shared_between_sessions",
       "target": "backend_tests_test_api_make_client",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_api.py",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_api_test_menu_stock_goes_down_and_is_shared_between_sessions",
+      "target": "backend_tests_test_api_finish_order",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6977,18 +6879,6 @@
     },
     {
       "source": "backend_tests_test_api_test_menu_stock_goes_down_and_is_shared_between_sessions",
-      "target": "backend_tests_test_api_finish_order",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/tests/test_api.py",
-      "source_location": "L141",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_tests_test_api_test_menu_stock_goes_down_and_is_shared_between_sessions",
       "target": "backend_tests_test_api_say",
       "relation": "calls",
       "_origin": "ast",
@@ -6996,7 +6886,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L145",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -7008,7 +6898,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L241",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -7020,12 +6910,24 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L243",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
       "source": "backend_tests_test_api_test_orders_are_recorded",
       "target": "backend_tests_test_api_make_client",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_api.py",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_api_test_orders_are_recorded",
+      "target": "backend_tests_test_api_finish_order",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7037,18 +6939,6 @@
     },
     {
       "source": "backend_tests_test_api_test_orders_are_recorded",
-      "target": "backend_tests_test_api_finish_order",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/tests/test_api.py",
-      "source_location": "L151",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_tests_test_api_test_orders_are_recorded",
       "target": "backend_tests_test_api_say",
       "relation": "calls",
       "_origin": "ast",
@@ -7056,7 +6946,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L153",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -7068,7 +6958,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L70",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -7080,7 +6970,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L72",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -7092,7 +6982,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L92",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -7104,7 +6994,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L94",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -7116,7 +7006,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L228",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -7128,7 +7018,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L232",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -7140,7 +7030,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L84",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -8400,7 +8290,19 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "backend/tests/conftest.py",
-      "source_location": "L23",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_conftest_postgres_server",
+      "target": "fixture",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -8436,19 +8338,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api",
-      "target": "sqlite3",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L30",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -8460,7 +8350,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -8472,7 +8362,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L32",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -8484,7 +8374,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L33",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -8496,7 +8386,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L37",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -8508,7 +8398,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L45",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -8520,7 +8410,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L45",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -8532,7 +8422,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L46",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -8544,7 +8434,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L46",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -8556,7 +8446,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L46",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -8568,7 +8458,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L47",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -8580,7 +8470,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L47",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -8592,7 +8482,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L48",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -8604,7 +8494,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L48",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -8616,7 +8506,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L49",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -8628,7 +8518,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L49",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -8868,7 +8758,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -8956,90 +8846,6 @@
       "weight": 1.0
     },
     {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "sys",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_dinegraph_api_postgres_checkpointer",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_dinegraph_store_make_engine",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_dinegraph_store_store",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_dinegraph_store_store_menu_items",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "sqlite3",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_tests_conftest",
-      "target": "pytest",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/tests/conftest.py",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
       "source": "backend_tests_conftest",
       "target": "os",
       "relation": "imports",
@@ -9048,7 +8854,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/tests/conftest.py",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -9060,7 +8866,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/tests/conftest.py",
-      "source_location": "L9",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_conftest",
+      "target": "psycopg",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_conftest",
+      "target": "pytest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -9876,7 +9706,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L34",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -9888,7 +9718,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L35",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -9900,7 +9730,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L38",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -9912,7 +9742,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L39",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -9924,19 +9754,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api",
-      "target": "langgraph_checkpoint_sqlite",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L41",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -9948,7 +9766,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L42",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -9960,7 +9778,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L43",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -9972,7 +9790,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L45",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -9984,7 +9802,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L46",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -9996,7 +9814,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L47",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -10008,7 +9826,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L48",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -10020,7 +9838,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L49",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -10332,7 +10150,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -10344,19 +10162,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_store",
-      "target": "sqlalchemy_dialects",
+      "target": "sqlalchemy_dialects_postgresql",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -10368,7 +10186,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -10465,90 +10283,6 @@
       "context": "import",
       "source_file": "backend/scripts/live_check.py",
       "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "collections",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "pathlib",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "langgraph_checkpoint_sqlite",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "sqlalchemy",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_dinegraph_api",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_dinegraph_store",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_tests_conftest",
-      "target": "dataclasses",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/tests/conftest.py",
-      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -11040,7 +10774,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L218",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -11076,7 +10810,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L91",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -11100,7 +10834,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L218",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -11160,7 +10894,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L76",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -11189,24 +10923,13 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_api_usermessage",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L100",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api",
       "target": "backend_dinegraph_api_menuitem",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L104",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -11217,7 +10940,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L110",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -11228,7 +10951,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L115",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -11239,7 +10962,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L120",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -11250,7 +10973,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L133",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -11261,7 +10984,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L143",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -11272,7 +10995,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L154",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -11283,7 +11006,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L176",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -11294,7 +11017,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L204",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -11305,7 +11028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L218",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -11316,7 +11039,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L477",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -11327,7 +11050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L56",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -11338,7 +11061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L61",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -11349,7 +11072,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L68",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -11360,7 +11083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L75",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -11371,7 +11094,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L96",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api",
+      "target": "backend_dinegraph_api_usermessage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -11382,7 +11116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L263",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -11393,7 +11127,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L266",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -11404,7 +11138,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L272",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -11415,7 +11149,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L306",
+      "source_location": "L297",
       "weight": 1.0
     },
     {
@@ -11426,7 +11160,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L310",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -11437,7 +11171,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L319",
+      "source_location": "L310",
       "weight": 1.0
     },
     {
@@ -11448,7 +11182,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L329",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
@@ -11459,7 +11193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L344",
+      "source_location": "L335",
       "weight": 1.0
     },
     {
@@ -11470,7 +11204,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L362",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -11481,7 +11215,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L369",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -11492,7 +11226,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L374",
+      "source_location": "L364",
       "weight": 1.0
     },
     {
@@ -11503,7 +11237,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L381",
+      "source_location": "L371",
       "weight": 1.0
     },
     {
@@ -11514,7 +11248,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L392",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -11525,7 +11259,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L396",
+      "source_location": "L386",
       "weight": 1.0
     },
     {
@@ -11536,7 +11270,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L408",
+      "source_location": "L398",
       "weight": 1.0
     },
     {
@@ -11547,7 +11281,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L420",
+      "source_location": "L410",
       "weight": 1.0
     },
     {
@@ -11558,7 +11292,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L428",
+      "source_location": "L418",
       "weight": 1.0
     },
     {
@@ -11569,7 +11303,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L435",
+      "source_location": "L425",
       "weight": 1.0
     },
     {
@@ -11580,7 +11314,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L444",
+      "source_location": "L434",
       "weight": 1.0
     },
     {
@@ -11591,7 +11325,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L457",
+      "source_location": "L447",
       "weight": 1.0
     },
     {
@@ -11602,7 +11336,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L466",
+      "source_location": "L456",
       "weight": 1.0
     },
     {
@@ -11613,7 +11347,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L471",
+      "source_location": "L461",
       "weight": 1.0
     },
     {
@@ -11888,7 +11622,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L63",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -11899,7 +11633,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L68",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -11910,7 +11644,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L76",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -11921,18 +11655,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L90",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_store_make_engine",
-      "target": "backend_dinegraph_store_make_engine_wal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/dinegraph/store.py",
-      "source_location": "L83",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -11969,47 +11692,14 @@
       "weight": 1.0
     },
     {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_scripts_sqlite_to_postgres_copy_tables",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_scripts_sqlite_to_postgres_copy_sessions",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres",
-      "target": "backend_scripts_sqlite_to_postgres_main",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
       "source": "backend_tests_conftest",
-      "target": "backend_tests_conftest_database",
+      "target": "backend_tests_conftest_postgres_server",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/conftest.py",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -12020,7 +11710,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/conftest.py",
-      "source_location": "L24",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -12031,7 +11721,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L101",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -12042,7 +11732,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L115",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -12053,7 +11743,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L133",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -12064,7 +11754,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L139",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -12075,7 +11765,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L149",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -12086,7 +11776,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L168",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -12108,7 +11798,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L174",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -12119,7 +11809,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L192",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -12130,7 +11820,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L207",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -12141,7 +11831,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L217",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -12152,7 +11842,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L227",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -12163,7 +11853,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L240",
+      "source_location": "L239",
       "weight": 1.0
     },
     {
@@ -12174,7 +11864,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L254",
+      "source_location": "L253",
       "weight": 1.0
     },
     {
@@ -12207,7 +11897,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -12218,7 +11908,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L69",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -12229,7 +11919,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L83",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -12240,7 +11930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L91",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -13956,7 +13646,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L168",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -13978,7 +13668,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L298",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -13989,7 +13679,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L324",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -14000,7 +13690,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L339",
+      "source_location": "L330",
       "weight": 1.0
     },
     {
@@ -14011,7 +13701,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L362",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -14044,7 +13734,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L182",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
@@ -14055,7 +13745,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L204",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -14066,7 +13756,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L254",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -14077,7 +13767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L282",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -14121,7 +13811,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L352",
+      "source_location": "L343",
       "weight": 1.0
     },
     {
@@ -14132,7 +13822,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L56",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -14143,7 +13833,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L68",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -14154,7 +13844,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L143",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -14165,7 +13855,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L104",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -14176,7 +13866,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L115",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -14187,7 +13877,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L110",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -14198,7 +13888,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L96",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -14209,7 +13899,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L133",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -14220,7 +13910,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L61",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -14231,7 +13921,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L120",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -14242,7 +13932,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L75",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -14253,7 +13943,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L154",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -14264,7 +13954,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L100",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -14363,7 +14053,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L101",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -14621,46 +14311,13 @@
     },
     {
       "source": "backend_dinegraph_store_store",
-      "target": "backend_dinegraph_store_store_menu",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/dinegraph/store.py",
-      "source_location": "L116",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_store_store",
-      "target": "backend_dinegraph_store_store_prices",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/dinegraph/store.py",
-      "source_location": "L119",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_store_store",
-      "target": "backend_dinegraph_store_store_reserve",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/dinegraph/store.py",
-      "source_location": "L122",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_store_store",
       "target": "backend_dinegraph_store_store_release",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L137",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -14671,7 +14328,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L145",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -14682,7 +14339,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L151",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -14693,7 +14350,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L161",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -14704,7 +14361,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L178",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -14715,7 +14372,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L185",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -14726,7 +14383,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L201",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -14737,7 +14394,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L210",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -14748,7 +14405,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L215",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -14759,7 +14416,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L221",
+      "source_location": "L198",
       "weight": 1.0
     },
     {
@@ -14770,7 +14427,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L230",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -14781,7 +14438,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L235",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -14792,7 +14449,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L256",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -14803,7 +14460,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L91",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_store_store",
+      "target": "backend_dinegraph_store_store_menu",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/store.py",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_store_store",
+      "target": "backend_dinegraph_store_store_prices",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/store.py",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_store_store",
+      "target": "backend_dinegraph_store_store_reserve",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/store.py",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -14814,7 +14504,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L104",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -14825,7 +14515,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L107",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -14884,36 +14574,36 @@
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_rationale_177",
+      "source": "backend_dinegraph_api_rationale_174",
       "target": "backend_dinegraph_api_describe",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L177",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_rationale_205",
+      "source": "backend_dinegraph_api_rationale_202",
       "target": "backend_dinegraph_api_postgres_checkpointer",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L205",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_rationale_228",
+      "source": "backend_dinegraph_api_rationale_224",
       "target": "backend_dinegraph_api_create_app",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L228",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -15126,69 +14816,69 @@
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_store_rationale_123",
+      "source": "backend_dinegraph_store_rationale_100",
       "target": "backend_dinegraph_store_store_reserve",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L123",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_store_rationale_162",
+      "source": "backend_dinegraph_store_rationale_139",
       "target": "backend_dinegraph_store_store_upsert_item",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L162",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_store_rationale_186",
+      "source": "backend_dinegraph_store_rationale_163",
       "target": "backend_dinegraph_store_store_save_order",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L186",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_store_rationale_202",
+      "source": "backend_dinegraph_store_rationale_179",
       "target": "backend_dinegraph_store_store_active_orders",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L202",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_store_rationale_69",
+      "source": "backend_dinegraph_store_rationale_62",
       "target": "backend_dinegraph_store_sqlalchemy_url",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L69",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_store_rationale_77",
+      "source": "backend_dinegraph_store_rationale_70",
       "target": "backend_dinegraph_store_make_engine",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L77",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -15199,17 +14889,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/scripts/live_check.py",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_rationale_1",
-      "target": "backend_scripts_sqlite_to_postgres",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -15225,6 +14904,17 @@
       "weight": 1.0
     },
     {
+      "source": "backend_tests_conftest_rationale_32",
+      "target": "backend_tests_conftest_db",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/conftest.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
       "source": "backend_tests_test_api_rationale_1",
       "target": "backend_tests_test_api",
       "relation": "rationale_for",
@@ -15236,14 +14926,14 @@
       "weight": 1.0
     },
     {
-      "source": "backend_tests_test_api_rationale_102",
+      "source": "backend_tests_test_api_rationale_101",
       "target": "backend_tests_test_api_flakyllm",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_api.py",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -15321,7 +15011,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L454",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -15333,7 +15023,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L351",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -15441,7 +15131,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "backend/dinegraph/store.py",
-      "source_location": "L106",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -15661,54 +15351,6 @@
       "weight": 1.0
     },
     {
-      "source": "backend_scripts_sqlite_to_postgres_copy_tables",
-      "target": "backend_dinegraph_api_create_app_order_events",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "collection",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_copy_tables",
-      "target": "backend_dinegraph_store_store_menu_items",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "collection",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_main",
-      "target": "backend_dinegraph_api_create_app_order_events",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "collection",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_scripts_sqlite_to_postgres_main",
-      "target": "backend_dinegraph_store_store_menu_items",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "collection",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
       "source": "backend_dinegraph_graph_build_bill",
       "target": "backend_dinegraph_state_orderitem",
       "relation": "uses",
@@ -15741,7 +15383,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L219",
+      "source_location": "L216",
       "weight": 0.8
     },
     {
@@ -15781,18 +15423,6 @@
       "weight": 0.8
     },
     {
-      "source": "backend_scripts_sqlite_to_postgres_copy_tables",
-      "target": "backend_dinegraph_store_store",
-      "relation": "uses",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "parameter_type",
-      "source_file": "backend/scripts/sqlite_to_postgres.py",
-      "source_location": "L23",
-      "weight": 0.8
-    },
-    {
       "source": "backend_dinegraph_api_create_app",
       "target": "backend_dinegraph_state_status",
       "relation": "uses",
@@ -15800,7 +15430,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L387",
+      "source_location": "L377",
       "weight": 0.8
     },
     {
@@ -15811,7 +15441,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L183",
+      "source_location": "L180",
       "weight": 0.8
     },
     {
@@ -15937,5 +15567,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c595ebc95ea905eb07048beec1e130c6dd32bdb2"
+  "built_at_commit": "c355b78e12a1f7add211d2fd7a0df4a5ad9f4236"
 }

@@ -1,6 +1,5 @@
-"""Database storage for the backend: the menu with stock and prices, and order records.
+"""Postgres storage for the backend: the menu with stock and prices, and order records.
 
-Works on SQLite (the default, one local file) and Postgres (set DATABASE_URL).
 The LangGraph checkpointer keeps full session state in the same database, in its
 own tables. The orders table here is a flat summary that is easy to list and
 report on.
@@ -12,8 +11,8 @@ import json
 from datetime import datetime, timezone
 
 from sqlalchemy import (CheckConstraint, Column, Engine, Integer, MetaData, String, Table, Text,
-                        create_engine, event, func, inspect, select, text)
-from sqlalchemy.dialects import postgresql, sqlite
+                        create_engine, func, select)
+from sqlalchemy.dialects.postgresql import insert
 
 from .menu import MENU, PRICES
 
@@ -24,7 +23,7 @@ menu_items = Table(
     Column("dish", String, primary_key=True),
     Column("quantity", Integer, CheckConstraint("quantity >= 0"), nullable=False),
     Column("price", Integer, CheckConstraint("price >= 0"), nullable=False),
-    Column("position", Integer),  # menu order, since Postgres has no rowid
+    Column("position", Integer),  # menu order
 )
 
 orders = Table(
@@ -51,12 +50,6 @@ order_events = Table(
     Column("detail", Text, nullable=False),
 )
 
-# columns added after the first release, created on older databases at startup
-MIGRATIONS = {
-    "orders": {"table_no": "INTEGER", "stage": "TEXT NOT NULL DEFAULT ''"},
-    "menu_items": {"position": "INTEGER"},
-}
-
 FINISHED = ("PAID", "FAILED", "CANCELLED")
 
 
@@ -74,16 +67,10 @@ def sqlalchemy_url(url: str) -> str:
 
 
 def make_engine(url: str) -> Engine:
-    """An engine for a SQLAlchemy URL, e.g. sqlite:///dinegraph.sqlite or postgresql://..."""
+    """An engine for a Postgres URL such as postgresql://user:pass@host:5432/dinegraph."""
     url = sqlalchemy_url(url)
-    if url.startswith("sqlite"):
-        engine = create_engine(url, connect_args={"check_same_thread": False, "timeout": 30})
-
-        @event.listens_for(engine, "connect")
-        def _wal(conn, _record):
-            conn.execute("PRAGMA journal_mode=WAL")  # readers don't block the writer
-
-        return engine
+    if not url.startswith("postgresql"):
+        raise ValueError("DATABASE_URL must be a Postgres URL, e.g. postgresql://user:pass@host:5432/dinegraph")
     return create_engine(url, pool_pre_ping=True)
 
 
@@ -91,18 +78,8 @@ class Store:
     def __init__(self, engine: Engine, seed_menu: dict[str, int] | None = None,
                  seed_prices: dict[str, int] | None = None):
         self.engine = engine
-        insert = postgresql.insert if engine.dialect.name == "postgresql" else sqlite.insert
-        self._insert = insert
         metadata.create_all(engine)
         with engine.begin() as conn:
-            existing = inspect(conn)
-            for table, columns in MIGRATIONS.items():
-                have = {c["name"] for c in existing.get_columns(table)}
-                for name, decl in columns.items():
-                    if name not in have:
-                        conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {name} {decl}"))
-                        if (table, name) == ("menu_items", "position"):  # keep the old order
-                            conn.execute(text("UPDATE menu_items SET position = rowid"))
             if conn.execute(select(func.count()).select_from(menu_items)).scalar() == 0:
                 menu = MENU if seed_menu is None else seed_menu  # first run: load the default menu
                 prices = PRICES if seed_prices is None else seed_prices
@@ -191,7 +168,7 @@ class Store:
             "payment_method": state["payment_method"], "created_at": now, "updated_at": now,
             "table_no": state.get("table"), "stage": stage,
         }
-        query = self._insert(orders).values(**values)
+        query = insert(orders).values(**values)
         query = query.on_conflict_do_update(
             index_elements=[orders.c.session_id],
             set_={k: query.excluded[k] for k in values if k not in ("session_id", "created_at")})

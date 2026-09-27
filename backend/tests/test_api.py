@@ -19,7 +19,7 @@ def make_client(db, outcomes=(), llm=None, **options):
     app = create_app(
         llm=llm or RuleBasedLLM(),
         outcome=lambda stage: script.pop(0)[1],
-        **db.options,
+        database_url=db,
         menu=MENU,
         prices=PRICES,
         **options,
@@ -35,8 +35,7 @@ def say(client, sid, text, expect=200):
 
 def test_health_and_menu(db):
     c = make_client(db)
-    assert c.get("/health").json() == {"ok": True, "llm": "RuleBasedLLM", "kitchen_seconds": 0.0,
-                                    "database": db.kind}
+    assert c.get("/health").json() == {"ok": True, "llm": "RuleBasedLLM", "kitchen_seconds": 0.0}
     menu = c.get("/menu").json()
     assert menu["max_dishes"] == 3
     assert {"dish": "Veg Biryani", "available": 10, "price": 220} in menu["items"]
@@ -92,7 +91,7 @@ def test_sessions_survive_an_app_restart(db):
     c1 = make_client(db)
     sid = c1.post("/sessions").json()["session_id"]
     say(c1, sid, "tell me a joke")
-    c2 = make_client(db)  # new app, same database file
+    c2 = make_client(db)  # new app, same database
     s = c2.get(f"/sessions/{sid}").json()
     assert s["counters"]["order_retries"] == 2
     assert s["waiting_for"] == "order"
