@@ -152,6 +152,7 @@ backend/
     conftest.py         the database fixture for the API tests
   scripts/
     live_check.py       checks against the real Claude API
+    sqlite_to_postgres.py  copies a SQLite database into Postgres
   requirements.txt
   .env.example          every setting, with comments; copy to .env
 frontend/               React + Vite web app (order chat, kitchen screen, order history, admin)
@@ -309,6 +310,14 @@ docker run -d --name dinegraph-db -e POSTGRES_PASSWORD=dinegraph -e POSTGRES_DB=
 # in backend/.env
 DATABASE_URL=postgresql://postgres:dinegraph@localhost:5432/dinegraph
 ```
+
+To move an existing SQLite database into an empty Postgres database, stop the backend and run:
+
+```bash
+.venv/bin/python scripts/sqlite_to_postgres.py dinegraph.sqlite postgresql://postgres:dinegraph@localhost:5432/dinegraph
+```
+
+It copies the menu, orders, order events and saved sessions, so orders in progress carry on. The SQLite file is left unchanged.
 
 `GET /health` reports which database is in use. Older SQLite files from earlier versions are upgraded automatically at startup, with their data and menu order kept. The backend still needs a single server process, because busy sessions are tracked in memory.
 

@@ -17,19 +17,6 @@
       "source_location": "L33"
     },
     {
-      "id": "backend_dinegraph_llm_rulebasedllm",
-      "label": "RuleBasedLLM",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": "rulebasedllm",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L153"
-    },
-    {
       "id": "backend_dinegraph_state_status",
       "label": "Status",
       "_callable": true,
@@ -49,7 +36,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "chatmessage",
       "source_file": "backend/dinegraph/api.py",
@@ -62,11 +49,89 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "counters",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L68"
+    },
+    {
+      "id": "backend_dinegraph_api_kitchenticket",
+      "label": "KitchenTicket",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "kitchenticket",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L143"
+    },
+    {
+      "id": "backend_dinegraph_api_menuitem",
+      "label": "MenuItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "menuitem",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L104"
+    },
+    {
+      "id": "backend_dinegraph_api_menuupdate",
+      "label": "MenuUpdate",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "menuupdate",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L115"
+    },
+    {
+      "id": "backend_dinegraph_api_menuview",
+      "label": "MenuView",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "menuview",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L110"
+    },
+    {
+      "id": "backend_dinegraph_api_newsession",
+      "label": "NewSession",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "newsession",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L96"
+    },
+    {
+      "id": "backend_dinegraph_api_orderevent",
+      "label": "OrderEvent",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "orderevent",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L133"
     },
     {
       "id": "backend_dinegraph_api_orderline",
@@ -75,11 +140,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "orderline",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L61"
+    },
+    {
+      "id": "backend_dinegraph_api_orderrecord",
+      "label": "OrderRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "orderrecord",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L120"
     },
     {
       "id": "backend_dinegraph_api_sessionview",
@@ -88,11 +166,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "sessionview",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L75"
+    },
+    {
+      "id": "backend_dinegraph_api_stats",
+      "label": "Stats",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "stats",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L154"
+    },
+    {
+      "id": "backend_dinegraph_api_usermessage",
+      "label": "UserMessage",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "usermessage",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L100"
     },
     {
       "id": "backend_dinegraph_llm_claudellm",
@@ -173,6 +277,19 @@
       "source_location": "L41"
     },
     {
+      "id": "backend_dinegraph_llm_rulebasedllm",
+      "label": "RuleBasedLLM",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "code",
+      "norm_label": "rulebasedllm",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L153"
+    },
+    {
       "id": "backend_tests_test_claude_wiring_fakeapi",
       "label": "FakeAPI",
       "_callable": true,
@@ -212,121 +329,30 @@
       "source_location": "L18"
     },
     {
-      "id": "backend_dinegraph_api_kitchenticket",
-      "label": "KitchenTicket",
+      "id": "backend_dinegraph_state_dinestate",
+      "label": "DineState",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "file_type": "code",
-      "norm_label": "kitchenticket",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L143"
+      "norm_label": "dinestate",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L45"
     },
     {
-      "id": "backend_dinegraph_api_menuitem",
-      "label": "MenuItem",
+      "id": "backend_dinegraph_state_orderitem",
+      "label": "OrderItem",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "file_type": "code",
-      "norm_label": "menuitem",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L104"
-    },
-    {
-      "id": "backend_dinegraph_api_menuupdate",
-      "label": "MenuUpdate",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "menuupdate",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L115"
-    },
-    {
-      "id": "backend_dinegraph_api_menuview",
-      "label": "MenuView",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "menuview",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L110"
-    },
-    {
-      "id": "backend_dinegraph_api_newsession",
-      "label": "NewSession",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "newsession",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L96"
-    },
-    {
-      "id": "backend_dinegraph_api_orderevent",
-      "label": "OrderEvent",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "orderevent",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L133"
-    },
-    {
-      "id": "backend_dinegraph_api_orderrecord",
-      "label": "OrderRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "orderrecord",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L120"
-    },
-    {
-      "id": "backend_dinegraph_api_stats",
-      "label": "Stats",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "stats",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L154"
-    },
-    {
-      "id": "backend_dinegraph_api_usermessage",
-      "label": "UserMessage",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "usermessage",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L100"
+      "norm_label": "orderitem",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L38"
     },
     {
       "id": "frontend_src_api_apierror",
@@ -550,32 +576,6 @@
       "source_location": "L41"
     },
     {
-      "id": "backend_dinegraph_state_dinestate",
-      "label": "DineState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "code",
-      "norm_label": "dinestate",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L45"
-    },
-    {
-      "id": "backend_dinegraph_state_orderitem",
-      "label": "OrderItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "code",
-      "norm_label": "orderitem",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L38"
-    },
-    {
       "id": "backend_tests_test_api_flakyllm",
       "label": "FlakyLLM",
       "_callable": true,
@@ -660,30 +660,6 @@
       "norm_label": ".reserve()",
       "source_file": "backend/dinegraph/inventory.py",
       "source_location": "L47"
-    },
-    {
-      "id": "backend_dinegraph_llm_claudellm_compose",
-      "label": ".compose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": ".compose()",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L127"
-    },
-    {
-      "id": "backend_dinegraph_llm_rulebasedllm_compose",
-      "label": ".compose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": ".compose()",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L190"
     },
     {
       "id": "backend_tests_test_scenarios_run",
@@ -852,18 +828,6 @@
       "norm_label": "test_nothing_available_three_times_ends_with_apology()",
       "source_file": "backend/tests/test_scenarios.py",
       "source_location": "L91"
-    },
-    {
-      "id": "backend_tests_test_scenarios_test_offline_parser_reads_notes_and_number_words",
-      "label": "test_offline_parser_reads_notes_and_number_words()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": "test_offline_parser_reads_notes_and_number_words()",
-      "source_file": "backend/tests/test_scenarios.py",
-      "source_location": "L310"
     },
     {
       "id": "backend_tests_test_scenarios_test_partial_on_last_attempt_can_still_be_accepted",
@@ -1111,7 +1075,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "create_app()",
       "source_file": "backend/dinegraph/api.py",
@@ -1123,7 +1087,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "busy()",
       "source_file": "backend/dinegraph/api.py",
@@ -1135,7 +1099,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "config()",
       "source_file": "backend/dinegraph/api.py",
@@ -1147,7 +1111,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "delete_dish()",
       "source_file": "backend/dinegraph/api.py",
@@ -1159,11 +1123,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "error_text()",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L310"
+    },
+    {
+      "id": "backend_dinegraph_api_create_app_get_menu",
+      "label": "get_menu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "get_menu()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L374"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_order",
@@ -1171,7 +1147,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "get_order()",
       "source_file": "backend/dinegraph/api.py",
@@ -1183,7 +1159,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "get_session()",
       "source_file": "backend/dinegraph/api.py",
@@ -1195,11 +1171,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "health()",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L369"
+    },
+    {
+      "id": "backend_dinegraph_api_create_app_kitchen",
+      "label": "kitchen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "kitchen()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L444"
     },
     {
       "id": "backend_dinegraph_api_create_app_list_orders",
@@ -1207,23 +1195,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "list_orders()",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L420"
-    },
-    {
-      "id": "backend_dinegraph_api_create_app_order_events",
-      "label": "order_events()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "create_app",
-      "file_type": "code",
-      "norm_label": "order_events()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L435"
     },
     {
       "id": "backend_dinegraph_api_create_app_require_admin",
@@ -1231,7 +1207,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "require_admin()",
       "source_file": "backend/dinegraph/api.py",
@@ -1243,7 +1219,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "require_idle()",
       "source_file": "backend/dinegraph/api.py",
@@ -1255,7 +1231,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "retry()",
       "source_file": "backend/dinegraph/api.py",
@@ -1267,7 +1243,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "run()",
       "source_file": "backend/dinegraph/api.py",
@@ -1279,7 +1255,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "save()",
       "source_file": "backend/dinegraph/api.py",
@@ -1291,7 +1267,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "send_message()",
       "source_file": "backend/dinegraph/api.py",
@@ -1303,11 +1279,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "snapshot()",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L266"
+    },
+    {
+      "id": "backend_dinegraph_api_create_app_start_session",
+      "label": "start_session()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "start_session()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L381"
     },
     {
       "id": "backend_dinegraph_api_create_app_stats",
@@ -1315,11 +1303,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "stats()",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L471"
+    },
+    {
+      "id": "backend_dinegraph_api_create_app_upsert_dish",
+      "label": "upsert_dish()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "upsert_dish()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L457"
     },
     {
       "id": "backend_dinegraph_api_create_app_view",
@@ -1327,7 +1327,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "view()",
       "source_file": "backend/dinegraph/api.py",
@@ -1339,7 +1339,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "work()",
       "source_file": "backend/dinegraph/api.py",
@@ -1351,7 +1351,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "describe()",
       "source_file": "backend/dinegraph/api.py",
@@ -1363,23 +1363,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "__getattr__()",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L477"
     },
     {
-      "id": "backend_dinegraph_api_postgres_checkpointer",
-      "label": "postgres_checkpointer()",
+      "id": "backend_dinegraph_main_welcome_text",
+      "label": "welcome_text()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
-      "norm_label": "postgres_checkpointer()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L204"
+      "norm_label": "welcome_text()",
+      "source_file": "backend/dinegraph/main.py",
+      "source_location": "L19"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_classify_decision",
@@ -1404,6 +1404,18 @@
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
       "source_location": "L124"
+    },
+    {
+      "id": "backend_dinegraph_llm_claudellm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L127"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_init",
@@ -1512,6 +1524,18 @@
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
       "source_location": "L182"
+    },
+    {
+      "id": "backend_dinegraph_llm_rulebasedllm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L190"
     },
     {
       "id": "backend_dinegraph_llm_rulebasedllm_parse_order",
@@ -1658,40 +1682,40 @@
       "source_location": "L67"
     },
     {
-      "id": "backend_scripts_live_check_full_order",
-      "label": "full_order()",
+      "id": "backend_tests_test_scenarios_test_offline_parser_reads_notes_and_number_words",
+      "label": "test_offline_parser_reads_notes_and_number_words()",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
-      "community_name": "llm.py",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
       "file_type": "code",
-      "norm_label": "full_order()",
-      "source_file": "backend/scripts/live_check.py",
-      "source_location": "L62"
+      "norm_label": "test_offline_parser_reads_notes_and_number_words()",
+      "source_file": "backend/tests/test_scenarios.py",
+      "source_location": "L310"
     },
     {
-      "id": "backend_scripts_live_check_items",
-      "label": "items()",
+      "id": "backend_dinegraph_graph_random_outcome",
+      "label": "random_outcome()",
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "llm.py",
+      "community_name": "random_outcome",
       "file_type": "code",
-      "norm_label": "items()",
-      "source_file": "backend/scripts/live_check.py",
-      "source_location": "L30"
+      "norm_label": "random_outcome()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L44"
     },
     {
-      "id": "backend_scripts_live_check_main",
-      "label": "main()",
+      "id": "backend_tests_test_scenarios_test_random_outcome_is_about_forty_percent_failure",
+      "label": "test_random_outcome_is_about_forty_percent_failure()",
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": "llm.py",
+      "community_name": "random_outcome",
       "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "backend/scripts/live_check.py",
-      "source_location": "L73"
+      "norm_label": "test_random_outcome_is_about_forty_percent_failure()",
+      "source_file": "backend/tests/test_scenarios.py",
+      "source_location": "L239"
     },
     {
       "id": "backend_dinegraph_graph_build_graph",
@@ -1850,18 +1874,6 @@
       "source_location": "L247"
     },
     {
-      "id": "backend_dinegraph_graph_build_graph_order_confirm",
-      "label": "order_confirm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "code",
-      "norm_label": "order_confirm()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L116"
-    },
-    {
       "id": "backend_dinegraph_graph_build_graph_pay",
       "label": "pay()",
       "_callable": true,
@@ -1872,18 +1884,6 @@
       "norm_label": "pay()",
       "source_file": "backend/dinegraph/graph.py",
       "source_location": "L230"
-    },
-    {
-      "id": "backend_dinegraph_graph_build_graph_request_payment",
-      "label": "request_payment()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "code",
-      "norm_label": "request_payment()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L212"
     },
     {
       "id": "backend_dinegraph_graph_build_graph_reserve_stock",
@@ -1958,30 +1958,6 @@
       "source_location": "L64"
     },
     {
-      "id": "backend_dinegraph_graph_random_outcome",
-      "label": "random_outcome()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "code",
-      "norm_label": "random_outcome()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L44"
-    },
-    {
-      "id": "backend_dinegraph_menu_lookup",
-      "label": "lookup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "code",
-      "norm_label": "lookup()",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L19"
-    },
-    {
       "id": "backend_tests_test_scenarios_run_outcome",
       "label": "outcome()",
       "_callable": true,
@@ -1992,30 +1968,6 @@
       "norm_label": "outcome()",
       "source_file": "backend/tests/test_scenarios.py",
       "source_location": "L29"
-    },
-    {
-      "id": "backend_tests_test_scenarios_test_random_outcome_is_about_forty_percent_failure",
-      "label": "test_random_outcome_is_about_forty_percent_failure()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "code",
-      "norm_label": "test_random_outcome_is_about_forty_percent_failure()",
-      "source_file": "backend/tests/test_scenarios.py",
-      "source_location": "L239"
-    },
-    {
-      "id": "backend_dinegraph_api_create_app_start_session",
-      "label": "start_session()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "start_session()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L381"
     },
     {
       "id": "backend_dinegraph_main_load_env",
@@ -2042,28 +1994,40 @@
       "source_location": "L32"
     },
     {
-      "id": "backend_dinegraph_main_welcome_text",
-      "label": "welcome_text()",
+      "id": "backend_scripts_live_check_full_order",
+      "label": "full_order()",
       "_callable": true,
       "_origin": "ast",
       "community": 17,
       "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "welcome_text()",
-      "source_file": "backend/dinegraph/main.py",
-      "source_location": "L19"
+      "norm_label": "full_order()",
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L62"
     },
     {
-      "id": "backend_dinegraph_state_initial_state",
-      "label": "initial_state()",
+      "id": "backend_scripts_live_check_items",
+      "label": "items()",
       "_callable": true,
       "_origin": "ast",
       "community": 17,
       "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "initial_state()",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L60"
+      "norm_label": "items()",
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "backend_scripts_live_check_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L73"
     },
     {
       "id": "backend_dinegraph_inventory_inventory_menu",
@@ -2126,40 +2090,16 @@
       "source_location": "L24"
     },
     {
-      "id": "backend_dinegraph_api_create_app_get_menu",
-      "label": "get_menu()",
+      "id": "backend_dinegraph_state_initial_state",
+      "label": "initial_state()",
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "file_type": "code",
-      "norm_label": "get_menu()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L374"
-    },
-    {
-      "id": "backend_dinegraph_api_create_app_kitchen",
-      "label": "kitchen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "kitchen()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L444"
-    },
-    {
-      "id": "backend_dinegraph_api_create_app_upsert_dish",
-      "label": "upsert_dish()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "upsert_dish()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L457"
+      "norm_label": "initial_state()",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L60"
     },
     {
       "id": "frontend_src_api_apierror_constructor",
@@ -2594,6 +2534,18 @@
       "source_location": "L74"
     },
     {
+      "id": "backend_dinegraph_graph_build_graph_order_confirm",
+      "label": "order_confirm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "order_confirm()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L116"
+    },
+    {
       "id": "backend_dinegraph_graph_build_graph_parse_order",
       "label": "parse_order()",
       "_callable": true,
@@ -2604,6 +2556,18 @@
       "norm_label": "parse_order()",
       "source_file": "backend/dinegraph/graph.py",
       "source_location": "L105"
+    },
+    {
+      "id": "backend_dinegraph_graph_build_graph_request_payment",
+      "label": "request_payment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "request_payment()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L212"
     },
     {
       "id": "backend_dinegraph_graph_item",
@@ -2628,6 +2592,18 @@
       "norm_label": "_last_user_text()",
       "source_file": "backend/dinegraph/graph.py",
       "source_location": "L50"
+    },
+    {
+      "id": "backend_dinegraph_menu_lookup",
+      "label": "lookup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "code",
+      "norm_label": "lookup()",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L19"
     },
     {
       "id": "backend_tests_test_api_finish_order",
@@ -2882,6 +2858,30 @@
       "source_location": "L83"
     },
     {
+      "id": "backend_dinegraph_api_create_app_order_events",
+      "label": "order_events()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "code",
+      "norm_label": "order_events()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L435"
+    },
+    {
+      "id": "backend_dinegraph_api_postgres_checkpointer",
+      "label": "postgres_checkpointer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "code",
+      "norm_label": "postgres_checkpointer()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L204"
+    },
+    {
       "id": "backend_dinegraph_store_make_engine",
       "label": "make_engine()",
       "_callable": true,
@@ -3134,6 +3134,42 @@
       "source_location": "L161"
     },
     {
+      "id": "backend_scripts_sqlite_to_postgres_copy_sessions",
+      "label": "copy_sessions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "code",
+      "norm_label": "copy_sessions()",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "backend_scripts_sqlite_to_postgres_copy_tables",
+      "label": "copy_tables()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "code",
+      "norm_label": "copy_tables()",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "backend_scripts_sqlite_to_postgres_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L54"
+    },
+    {
       "id": "backend_tests_test_scenarios",
       "label": "test_scenarios.py",
       "_origin": "ast",
@@ -3143,17 +3179,6 @@
       "norm_label": "test_scenarios.py",
       "source_file": "backend/tests/test_scenarios.py",
       "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_llm_rationale_154",
-      "label": "Deterministic stand-in for tests and offline runs. Understands inputs like \"2\u2026",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "rationale",
-      "norm_label": "deterministic stand-in for tests and offline runs. understands inputs like \"2...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L154"
     },
     {
       "id": "backend_dinegraph_state_rationale_19",
@@ -3189,11 +3214,33 @@
       "source_location": "L22"
     },
     {
+      "id": "backend_dinegraph_api",
+      "label": "api.py",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "api.py",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_api_py_basemodel",
+      "label": "BaseModel",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "basemodel",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "backend_dinegraph_api_py_outcome",
       "label": "Outcome",
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "outcome",
       "source_file": "",
@@ -3204,40 +3251,40 @@
       "label": "FastAPI",
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "code",
       "norm_label": "fastapi",
       "source_file": "",
       "source_location": ""
     },
     {
+      "id": "backend_dinegraph_api_rationale_1",
+      "label": "HTTP backend for DineGraph. Run from the backend folder: uvicorn\u2026",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "rationale",
+      "norm_label": "http backend for dinegraph. run from the backend folder: uvicorn...",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L1"
+    },
+    {
       "id": "backend_dinegraph_api_rationale_177",
       "label": "A one-line activity entry for a finished graph step, or None for steps not\u2026",
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "rationale",
       "norm_label": "a one-line activity entry for a finished graph step, or none for steps not...",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L177"
     },
     {
-      "id": "backend_dinegraph_api_rationale_205",
-      "label": "A LangGraph checkpointer that keeps sessions in Postgres, creating its tables\u2026",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "create_app",
-      "file_type": "rationale",
-      "norm_label": "a langgraph checkpointer that keeps sessions in postgres, creating its tables...",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L205"
-    },
-    {
       "id": "backend_dinegraph_api_rationale_228",
       "label": "`menu` and `prices` seed the menu table the first time a database is created.\u2026",
       "_origin": "ast",
       "community": 1,
-      "community_name": "create_app",
+      "community_name": "api.py",
       "file_type": "rationale",
       "norm_label": "`menu` and `prices` seed the menu table the first time a database is created....",
       "source_file": "backend/dinegraph/api.py",
@@ -3253,6 +3300,17 @@
       "norm_label": "anthropic",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "backend_dinegraph_llm",
+      "label": "llm.py",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "code",
+      "norm_label": "llm.py",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_dinegraph_llm_py_basemodel",
@@ -3310,6 +3368,28 @@
       "source_location": ""
     },
     {
+      "id": "backend_dinegraph_llm_rationale_1",
+      "label": "The LLM layer. The graph talks to the LLM through three calls: parse_order user\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "the llm layer. the graph talks to the llm through three calls: parse_order user...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_154",
+      "label": "Deterministic stand-in for tests and offline runs. Understands inputs like \"2\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "deterministic stand-in for tests and offline runs. understands inputs like \"2...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L154"
+    },
+    {
       "id": "backend_dinegraph_llm_rationale_91",
       "label": "One structured-output call. A refusal or an unreadable reply returns\u2026",
       "_origin": "ast",
@@ -3354,59 +3434,26 @@
       "source_location": "L92"
     },
     {
-      "id": "backend_dinegraph_llm",
-      "label": "llm.py",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "llm.py",
-      "file_type": "code",
-      "norm_label": "llm.py",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_scripts_live_check",
-      "label": "live_check.py",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "llm.py",
-      "file_type": "code",
-      "norm_label": "live_check.py",
-      "source_file": "backend/scripts/live_check.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_llm_rationale_1",
-      "label": "The LLM layer. The graph talks to the LLM through three calls: parse_order user\u2026",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "llm.py",
-      "file_type": "rationale",
-      "norm_label": "the llm layer. the graph talks to the llm through three calls: parse_order user...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_scripts_live_check_rationale_1",
-      "label": "Live check of DineGraph against the real Claude API. Run it once you have a\u2026",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "llm.py",
-      "file_type": "rationale",
-      "norm_label": "live check of dinegraph against the real claude api. run it once you have a...",
-      "source_file": "backend/scripts/live_check.py",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_dinegraph_graph_py_outcome",
       "label": "Outcome",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
+      "community": 12,
+      "community_name": "random_outcome",
       "file_type": "code",
       "norm_label": "outcome",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "backend_dinegraph_graph_rationale_45",
+      "label": "The probability function: 40% failure, 60% success.",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "random_outcome",
+      "file_type": "rationale",
+      "norm_label": "the probability function: 40% failure, 60% success.",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L45"
     },
     {
       "id": "pace",
@@ -3420,17 +3467,6 @@
       "source_location": ""
     },
     {
-      "id": "backend_dinegraph_graph_rationale_45",
-      "label": "The probability function: 40% failure, 60% success.",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "rationale",
-      "norm_label": "the probability function: 40% failure, 60% success.",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L45"
-    },
-    {
       "id": "backend_dinegraph_graph_rationale_94",
       "label": "Build the graph. Pass `inventory` for shared stock, or `menu`/`prices` for a\u2026",
       "_origin": "ast",
@@ -3440,17 +3476,6 @@
       "norm_label": "build the graph. pass `inventory` for shared stock, or `menu`/`prices` for a...",
       "source_file": "backend/dinegraph/graph.py",
       "source_location": "L94"
-    },
-    {
-      "id": "backend_dinegraph_menu_rationale_20",
-      "label": "Case-insensitive menu lookup. Returns (canonical name, available quantity). A\u2026",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "rationale",
-      "norm_label": "case-insensitive menu lookup. returns (canonical name, available quantity). a...",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L20"
     },
     {
       "id": "claude",
@@ -3488,6 +3513,17 @@
       "source_location": "L1"
     },
     {
+      "id": "backend_scripts_live_check",
+      "label": "live_check.py",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "live_check.py",
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L1"
+    },
+    {
       "id": "backend_dinegraph_main_rationale_1",
       "label": "Command-line runner: python -m dinegraph.main [--offline] [--seed N]",
       "_origin": "ast",
@@ -3508,6 +3544,17 @@
       "norm_label": "read backend/.env if it exists. variables already set in the shell take...",
       "source_file": "backend/dinegraph/main.py",
       "source_location": "L28"
+    },
+    {
+      "id": "backend_scripts_live_check_rationale_1",
+      "label": "Live check of DineGraph against the real Claude API. Run it once you have a\u2026",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "rationale",
+      "norm_label": "live check of dinegraph against the real claude api. run it once you have a...",
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_dinegraph_inventory_py_protocol",
@@ -3598,36 +3645,36 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_api",
-      "label": "api.py",
+      "id": "backend_dinegraph_state",
+      "label": "state.py",
       "_origin": "ast",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "file_type": "code",
-      "norm_label": "api.py",
-      "source_file": "backend/dinegraph/api.py",
+      "norm_label": "state.py",
+      "source_file": "backend/dinegraph/state.py",
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_api_py_basemodel",
-      "label": "BaseModel",
+      "id": "typeddict",
+      "label": "TypedDict",
       "_origin": "ast",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "file_type": "code",
-      "norm_label": "basemodel",
+      "norm_label": "typeddict",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "backend_dinegraph_api_rationale_1",
-      "label": "HTTP backend for DineGraph. Run from the backend folder: uvicorn\u2026",
+      "id": "backend_dinegraph_state_rationale_1",
+      "label": "The LangGraph state shared by every node.",
       "_origin": "ast",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "file_type": "rationale",
-      "norm_label": "http backend for dinegraph. run from the backend folder: uvicorn...",
-      "source_file": "backend/dinegraph/api.py",
+      "norm_label": "the langgraph state shared by every node.",
+      "source_file": "backend/dinegraph/state.py",
       "source_location": "L1"
     },
     {
@@ -3840,17 +3887,6 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_lucide_react",
-      "label": "lucide-react",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "api.ts",
-      "file_type": "concept",
-      "norm_label": "lucide-react",
-      "source_file": "frontend/package.json",
-      "source_location": "L12"
-    },
-    {
       "id": "ref_react",
       "label": "react",
       "_origin": "ast",
@@ -3860,6 +3896,17 @@
       "norm_label": "react",
       "source_file": "frontend/package.json",
       "source_location": "L13"
+    },
+    {
+      "id": "ref_react_dom",
+      "label": "react-dom",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "api.ts",
+      "file_type": "concept",
+      "norm_label": "react-dom",
+      "source_file": "frontend/package.json",
+      "source_location": "L14"
     },
     {
       "id": "frontend_package",
@@ -4093,15 +4140,15 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_react_dom",
-      "label": "react-dom",
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
       "_origin": "ast",
       "community": 22,
       "community_name": "package.json",
       "file_type": "concept",
-      "norm_label": "react-dom",
+      "norm_label": "lucide-react",
       "source_file": "frontend/package.json",
-      "source_location": "L14"
+      "source_location": "L12"
     },
     {
       "id": "ref_types_node",
@@ -4168,50 +4215,6 @@
       "norm_label": "@vitejs/plugin-react",
       "source_file": "frontend/package.json",
       "source_location": "L20"
-    },
-    {
-      "id": "backend_dinegraph_inventory",
-      "label": "inventory.py",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "inventory.py",
-      "file_type": "code",
-      "norm_label": "inventory.py",
-      "source_file": "backend/dinegraph/inventory.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_menu",
-      "label": "menu.py",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "inventory.py",
-      "file_type": "code",
-      "norm_label": "menu.py",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_inventory_rationale_1",
-      "label": "Stock and prices, behind one small interface the graph can use.\u2026",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "inventory.py",
-      "file_type": "rationale",
-      "norm_label": "stock and prices, behind one small interface the graph can use....",
-      "source_file": "backend/dinegraph/inventory.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_menu_rationale_1",
-      "label": "The restaurant menu: dish name -> quantity currently available. Edit this dict\u2026",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "inventory.py",
-      "file_type": "rationale",
-      "norm_label": "the restaurant menu: dish name -> quantity currently available. edit this dict...",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L1"
     },
     {
       "id": "backend_dinegraph_init",
@@ -4616,26 +4619,26 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_state",
-      "label": "state.py",
+      "id": "backend_dinegraph_inventory",
+      "label": "inventory.py",
       "_origin": "ast",
       "community": 3,
       "community_name": "graph.py",
       "file_type": "code",
-      "norm_label": "state.py",
-      "source_file": "backend/dinegraph/state.py",
+      "norm_label": "inventory.py",
+      "source_file": "backend/dinegraph/inventory.py",
       "source_location": "L1"
     },
     {
-      "id": "typeddict",
-      "label": "TypedDict",
+      "id": "backend_dinegraph_menu",
+      "label": "menu.py",
       "_origin": "ast",
       "community": 3,
       "community_name": "graph.py",
       "file_type": "code",
-      "norm_label": "typeddict",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "menu.py",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_dinegraph_graph_rationale_1",
@@ -4649,15 +4652,37 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_state_rationale_1",
-      "label": "The LangGraph state shared by every node.",
+      "id": "backend_dinegraph_inventory_rationale_1",
+      "label": "Stock and prices, behind one small interface the graph can use.\u2026",
       "_origin": "ast",
       "community": 3,
       "community_name": "graph.py",
       "file_type": "rationale",
-      "norm_label": "the langgraph state shared by every node.",
-      "source_file": "backend/dinegraph/state.py",
+      "norm_label": "stock and prices, behind one small interface the graph can use....",
+      "source_file": "backend/dinegraph/inventory.py",
       "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_menu_rationale_1",
+      "label": "The restaurant menu: dish name -> quantity currently available. Edit this dict\u2026",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "rationale",
+      "norm_label": "the restaurant menu: dish name -> quantity currently available. edit this dict...",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_menu_rationale_20",
+      "label": "Case-insensitive menu lookup. Returns (canonical name, available quantity). A\u2026",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "graph.py",
+      "file_type": "rationale",
+      "norm_label": "case-insensitive menu lookup. returns (canonical name, available quantity). a...",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L20"
     },
     {
       "id": "backend_tests_test_api",
@@ -4704,6 +4729,17 @@
       "source_location": "L1"
     },
     {
+      "id": "backend_scripts_sqlite_to_postgres",
+      "label": "sqlite_to_postgres.py",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "code",
+      "norm_label": "sqlite_to_postgres.py",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L1"
+    },
+    {
       "id": "engine",
       "label": "Engine",
       "_origin": "ast",
@@ -4713,6 +4749,17 @@
       "norm_label": "engine",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "backend_dinegraph_api_rationale_205",
+      "label": "A LangGraph checkpointer that keeps sessions in Postgres, creating its tables\u2026",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "rationale",
+      "norm_label": "a langgraph checkpointer that keeps sessions in postgres, creating its tables...",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L205"
     },
     {
       "id": "backend_dinegraph_store_rationale_1",
@@ -4792,6 +4839,17 @@
       "source_location": "L77"
     },
     {
+      "id": "backend_scripts_sqlite_to_postgres_rationale_1",
+      "label": "Copy a DineGraph SQLite database into an empty Postgres database. python\u2026",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Store",
+      "file_type": "rationale",
+      "norm_label": "copy a dinegraph sqlite database into an empty postgres database. python...",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L1"
+    },
+    {
       "id": "approch",
       "label": "approch.md",
       "_origin": "ast",
@@ -4825,7 +4883,7 @@
       "node_kind": "heading",
       "norm_label": "backend",
       "source_file": "README.md",
-      "source_location": "L203"
+      "source_location": "L204"
     },
     {
       "id": "readme_command_line_chat",
@@ -4837,7 +4895,7 @@
       "node_kind": "heading",
       "norm_label": "command-line chat",
       "source_file": "README.md",
-      "source_location": "L181"
+      "source_location": "L182"
     },
     {
       "id": "readme_configuration",
@@ -4849,7 +4907,7 @@
       "node_kind": "heading",
       "norm_label": "configuration",
       "source_file": "README.md",
-      "source_location": "L281"
+      "source_location": "L282"
     },
     {
       "id": "readme_contents",
@@ -4873,7 +4931,7 @@
       "node_kind": "heading",
       "norm_label": "database",
       "source_file": "README.md",
-      "source_location": "L297"
+      "source_location": "L298"
     },
     {
       "id": "readme_dinegraph",
@@ -4909,7 +4967,7 @@
       "node_kind": "heading",
       "norm_label": "getting started",
       "source_file": "README.md",
-      "source_location": "L167"
+      "source_location": "L168"
     },
     {
       "id": "readme_how_the_graph_works",
@@ -4933,7 +4991,7 @@
       "node_kind": "heading",
       "norm_label": "live check with claude",
       "source_file": "README.md",
-      "source_location": "L343"
+      "source_location": "L352"
     },
     {
       "id": "readme_menu",
@@ -4945,7 +5003,7 @@
       "node_kind": "heading",
       "norm_label": "menu",
       "source_file": "README.md",
-      "source_location": "L315"
+      "source_location": "L324"
     },
     {
       "id": "readme_nodes",
@@ -4993,7 +5051,7 @@
       "node_kind": "heading",
       "norm_label": "roadmap",
       "source_file": "README.md",
-      "source_location": "L353"
+      "source_location": "L362"
     },
     {
       "id": "readme_state",
@@ -5029,7 +5087,7 @@
       "node_kind": "heading",
       "norm_label": "tests",
       "source_file": "README.md",
-      "source_location": "L330"
+      "source_location": "L339"
     },
     {
       "id": "readme_web_frontend",
@@ -5041,7 +5099,43 @@
       "node_kind": "heading",
       "norm_label": "web frontend",
       "source_file": "README.md",
-      "source_location": "L253"
+      "source_location": "L254"
+    },
+    {
+      "id": "fastapi_middleware_cors",
+      "label": "fastapi_middleware_cors",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "api.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "fastapi_middleware_cors",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "threading",
+      "label": "threading",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "api.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "threading",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "time",
+      "label": "time",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "api.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "time",
+      "source_file": "",
+      "type": "external"
     },
     {
       "id": "httpx2",
@@ -5056,47 +5150,11 @@
       "type": "external"
     },
     {
-      "id": "statistics",
-      "label": "statistics",
-      "_origin": "semantic",
-      "community": 11,
-      "community_name": "statistics",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "statistics",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "langgraph_checkpoint_memory",
-      "label": "langgraph_checkpoint_memory",
-      "_origin": "semantic",
-      "community": 12,
-      "community_name": "llm.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "langgraph_checkpoint_memory",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "os",
-      "label": "os",
-      "_origin": "semantic",
-      "community": 12,
-      "community_name": "llm.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "os",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "pydantic",
       "label": "pydantic",
       "_origin": "semantic",
-      "community": 12,
-      "community_name": "llm.py",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "pydantic",
@@ -5107,8 +5165,8 @@
       "id": "re",
       "label": "re",
       "_origin": "semantic",
-      "community": 12,
-      "community_name": "llm.py",
+      "community": 10,
+      "community_name": "test_claude_wiring.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "re",
@@ -5116,26 +5174,14 @@
       "type": "external"
     },
     {
-      "id": "sys",
-      "label": "sys",
+      "id": "statistics",
+      "label": "statistics",
       "_origin": "semantic",
-      "community": 12,
-      "community_name": "llm.py",
+      "community": 11,
+      "community_name": "statistics",
       "external": true,
       "file_type": "concept",
-      "norm_label": "sys",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "time",
-      "label": "time",
-      "_origin": "semantic",
-      "community": 12,
-      "community_name": "llm.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "time",
+      "norm_label": "statistics",
       "source_file": "",
       "type": "external"
     },
@@ -5176,6 +5222,30 @@
       "type": "external"
     },
     {
+      "id": "dotenv",
+      "label": "dotenv",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "main.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "dotenv",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "langgraph_checkpoint_memory",
+      "label": "langgraph_checkpoint_memory",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "main.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "langgraph_checkpoint_memory",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "langgraph_types",
       "label": "langgraph_types",
       "_origin": "semantic",
@@ -5196,6 +5266,30 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "pathlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "dataclasses",
+      "label": "dataclasses",
+      "_origin": "semantic",
+      "community": 19,
+      "community_name": "conftest.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "dataclasses",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "os",
+      "label": "os",
+      "_origin": "semantic",
+      "community": 19,
+      "community_name": "conftest.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "os",
       "source_file": "",
       "type": "external"
     },
@@ -5224,50 +5318,38 @@
       "type": "external"
     },
     {
-      "id": "collections",
-      "label": "collections",
+      "id": "langchain_core_messages",
+      "label": "langchain_core_messages",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "external": true,
       "file_type": "concept",
-      "norm_label": "collections",
+      "norm_label": "langchain_core_messages",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "fastapi_middleware_cors",
-      "label": "fastapi_middleware_cors",
+      "id": "langgraph_graph_message",
+      "label": "langgraph_graph_message",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "external": true,
       "file_type": "concept",
-      "norm_label": "fastapi_middleware_cors",
+      "norm_label": "langgraph_graph_message",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "langgraph_checkpoint_sqlite",
-      "label": "langgraph_checkpoint_sqlite",
+      "id": "typing_extensions",
+      "label": "typing_extensions",
       "_origin": "semantic",
       "community": 2,
-      "community_name": "api.py",
+      "community_name": "initial_state",
       "external": true,
       "file_type": "concept",
-      "norm_label": "langgraph_checkpoint_sqlite",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "sqlite3",
-      "label": "sqlite3",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "api.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "sqlite3",
+      "norm_label": "typing_extensions",
       "source_file": "",
       "type": "external"
     },
@@ -5296,30 +5378,6 @@
       "type": "external"
     },
     {
-      "id": "threading",
-      "label": "threading",
-      "_origin": "semantic",
-      "community": 23,
-      "community_name": "inventory.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "threading",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "typing",
-      "label": "typing",
-      "_origin": "semantic",
-      "community": 23,
-      "community_name": "inventory.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "typing",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "csv",
       "label": "csv",
       "_origin": "semantic",
@@ -5328,18 +5386,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "csv",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "langchain_core_messages",
-      "label": "langchain_core_messages",
-      "_origin": "semantic",
-      "community": 3,
-      "community_name": "graph.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "langchain_core_messages",
       "source_file": "",
       "type": "external"
     },
@@ -5356,18 +5402,6 @@
       "type": "external"
     },
     {
-      "id": "langgraph_graph_message",
-      "label": "langgraph_graph_message",
-      "_origin": "semantic",
-      "community": 3,
-      "community_name": "graph.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "langgraph_graph_message",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "random",
       "label": "random",
       "_origin": "semantic",
@@ -5380,14 +5414,14 @@
       "type": "external"
     },
     {
-      "id": "typing_extensions",
-      "label": "typing_extensions",
+      "id": "typing",
+      "label": "typing",
       "_origin": "semantic",
       "community": 3,
       "community_name": "graph.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "typing_extensions",
+      "norm_label": "typing",
       "source_file": "",
       "type": "external"
     },
@@ -5440,6 +5474,18 @@
       "type": "external"
     },
     {
+      "id": "collections",
+      "label": "collections",
+      "_origin": "semantic",
+      "community": 7,
+      "community_name": "Store",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "collections",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "datetime",
       "label": "datetime",
       "_origin": "semantic",
@@ -5464,42 +5510,21 @@
       "type": "external"
     },
     {
-      "id": "math",
-      "label": "math",
+      "id": "langgraph_checkpoint_sqlite",
+      "label": "langgraph_checkpoint_sqlite",
       "_origin": "semantic",
-      "community": 9,
-      "community_name": "math",
+      "community": 7,
+      "community_name": "Store",
       "external": true,
       "file_type": "concept",
-      "norm_label": "math",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "dotenv",
-      "label": "dotenv",
-      "community": 17,
-      "community_name": "main.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "dotenv",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "dataclasses",
-      "label": "dataclasses",
-      "community": 19,
-      "community_name": "conftest.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "dataclasses",
+      "norm_label": "langgraph_checkpoint_sqlite",
       "source_file": "",
       "type": "external"
     },
     {
       "id": "sqlalchemy",
       "label": "sqlalchemy",
+      "_origin": "semantic",
       "community": 7,
       "community_name": "Store",
       "external": true,
@@ -5511,11 +5536,48 @@
     {
       "id": "sqlalchemy_dialects",
       "label": "sqlalchemy_dialects",
+      "_origin": "semantic",
       "community": 7,
       "community_name": "Store",
       "external": true,
       "file_type": "concept",
       "norm_label": "sqlalchemy_dialects",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sqlite3",
+      "label": "sqlite3",
+      "_origin": "semantic",
+      "community": 7,
+      "community_name": "Store",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sqlite3",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sys",
+      "label": "sys",
+      "_origin": "semantic",
+      "community": 7,
+      "community_name": "Store",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sys",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "math",
+      "label": "math",
+      "_origin": "semantic",
+      "community": 9,
+      "community_name": "math",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "math",
       "source_file": "",
       "type": "external"
     }
@@ -6587,6 +6649,66 @@
       "context": "call",
       "source_file": "backend/scripts/live_check.py",
       "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_copy_sessions",
+      "target": "backend_dinegraph_api_postgres_checkpointer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_main",
+      "target": "backend_dinegraph_store_make_engine",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_main",
+      "target": "backend_dinegraph_store_store",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_main",
+      "target": "backend_scripts_sqlite_to_postgres_copy_tables",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_main",
+      "target": "backend_scripts_sqlite_to_postgres_copy_sessions",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -8834,6 +8956,78 @@
       "weight": 1.0
     },
     {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "sys",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_dinegraph_api_postgres_checkpointer",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_dinegraph_store_make_engine",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_dinegraph_store_store",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_dinegraph_store_store_menu_items",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "sqlite3",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "backend_tests_conftest",
       "target": "pytest",
       "relation": "imports",
@@ -10274,6 +10468,78 @@
       "weight": 1.0
     },
     {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "collections",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "langgraph_checkpoint_sqlite",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "sqlalchemy",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_dinegraph_api",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_dinegraph_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
       "source": "backend_tests_conftest",
       "target": "dataclasses",
       "relation": "imports_from",
@@ -11700,6 +11966,39 @@
       "confidence_score": 1.0,
       "source_file": "backend/scripts/live_check.py",
       "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_scripts_sqlite_to_postgres_copy_tables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_scripts_sqlite_to_postgres_copy_sessions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres",
+      "target": "backend_scripts_sqlite_to_postgres_main",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -13657,7 +13956,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -13679,7 +13978,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L297",
+      "source_location": "L298",
       "weight": 1.0
     },
     {
@@ -13690,7 +13989,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L315",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -13701,7 +14000,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L330",
+      "source_location": "L339",
       "weight": 1.0
     },
     {
@@ -13712,7 +14011,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L353",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -13745,7 +14044,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L181",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -13756,7 +14055,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L203",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -13767,7 +14066,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L253",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -13778,7 +14077,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L281",
+      "source_location": "L282",
       "weight": 1.0
     },
     {
@@ -13822,7 +14121,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L343",
+      "source_location": "L352",
       "weight": 1.0
     },
     {
@@ -14904,6 +15203,17 @@
       "weight": 1.0
     },
     {
+      "source": "backend_scripts_sqlite_to_postgres_rationale_1",
+      "target": "backend_scripts_sqlite_to_postgres",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "backend_tests_conftest_rationale_1",
       "target": "backend_tests_conftest",
       "relation": "rationale_for",
@@ -15351,6 +15661,54 @@
       "weight": 1.0
     },
     {
+      "source": "backend_scripts_sqlite_to_postgres_copy_tables",
+      "target": "backend_dinegraph_api_create_app_order_events",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_copy_tables",
+      "target": "backend_dinegraph_store_store_menu_items",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_main",
+      "target": "backend_dinegraph_api_create_app_order_events",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_main",
+      "target": "backend_dinegraph_store_store_menu_items",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "collection",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
       "source": "backend_dinegraph_graph_build_bill",
       "target": "backend_dinegraph_state_orderitem",
       "relation": "uses",
@@ -15420,6 +15778,18 @@
       "context": "parameter_type",
       "source_file": "backend/dinegraph/graph.py",
       "source_location": "L50",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_scripts_sqlite_to_postgres_copy_tables",
+      "target": "backend_dinegraph_store_store",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "parameter_type",
+      "source_file": "backend/scripts/sqlite_to_postgres.py",
+      "source_location": "L23",
       "weight": 0.8
     },
     {
@@ -15567,5 +15937,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bd8facd7b303bd2de38aa79df2b2335192b074d4"
+  "built_at_commit": "c595ebc95ea905eb07048beec1e130c6dd32bdb2"
 }
