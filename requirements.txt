@@ -1,0 +1,4 @@
+langgraph>=1.2
+anthropic>=1.8
+pydantic>=2
+pytest>=8
