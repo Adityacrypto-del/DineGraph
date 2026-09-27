@@ -22,6 +22,8 @@ from pydantic import BaseModel, Field
 class DishRequest(BaseModel):
     dish: str = Field(description="Dish name. Use the exact menu spelling when the user clearly means a menu dish.")
     quantity: int = Field(description="How many the user wants.")
+    note: str = Field(default="", description=(
+        "Special instructions for this dish, such as 'extra spicy' or 'no onion'. Empty if none."))
 
 
 class ParsedOrder(BaseModel):
@@ -55,6 +57,8 @@ The menu has these dishes: {menu}.
 If the customer clearly means a menu dish, use its exact menu spelling. If they ask for a dish that is
 not on the menu, keep the name they used; another step checks availability, so never drop it.
 If no quantity is given for a dish, use 1.
+Put any special instructions for a dish (spice level, 'no onion', 'less sugar') in its note, in a few
+words. Leave the note empty when there are none.
 If the message is not about ordering food (small talk, questions unrelated to ordering, requests to do
 other tasks), set is_food_order to false and return no items."""
 
@@ -77,24 +81,36 @@ Use only the facts given. Do not invent dishes, prices, or times. Plain text, no
 
 
 class ClaudeLLM:
-    def __init__(self, model: str | None = None):
+    def __init__(self, model: str | None = None, client=None):
         import anthropic
 
-        self.client = anthropic.Anthropic()
+        self.client = client or anthropic.Anthropic()
         self.model = model or os.environ.get("DINEGRAPH_MODEL", "claude-opus-5")
 
+    def _parse(self, system: str, text: str, schema, fallback, max_tokens: int = 2000):
+        """One structured-output call. A refusal or an unreadable reply returns ``fallback``."""
+        import pydantic
+
+        try:
+            response = self.client.messages.parse(
+                model=self.model,
+                max_tokens=max_tokens,
+                output_config={"effort": "low"},
+                system=system,
+                messages=[{"role": "user", "content": text}],
+                output_format=schema,
+            )
+            if response.stop_reason == "refusal":
+                return fallback
+            parsed = response.parsed_output  # validated lazily, so it can raise here
+        except pydantic.ValidationError:
+            # a refusal or a cut-off reply has no valid JSON for the schema
+            return fallback
+        return parsed if parsed is not None else fallback
+
     def parse_order(self, text: str, menu_names: list[str]) -> ParsedOrder:
-        response = self.client.messages.parse(
-            model=self.model,
-            max_tokens=4000,
-            output_config={"effort": "low"},
-            system=PARSE_SYSTEM.format(menu=", ".join(menu_names)),
-            messages=[{"role": "user", "content": text}],
-            output_format=ParsedOrder,
-        )
-        if response.stop_reason == "refusal" or response.parsed_output is None:
-            return ParsedOrder(is_food_order=False, items=[])
-        return response.parsed_output
+        return self._parse(PARSE_SYSTEM.format(menu=", ".join(menu_names)), text, ParsedOrder,
+                           ParsedOrder(is_food_order=False, items=[]), max_tokens=4000)
 
     def classify_decision(self, text: str, partial_allowed: bool) -> Decision:
         options = (
@@ -102,30 +118,11 @@ class ClaudeLLM:
             if partial_allowed
             else "Nothing they asked for is available. They may place a new order or cancel."
         )
-        response = self.client.messages.parse(
-            model=self.model,
-            max_tokens=2000,
-            output_config={"effort": "low"},
-            system=DECISION_SYSTEM.format(options=options),
-            messages=[{"role": "user", "content": text}],
-            output_format=Decision,
-        )
-        if response.stop_reason == "refusal" or response.parsed_output is None:
-            return Decision(action="unclear", has_order_details=False)
-        return response.parsed_output
+        return self._parse(DECISION_SYSTEM.format(options=options), text, Decision,
+                           Decision(action="unclear", has_order_details=False))
 
     def classify_payment(self, text: str) -> PaymentChoice:
-        response = self.client.messages.parse(
-            model=self.model,
-            max_tokens=2000,
-            output_config={"effort": "low"},
-            system=PAYMENT_SYSTEM,
-            messages=[{"role": "user", "content": text}],
-            output_format=PaymentChoice,
-        )
-        if response.stop_reason == "refusal" or response.parsed_output is None:
-            return PaymentChoice(method="unclear")
-        return response.parsed_output
+        return self._parse(PAYMENT_SYSTEM, text, PaymentChoice, PaymentChoice(method="unclear"))
 
     def compose(self, situation: str, facts: dict) -> str:
         response = self.client.messages.create(
@@ -161,12 +158,14 @@ class RuleBasedLLM:
 
     def parse_order(self, text: str, menu_names: list[str]) -> ParsedOrder:
         items: list[DishRequest] = []
-        pattern = r"(\d+|" + "|".join(_NUMBER_WORDS) + r")\s*(?:x\s*)?([A-Za-z][A-Za-z ]*?)(?=\s*(?:,|\band\b|$|\d))"
-        for qty_raw, dish in re.findall(pattern, text, flags=re.IGNORECASE):
+        # a note goes in brackets after the dish: "2 Masala Dosa (extra spicy)"
+        pattern = (r"\b(\d+|(?:" + "|".join(_NUMBER_WORDS) + r")\b)\s*(?:x\s*)?([A-Za-z][A-Za-z ]*?)"
+                   r"\s*(?:\(([^)]*)\))?(?=\s*(?:,|\band\b|$|\d))")
+        for qty_raw, dish, note in re.findall(pattern, text, flags=re.IGNORECASE):
             qty = int(qty_raw) if qty_raw.isdigit() else _NUMBER_WORDS[qty_raw.lower()]
             dish = dish.strip()
             canonical = next((m for m in menu_names if m.lower() == dish.lower()), dish.title())
-            items.append(DishRequest(dish=canonical, quantity=qty))
+            items.append(DishRequest(dish=canonical, quantity=qty, note=note.strip()))
         return ParsedOrder(is_food_order=bool(items), items=items)
 
     def classify_decision(self, text: str, partial_allowed: bool) -> Decision:
@@ -194,6 +193,7 @@ class RuleBasedLLM:
         )
         order = ", ".join(
             f"{i['dish']} (asked {i['requested']}, available {i['available']})"
+            + (f" [{i['note']}]" if i.get("note") else "")
             for i in facts.get("order", [])
         )
         left = facts.get("attempts_left")

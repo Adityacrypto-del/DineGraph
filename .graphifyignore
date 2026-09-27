@@ -1,0 +1,4 @@
+# third-party skill code, not part of DineGraph
+.claude/
+graphify-out/
+frontend/dist/

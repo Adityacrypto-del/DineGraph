@@ -241,3 +241,75 @@ def test_random_outcome_is_about_forty_percent_failure():
     roll = random_outcome(seed=7)
     failures = sum(not roll("cook") for _ in range(10_000))
     assert 3700 < failures < 4300
+
+
+# --------------------------------------------------------------------- stock
+
+from dinegraph.inventory import InMemoryInventory
+
+
+def run_with(inventory, inputs, outcomes):
+    script = list(outcomes)
+    graph = build_graph(RuleBasedLLM(), outcome=lambda stage: script.pop(0)[1], inventory=inventory)
+    config = {"configurable": {"thread_id": str(uuid.uuid4())}, "recursion_limit": 100}
+    graph.invoke(initial_state("welcome"), config)
+    for text in inputs:
+        graph.invoke(Command(resume=text), config)
+    return graph, config
+
+
+def test_served_order_uses_up_stock():
+    inv = InMemoryInventory(MENU, PRICES)
+    run_with(inv, ["3 Masala Dosa", "cash"], SERVED)
+    assert inv.menu()["Masala Dosa"] == 3
+    assert MENU["Masala Dosa"] == 6  # the caller's dict is not changed
+
+
+def test_kitchen_failure_puts_stock_back():
+    inv = InMemoryInventory(MENU, PRICES)
+    graph, config = run_with(inv, ["3 Masala Dosa"], [("cook", False), ("cook", False)])
+    assert inv.menu()["Masala Dosa"] == 6
+    assert graph.get_state(config).values["stock_reserved"] is False
+
+
+def test_failed_payment_keeps_stock_used():
+    inv = InMemoryInventory(MENU, PRICES)
+    run_with(inv, ["1 Veg Biryani", "card", "card"], SERVED + [("pay", False), ("pay", False)])
+    assert inv.menu()["Veg Biryani"] == 9  # the food was served
+
+
+def test_second_customer_sees_reduced_stock():
+    inv = InMemoryInventory(MENU, PRICES)
+    run_with(inv, ["2 Cold Coffee", "cash"], SERVED)
+    graph, config = run_with(inv, ["1 Cold Coffee"], [])
+    s = graph.get_state(config).values
+    assert s["status"] == Status.NOT_AVAILABLE
+
+
+def test_stock_sold_out_while_customer_decides_rechecks_order():
+    inv = InMemoryInventory(MENU, PRICES)
+    script = list(SERVED)
+    graph = build_graph(RuleBasedLLM(), outcome=lambda stage: script.pop(0)[1], inventory=inv)
+    config = {"configurable": {"thread_id": "a"}, "recursion_limit": 100}
+    graph.invoke(initial_state("welcome"), config)
+    graph.invoke(Command(resume="5 Cold Coffee, 1 Veg Biryani"), config)  # partial, waiting
+    assert inv.reserve({"Cold Coffee": 2})  # another customer takes the last coffees
+    graph.invoke(Command(resume="confirm"), config)
+    s = graph.get_state(config)
+    assert "just sold out" in texts(s.values)
+    # the recheck finds coffee gone, so it is partial again and the customer is asked again
+    assert s.values["status"] == Status.PARTIAL
+    graph.invoke(Command(resume="confirm"), config)
+    graph.invoke(Command(resume="cash"), config)
+    s = graph.get_state(config).values
+    assert s["final_result"] == "COMPLETED"
+    assert [i["dish"] for i in s["order"]] == ["Veg Biryani"]
+    assert inv.menu() == {**MENU, "Cold Coffee": 0, "Veg Biryani": 9}
+
+
+def test_offline_parser_reads_notes_and_number_words():
+    from dinegraph.llm import RuleBasedLLM
+    parsed = RuleBasedLLM().parse_order(
+        "two masala dosa (extra spicy) and a cold coffee", ["Masala Dosa", "Cold Coffee"])
+    assert [(i.dish, i.quantity, i.note) for i in parsed.items] == [
+        ("Masala Dosa", 2, "extra spicy"), ("Cold Coffee", 1, "")]

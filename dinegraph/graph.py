@@ -3,9 +3,10 @@ r"""The DineGraph LangGraph.
     START -> take_order -> parse_order -> order_confirm -> review_order
                                  \__________________________/   |
                                  (invalid input skips confirm)   |
-    review_order --CONFIRMED--> cook
+    review_order --CONFIRMED--> reserve_stock
     review_order --PARTIAL / NOT_AVAILABLE / INVALID--> user_decision or take_order or finish
-    user_decision --accept--> cook | --new order--> parse_order / take_order | --cancel--> finish
+    user_decision --accept--> reserve_stock | --new order--> parse_order / take_order | --cancel--> finish
+    reserve_stock --stock taken--> cook | --stock changed meanwhile--> order_confirm
     cook --READY--> serve | --failed, retries left--> cook | --no retries--> finish
     serve --COMPLETE--> request_payment | --failed, serve+cook retries left--> cook | --otherwise--> finish
     request_payment -> choose_payment -> pay (unclear reply asks again)
@@ -28,13 +29,16 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.types import interrupt
 
 from .llm import OrderLLM
-from .menu import MENU, PRICES, lookup
+from .inventory import InMemoryInventory, Inventory
+from .menu import lookup
 from .state import MAX_DISHES, DineState, OrderItem, Status
 
 FAILURE_CHANCE = 0.4  # cook, serve and card/UPI payments fail 40% of the time
 
 # stage ("cook", "serve" or "pay") -> True if that attempt succeeded
 Outcome = Callable[[str], bool]
+# called with "cook" or "serve" before each attempt; the backend sleeps here so the kitchen takes time
+Pace = Callable[[str], None]
 
 
 def random_outcome(seed: int | None = None, failure_chance: float = FAILURE_CHANCE) -> Outcome:
@@ -50,19 +54,31 @@ def _last_user_text(state: DineState) -> str:
     return ""
 
 
+def _item(dish: str, required: int, available: int, note: str = "") -> OrderItem:
+    item = OrderItem(dish=dish, required_quantity=required, available_quantity=available)
+    if note:
+        item["note"] = note
+    return item
+
+
 def _order_facts(order: list[OrderItem]) -> list[dict]:
-    return [
-        {"dish": i["dish"], "requested": i["required_quantity"], "available": i["available_quantity"]}
-        for i in order
-    ]
+    facts = []
+    for i in order:
+        fact = {"dish": i["dish"], "requested": i["required_quantity"], "available": i["available_quantity"]}
+        if i.get("note"):
+            fact["note"] = i["note"]
+        facts.append(fact)
+    return facts
 
 
 def build_bill(order: list[OrderItem], prices: dict[str, int]) -> tuple[list[dict], int]:
-    lines = [
-        {"dish": i["dish"], "quantity": i["required_quantity"],
-         "amount": i["required_quantity"] * prices.get(i["dish"], 0)}
-        for i in order
-    ]
+    lines = []
+    for i in order:
+        line = {"dish": i["dish"], "quantity": i["required_quantity"],
+                "amount": i["required_quantity"] * prices.get(i["dish"], 0)}
+        if i.get("note"):
+            line["note"] = i["note"]
+        lines.append(line)
     return lines, sum(line["amount"] for line in lines)
 
 
@@ -72,40 +88,37 @@ def build_graph(
     menu: dict[str, int] | None = None,
     prices: dict[str, int] | None = None,
     checkpointer=None,
+    inventory: Inventory | None = None,
+    pace: Pace | None = None,
 ):
-    menu = MENU if menu is None else menu
-    prices = PRICES if prices is None else prices
+    """Build the graph. Pass `inventory` for shared stock, or `menu`/`prices` for a private copy."""
+    inventory = inventory or InMemoryInventory(menu, prices)
     outcome = outcome or random_outcome()
+    pace = pace or (lambda stage: None)
 
     # ------------------------------------------------------------------ nodes
 
     def take_order(state: DineState) -> dict:
-        text = interrupt({"prompt": "Your order"})
+        text = interrupt({"kind": "order", "prompt": "Your order"})
         return {"messages": [HumanMessage(content=text)]}
 
     def parse_order(state: DineState) -> dict:
-        parsed = llm.parse_order(_last_user_text(state), list(menu))
+        parsed = llm.parse_order(_last_user_text(state), list(inventory.menu()))
         if not parsed.is_food_order or not parsed.items:
             return {"status": Status.INVALID, "order": [], "final_result": "not_food_order"}
         if len(parsed.items) > MAX_DISHES:
             return {"status": Status.INVALID, "order": [], "final_result": "too_many_dishes"}
         if any(i.quantity <= 0 for i in parsed.items):
             return {"status": Status.INVALID, "order": [], "final_result": "invalid_quantity"}
-        order = [
-            OrderItem(dish=i.dish, required_quantity=i.quantity, available_quantity=0)
-            for i in parsed.items
-        ]
+        order = [_item(i.dish, i.quantity, 0, i.note.strip()) for i in parsed.items]
         return {"status": Status.PLACED, "order": order, "final_result": ""}
 
     def order_confirm(state: DineState) -> dict:
+        menu = inventory.menu()
         order = []
         for item in state["order"]:
             name, available = lookup(item["dish"], menu)
-            order.append(OrderItem(
-                dish=name,
-                required_quantity=item["required_quantity"],
-                available_quantity=available,
-            ))
+            order.append(_item(name, item["required_quantity"], available, item.get("note", "")))
         if all(i["available_quantity"] >= i["required_quantity"] for i in order):
             status = Status.CONFIRMED
         elif all(i["available_quantity"] == 0 for i in order):
@@ -137,18 +150,15 @@ def build_graph(
         return update
 
     def user_decision(state: DineState) -> dict:
-        text = interrupt({"prompt": "Your choice"})
+        text = interrupt({"kind": "decision", "prompt": "Accept, new order, or cancel"})
         partial_allowed = state["status"] == Status.PARTIAL
         decision = llm.classify_decision(text, partial_allowed)
         update: dict = {"messages": [HumanMessage(content=text)]}
 
         if decision.action == "accept_partial" and partial_allowed:
             order = [
-                OrderItem(
-                    dish=i["dish"],
-                    required_quantity=min(i["required_quantity"], i["available_quantity"]),
-                    available_quantity=i["available_quantity"],
-                )
+                _item(i["dish"], min(i["required_quantity"], i["available_quantity"]),
+                      i["available_quantity"], i.get("note", ""))
                 for i in state["order"] if i["available_quantity"] > 0
             ]
             text = llm.compose("partial_accepted", {"order": _order_facts(order)})
@@ -168,7 +178,20 @@ def build_graph(
             update["messages"].append(AIMessage(content=text))
         return update
 
+    def reserve_stock(state: DineState) -> dict:
+        """Take the confirmed order out of stock before cooking.
+
+        Another customer may have ordered the same dish since order_confirm looked,
+        so if the stock is no longer there, the order is checked again.
+        """
+        wanted = {i["dish"]: i["required_quantity"] for i in state["order"]}
+        if inventory.reserve(wanted):
+            return {"stock_reserved": True}
+        return {"status": Status.PLACED, "messages": [AIMessage(
+            content="Some of those dishes just sold out while we were confirming. Checking the menu again.")]}
+
     def cook(state: DineState) -> dict:
+        pace("cook")
         if outcome("cook"):
             return {"status": Status.READY,
                     "messages": [AIMessage(content="Kitchen: your food is cooked and ready.", name="kitchen")]}
@@ -178,6 +201,7 @@ def build_graph(
                 "messages": [AIMessage(content=f"Kitchen: cooking failed ({note}).", name="kitchen")]}
 
     def serve(state: DineState) -> dict:
+        pace("serve")
         if outcome("serve"):
             return {"status": Status.COMPLETE,
                     "messages": [AIMessage(content="Waiter: your food has been served.", name="waiter")]}
@@ -187,13 +211,13 @@ def build_graph(
 
     def request_payment(state: DineState) -> dict:
         """The LLM shows the bill and asks how the user wants to pay."""
-        lines, total = build_bill(state["order"], prices)
+        lines, total = build_bill(state["order"], inventory.prices())
         text = llm.compose("bill", {"bill": lines, "total": total, "methods": ["cash", "card", "upi"]})
         return {"status": Status.PAYMENT_PENDING, "bill_total": total,
                 "messages": [AIMessage(content=text)]}
 
     def choose_payment(state: DineState) -> dict:
-        text = interrupt({"prompt": "Payment method"})
+        text = interrupt({"kind": "payment", "prompt": "Cash, card or UPI"})
         choice = llm.classify_payment(text)
         update: dict = {"messages": [HumanMessage(content=text)]}
         if choice.method == "unclear":
@@ -221,6 +245,14 @@ def build_graph(
         return update
 
     def finish(state: DineState) -> dict:
+        update = final_message(state)
+        # food that was never served goes back into stock
+        if state["stock_reserved"] and state["status"] in (Status.COOK_FAILED, Status.SERVE_FAILED):
+            inventory.release({i["dish"]: i["required_quantity"] for i in state["order"]})
+            update["stock_reserved"] = False
+        return update
+
+    def final_message(state: DineState) -> dict:
         """The LLM reads the final state and writes the completion message or an apology."""
         status = state["status"]
         facts = {
@@ -263,7 +295,7 @@ def build_graph(
     def after_review(state: DineState) -> str:
         status = state["status"]
         if status == Status.CONFIRMED:
-            return "cook"
+            return "reserve_stock"
         if status == Status.PARTIAL:
             return "user_decision"  # accept / new order / cancel (new order only if attempts remain)
         if state["order_retries"] > 0:
@@ -273,7 +305,7 @@ def build_graph(
     def after_decision(state: DineState) -> str:
         status = state["status"]
         if status == Status.CONFIRMED:
-            return "cook"
+            return "reserve_stock"
         if status == Status.PLACED:
             return "parse_order"  # the reply already contains the new order
         if status == Status.NEW:
@@ -281,6 +313,9 @@ def build_graph(
         if status == Status.CANCELLED:
             return "finish"
         return "user_decision"  # unclear reply, ask again
+
+    def after_reserve(state: DineState) -> str:
+        return "cook" if state["stock_reserved"] else "order_confirm"
 
     def after_cook(state: DineState) -> str:
         if state["status"] == Status.READY:
@@ -308,7 +343,7 @@ def build_graph(
     for name, fn in [
         ("take_order", take_order), ("parse_order", parse_order),
         ("order_confirm", order_confirm), ("review_order", review_order),
-        ("user_decision", user_decision), ("cook", cook), ("serve", serve),
+        ("user_decision", user_decision), ("reserve_stock", reserve_stock), ("cook", cook), ("serve", serve),
         ("request_payment", request_payment), ("choose_payment", choose_payment), ("pay", pay),
         ("finish", finish),
     ]:
@@ -318,9 +353,11 @@ def build_graph(
     g.add_edge("take_order", "parse_order")
     g.add_conditional_edges("parse_order", after_parse, ["order_confirm", "review_order"])
     g.add_edge("order_confirm", "review_order")
-    g.add_conditional_edges("review_order", after_review, ["cook", "user_decision", "take_order", "finish"])
+    g.add_conditional_edges("review_order", after_review,
+                            ["reserve_stock", "user_decision", "take_order", "finish"])
     g.add_conditional_edges("user_decision", after_decision,
-                            ["cook", "parse_order", "take_order", "finish", "user_decision"])
+                            ["reserve_stock", "parse_order", "take_order", "finish", "user_decision"])
+    g.add_conditional_edges("reserve_stock", after_reserve, ["cook", "order_confirm"])
     g.add_conditional_edges("cook", after_cook, ["serve", "cook", "finish"])
     g.add_conditional_edges("serve", after_serve, ["request_payment", "cook", "finish"])
     g.add_edge("request_payment", "choose_payment")

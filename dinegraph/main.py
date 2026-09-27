@@ -14,8 +14,8 @@ from .menu import MENU
 from .state import MAX_DISHES, initial_state
 
 
-def welcome_text() -> str:
-    lines = [f"  - {name}" for name in MENU]
+def welcome_text(dishes: list[str] | None = None) -> str:
+    lines = [f"  - {name}" for name in (MENU if dishes is None else dishes)]
     return (
         "Welcome to DineGraph! Here is our menu:\n" + "\n".join(lines)
         + f"\nOrder up to {MAX_DISHES} dishes with quantities, e.g. '2 Veg Biryani, 1 Cold Coffee'."

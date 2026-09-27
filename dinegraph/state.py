@@ -1,6 +1,8 @@
 """The LangGraph state shared by every node."""
 
-from typing import Annotated, TypedDict
+from typing import Annotated
+
+from typing_extensions import NotRequired, TypedDict  # NotRequired is in typing from 3.11
 
 from langchain_core.messages import AnyMessage
 from langgraph.graph.message import add_messages
@@ -37,6 +39,7 @@ class OrderItem(TypedDict):
     dish: str                 # dish name
     required_quantity: int    # what the user asked for
     available_quantity: int   # written by order_confirm from the menu (0 if not on menu)
+    note: NotRequired[str]    # special instructions, e.g. "extra spicy"; absent when there are none
 
 
 class DineState(TypedDict):
@@ -49,10 +52,12 @@ class DineState(TypedDict):
     payment_retries: int      # starts at 2, decremented on every failed payment
     payment_method: str       # "cash", "card", "upi" or "" before the user chooses
     bill_total: int           # sum of quantity x price, set when the bill is shown
+    stock_reserved: bool      # True once the confirmed order has been taken out of stock
     final_result: str         # "COMPLETED" or "NOT_COMPLETED: <reason>"
+    table: NotRequired[int | None]  # table number when the order comes from a table, else None
 
 
-def initial_state(welcome: str) -> DineState:
+def initial_state(welcome: str, table: int | None = None) -> DineState:
     from langchain_core.messages import AIMessage
 
     return DineState(
@@ -65,5 +70,7 @@ def initial_state(welcome: str) -> DineState:
         payment_retries=PAYMENT_RETRIES,
         payment_method="",
         bill_total=0,
+        stock_reserved=False,
         final_result="",
+        table=table,
     )
