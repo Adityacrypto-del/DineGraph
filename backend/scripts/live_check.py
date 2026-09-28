@@ -1,12 +1,12 @@
-"""Live check of DineGraph against the real Claude API.
+"""Live check of DineGraph against a real LLM: Gemini (default) or Claude.
 
-Run it once you have a key:
+Run it once you have a key, set in your shell or in backend/.env:
 
-    export ANTHROPIC_API_KEY=sk-ant-...     # or put it in backend/.env
-    python scripts/live_check.py            # uses DINEGRAPH_MODEL or claude-opus-5
+    python scripts/live_check.py            # DINEGRAPH_LLM, default gemini (GEMINI_API_KEY)
+    python scripts/live_check.py claude     # Claude (ANTHROPIC_API_KEY)
 
-It sends about 15 short requests (a few cents), prints one line per check,
-and exits with status 1 if any check fails.
+It sends about 15 short requests (free on Gemini's free tier, a few cents on
+Claude), prints one line per check, and exits with status 1 if any fail.
 """
 import os
 import sys
@@ -19,7 +19,7 @@ from langgraph.checkpoint.memory import InMemorySaver  # noqa: E402
 from langgraph.types import Command  # noqa: E402
 
 from dinegraph.graph import build_graph  # noqa: E402
-from dinegraph.llm import ClaudeLLM  # noqa: E402
+from dinegraph.llm import RuleBasedLLM, make_llm  # noqa: E402
 from dinegraph.main import load_env  # noqa: E402
 from dinegraph.menu import MENU, PRICES  # noqa: E402
 from dinegraph.state import initial_state  # noqa: E402
@@ -72,11 +72,15 @@ def full_order(llm) -> tuple[bool, str]:
 
 def main() -> int:
     load_env()
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY is not set. Export it or add it to backend/.env, then run this again.")
+    llm = make_llm(sys.argv[1] if len(sys.argv) > 1 else None)
+    if isinstance(llm, RuleBasedLLM):
+        print("DINEGRAPH_LLM is offline. Run with gemini or claude to check a real model.")
         return 2
-    llm = ClaudeLLM()
-    print(f"Model: {llm.model}\n")
+    keys = ("GEMINI_API_KEY", "GOOGLE_API_KEY") if type(llm).__name__ == "GeminiLLM" else ("ANTHROPIC_API_KEY",)
+    if not any(os.environ.get(k) for k in keys):
+        print(f"{keys[0]} is not set. Export it or add it to backend/.env, then run this again.")
+        return 2
+    print(f"{type(llm).__name__}, model {llm.model}\n")
     failures = 0
     for name, call, check in CHECKS:
         start = time.perf_counter()

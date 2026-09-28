@@ -14,10 +14,11 @@ and the client polls GET /sessions/{id}. Busy sessions are tracked in memory, so
 run a single server process.
 
 Settings come from environment variables, or from backend/.env (see .env.example):
-  DINEGRAPH_OFFLINE=1        use the rule-based LLM instead of Claude
+  DINEGRAPH_LLM              gemini (default, free tier), claude, or offline (rule-based, no key)
+  GEMINI_API_KEY             key for gemini; ANTHROPIC_API_KEY for claude
   DATABASE_URL               Postgres database (required), e.g. postgresql://user:pass@host:5432/dinegraph
   DINEGRAPH_CORS_ORIGINS     comma-separated frontend origins (default the Vite dev server)
-  DINEGRAPH_MODEL            Claude model (default claude-opus-5)
+  DINEGRAPH_MODEL            model name (default gemini-3.5-flash-lite, or claude-opus-5 for claude)
   DINEGRAPH_ADMIN_TOKEN      if set, /admin routes need the header X-Admin-Token with this value
   DINEGRAPH_KITCHEN_SECONDS  seconds each cook and serve attempt takes (default 0)
   DINEGRAPH_WAIT_SECONDS     how long a request waits for the graph to pause (default 15)
@@ -33,6 +34,7 @@ from collections import defaultdict
 from typing import Literal
 
 import anthropic
+from google.genai import errors as genai_errors
 from fastapi import Depends, FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_core.messages import AIMessage, BaseMessage
@@ -40,7 +42,7 @@ from langgraph.types import Command
 from pydantic import BaseModel, Field
 
 from .graph import Outcome, build_graph, random_outcome
-from .llm import ClaudeLLM, OrderLLM, RuleBasedLLM
+from .llm import MissingKeyError, OrderLLM, make_llm
 from .main import load_env, welcome_text
 from .state import MAX_DISHES, Status, initial_state
 from .store import Store, make_engine
@@ -226,7 +228,7 @@ def create_app(
     Data is kept in the Postgres database `database_url`, or DATABASE_URL when it is not given.
     """
     if llm is None:
-        llm = RuleBasedLLM() if os.environ.get("DINEGRAPH_OFFLINE") == "1" else ClaudeLLM()
+        llm = make_llm()
     if kitchen_seconds is None:
         kitchen_seconds = float(os.environ.get("DINEGRAPH_KITCHEN_SECONDS", "0"))
     if wait_seconds is None:
@@ -299,12 +301,14 @@ def create_app(
         return worker is not None and worker.is_alive()
 
     def error_text(exc: Exception) -> tuple[int, str] | tuple[None, str]:
-        if isinstance(exc, anthropic.APIError):
+        if isinstance(exc, (anthropic.APIError, genai_errors.APIError)):
             # the failed step is left pending in the checkpoint; /retry re-runs it
             return 502, f"LLM call failed: {exc.__class__.__name__}. POST /sessions/{{id}}/retry to try again."
         if isinstance(exc, TypeError) and "authentication" in str(exc):
             # the Anthropic SDK raises TypeError when it finds no credentials at all
-            return 503, "No Claude credentials found. Set ANTHROPIC_API_KEY, or run the server with DINEGRAPH_OFFLINE=1."
+            return 503, "No Claude credentials found. Set ANTHROPIC_API_KEY, or choose another DINEGRAPH_LLM."
+        if isinstance(exc, MissingKeyError):
+            return 503, str(exc)
         return None, f"{exc.__class__.__name__}: {exc}"
 
     def save(session_id: str, step: str | None = None, update: dict | None = None) -> None:

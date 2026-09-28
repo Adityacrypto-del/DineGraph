@@ -1,6 +1,6 @@
 # DineGraph
 
-DineGraph is a restaurant order management agent built with [LangGraph](https://langchain-ai.github.io/langgraph/) and Claude. A customer types an order in plain language. The agent checks it against the menu, handles partial or unavailable orders, sends it to the kitchen, serves it, and takes payment. Every stage has a retry limit, and the agent apologizes when a limit runs out.
+DineGraph is a restaurant order management agent built with [LangGraph](https://langchain-ai.github.io/langgraph/) and a language model: Google Gemini (free tier) by default, or Claude. A customer types an order in plain language. The agent checks it against the menu, handles partial or unavailable orders, sends it to the kitchen, serves it, and takes payment. Every stage has a retry limit, and the agent apologizes when a limit runs out.
 
 It comes with a FastAPI backend, a React web app with a live kitchen screen, and an offline mode that runs everything without an API key. The original design notes are in [approch.md](approch.md).
 
@@ -22,7 +22,7 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 
 ## Features
 
-- **Natural language orders.** Claude turns a message like "two dosas and a cold coffee" into dishes and quantities. It ignores messages that are not food orders.
+- **Natural language orders.** The LLM turns a message like "two dosas and a cold coffee" into dishes and quantities. It ignores messages that are not food orders.
 - **Menu checks.** Each dish is marked fully available, partly available, or unavailable.
 - **Partial orders.** The customer can accept what is available, place a new order, or cancel.
 - **Simulated kitchen.** Cooking and serving each fail 40% of the time, and failed steps are retried.
@@ -34,17 +34,17 @@ It comes with a FastAPI backend, a React web app with a live kitchen screen, and
 - **Live kitchen screen.** Orders move through cooking, ready to serve and awaiting payment as the graph runs, with a configurable time for each kitchen step.
 - **Order tracking.** Every order keeps a timestamped activity log, from seating through cooking, serving, the bill and payment.
 - **Staff tools.** Admin endpoints edit the menu and report orders and revenue.
-- **Offline mode.** A rule-based stand-in for Claude runs the whole system without an API key.
+- **Choice of LLM.** Gemini on Google's free tier, Claude, or an offline rule-based stand-in that runs the whole system without an API key. One setting switches between them.
 
 ## Tech stack
 
 | Part | Built with |
 |---|---|
 | Agent | LangGraph `StateGraph` with `interrupt()` pauses and a Postgres checkpointer |
-| Language model | Claude through the Anthropic Python SDK, using structured outputs for parsing and classification |
+| Language model | Gemini through the Google Gen AI SDK (default, free tier), or Claude through the Anthropic SDK. Both use structured JSON output for parsing and classification |
 | Backend | FastAPI, with SQLAlchemy and Postgres for the menu, stock, orders and order events |
 | Frontend | React 19, TypeScript and Vite, with Lucide icons |
-| Tests | pytest, with a rule-based stand-in for Claude and a fake Anthropic API |
+| Tests | pytest, with a rule-based stand-in for the LLM and fake Gemini and Anthropic APIs |
 
 ## How the graph works
 
@@ -83,7 +83,7 @@ flowchart TD
 
 ### Nodes
 
-| Node | Uses Claude | What it does |
+| Node | Uses the LLM | What it does |
 |---|---|---|
 | take_order | No | Pauses the graph until the customer types an order. |
 | parse_order | Yes | Extracts dishes, quantities and any dish notes. Rejects non-food messages, more than 3 dishes, and quantities below 1. |
@@ -98,7 +98,7 @@ flowchart TD
 | pay | No | Cash always succeeds. Card and UPI succeed 60% of the time. Each failure uses up one payment retry. |
 | finish | Yes | Writes the completion message or an apology and sets the final result. Puts stock back if the order was never served. |
 
-Routing between nodes is done in code from the status and the retry counters, so the flow is always predictable. Claude sees the same facts when it writes each message.
+Routing between nodes is done in code from the status and the retry counters, so the flow is always predictable. The LLM sees the same facts when it writes each message.
 
 ### Retry rules
 
@@ -139,7 +139,7 @@ backend/
   dinegraph/            the Python package
     state.py            LangGraph state, statuses and retry limits
     menu.py             menu quantities and prices
-    llm.py              Claude calls and the offline rule-based stand-in
+    llm.py              Gemini and Claude calls, the offline stand-in, and make_llm() to pick one
     graph.py            nodes, routing and graph wiring
     inventory.py        stock interface and the in-memory version used by the command line
     store.py            menu, stock, order records and order events in Postgres
@@ -148,10 +148,11 @@ backend/
   tests/
     test_scenarios.py   every branch of the graph
     test_api.py         the HTTP backend, on Postgres
+    test_gemini_wiring.py  the Gemini calls, against a fake API
     test_claude_wiring.py  the Claude calls, against a fake API
     conftest.py         gives each API test a fresh Postgres database
   scripts/
-    live_check.py       checks against the real Claude API
+    live_check.py       checks against the real Gemini or Claude API
   requirements.txt
   .env.example          every setting, with comments; copy to .env
 frontend/               React + Vite web app (order chat, kitchen screen, order history, admin)
@@ -173,7 +174,7 @@ git clone https://github.com/Adityacrypto-del/DineGraph.git
 cd DineGraph/backend
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-cp .env.example .env    # then set ANTHROPIC_API_KEY, or DINEGRAPH_OFFLINE=1 to run without a key
+cp .env.example .env    # then set GEMINI_API_KEY, or DINEGRAPH_LLM=offline to run without a key
 
 # start Postgres (see Database below)
 docker run -d --name dinegraph-db --restart unless-stopped \
@@ -183,10 +184,22 @@ docker run -d --name dinegraph-db --restart unless-stopped \
 
 All backend commands below run from the `backend/` folder. Settings come from `backend/.env`; anything set in your shell wins over the file.
 
+### Choosing the LLM
+
+`DINEGRAPH_LLM` in `backend/.env` picks the model that reads orders and writes replies:
+
+| Value | Model | Cost | Key |
+|---|---|---|---|
+| `gemini` (default) | `gemini-3.5-flash-lite` | Free tier, with daily and per-minute request limits | `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com): sign in and click **Get API key**. No card needed. |
+| `claude` | `claude-opus-5` | Paid, a cent or two per order | `ANTHROPIC_API_KEY` from the [Anthropic Console](https://console.anthropic.com) |
+| `offline` | Rule-based parser | Free, no network | None. Handles simple orders like `2 Masala Dosa (extra spicy), 1 Cold Coffee` |
+
+`DINEGRAPH_MODEL` overrides the model name, for example `gemini-3.1-flash-lite` for a lighter Gemini or `claude-sonnet-5` for a cheaper Claude. On Gemini's free tier, Google may use prompts to improve its products, so use it for demos rather than real customer data.
+
 ### Command-line chat
 
 ```bash
-.venv/bin/python -m dinegraph.main                      # with Claude
+.venv/bin/python -m dinegraph.main                      # with the LLM in DINEGRAPH_LLM
 .venv/bin/python -m dinegraph.main --offline --seed 3   # no API key, repeatable kitchen results
 ```
 
@@ -208,8 +221,8 @@ Assistant: Payment of Rs 740 received by upi. Your order is complete. Enjoy your
 ### Backend
 
 ```bash
-.venv/bin/uvicorn dinegraph.api:app --reload                      # with Claude
-DINEGRAPH_OFFLINE=1 .venv/bin/uvicorn dinegraph.api:app --reload  # no API key
+.venv/bin/uvicorn dinegraph.api:app --reload                          # with the LLM in DINEGRAPH_LLM
+DINEGRAPH_LLM=offline .venv/bin/uvicorn dinegraph.api:app --reload    # no API key
 ```
 
 Interactive API docs are served at http://localhost:8000/docs.
@@ -221,7 +234,7 @@ Interactive API docs are served at http://localhost:8000/docs.
 | `POST /sessions` | Starts a session and returns the welcome message. Send `{"table": 7}` to seat it at a table. |
 | `GET /sessions/{id}` | Returns messages, status, order, retry counters, bill, table and whether the graph is still running. |
 | `POST /sessions/{id}/messages` | Sends `{"text": "..."}` and runs the graph to its next pause. `?wait=1` answers after one second with `busy: true` if the graph is still running. |
-| `POST /sessions/{id}/retry` | Re-runs a step that failed, for example after a Claude error. Takes `?wait` too. |
+| `POST /sessions/{id}/retry` | Re-runs a step that failed, for example after an LLM error. Takes `?wait` too. |
 | `GET /orders` | Lists orders, newest first. Filter with `?status=PAID` and page with `limit` and `offset`. |
 | `GET /orders/{id}` | One order: items, status, result, bill, payment method and table. |
 | `GET /orders/{id}/events` | The order's activity log, oldest first. |
@@ -234,7 +247,7 @@ If `DINEGRAPH_ADMIN_TOKEN` is set, the admin endpoints need the header `X-Admin-
 
 Every session response includes `waiting_for`, which is `order`, `decision`, `payment`, or null when the session has ended. Each message carries a role: user, assistant, kitchen, waiter or cashier.
 
-Dish notes go in brackets after the dish, for example `2 Masala Dosa (extra spicy), 1 Cold Coffee`. With Claude, notes can also be written in plain words.
+Dish notes go in brackets after the dish, for example `2 Masala Dosa (extra spicy), 1 Cold Coffee`. With Gemini or Claude, notes can also be written in plain words.
 
 The graph runs in a background thread and saves the order record after every step, which is how the kitchen screen and tracking stay live. A request waits up to `DINEGRAPH_WAIT_SECONDS`, or its own `?wait=`, for the graph to pause. If the graph is still running, the response has `busy: true`, and the client polls `GET /sessions/{id}` until it is false. Busy sessions are tracked in memory, so run a single server process.
 
@@ -252,8 +265,8 @@ curl -s -X POST localhost:8000/sessions/$SID/messages -H 'content-type: applicat
 | 404 | The session, order or dish does not exist. |
 | 409 | The session has finished, is still busy, or has a failed step that must be retried first. |
 | 422 | The request body is invalid, for example empty text or negative stock. |
-| 502 | A Claude call failed. Call the retry endpoint. |
-| 503 | No Claude credentials were found. |
+| 502 | An LLM call failed, for example a Gemini rate limit. Call the retry endpoint. |
+| 503 | No API key was found for the chosen LLM. |
 
 ### Web frontend
 
@@ -262,7 +275,7 @@ The web app lives in `frontend/`. It needs Node 20 or newer.
 ```bash
 # terminal 1: the backend
 cd backend
-DINEGRAPH_OFFLINE=1 .venv/bin/uvicorn dinegraph.api:app --port 8000
+.venv/bin/uvicorn dinegraph.api:app --port 8000
 
 # terminal 2: the frontend
 cd frontend
@@ -289,9 +302,10 @@ Every setting is listed with comments in [backend/.env.example](backend/.env.exa
 
 | Variable | Purpose | Default |
 |---|---|---|
+| `DINEGRAPH_LLM` | `gemini`, `claude` or `offline`. See [Choosing the LLM](#choosing-the-llm). | `gemini` |
+| `GEMINI_API_KEY` | Gemini API key (free). `GOOGLE_API_KEY` also works. | none |
 | `ANTHROPIC_API_KEY` | Claude API key. | none |
-| `DINEGRAPH_MODEL` | Claude model. | `claude-opus-5` |
-| `DINEGRAPH_OFFLINE` | Set to `1` to use the rule-based stand-in in the backend. | off |
+| `DINEGRAPH_MODEL` | Model name for the chosen LLM. | `gemini-3.5-flash-lite` or `claude-opus-5` |
 | `DATABASE_URL` | Postgres database, for example `postgresql://user:pass@host:5432/dinegraph`. Required. | none |
 | `DINEGRAPH_ADMIN_TOKEN` | Token required by the admin endpoints. | none, admin is open |
 | `DINEGRAPH_CORS_ORIGINS` | Frontend origins allowed to call the backend, comma separated. | the Vite dev server |
@@ -340,17 +354,18 @@ The API tests need Postgres running. Each test creates its own empty database an
 DINEGRAPH_TEST_DATABASE_URL=postgresql://user:pass@host:5432/postgres .venv/bin/python -m pytest -q
 ```
 
-### Live check with Claude
+### Live check with a real LLM
 
-The normal tests never call Claude. `backend/tests/test_claude_wiring.py` runs the real Claude code against a fake API to check the requests it sends and how it handles replies, including refusals. To check the real model, set your key and run the live script. It sends about 15 short requests and prints one line per check.
+The normal tests never call a real LLM. `backend/tests/test_gemini_wiring.py` and `test_claude_wiring.py` run the real Gemini and Claude code against fake APIs to check the requests they send and how they handle replies, including blocked replies and refusals. To check the real model, set your key and run the live script. It sends about 15 short requests and prints one line per check.
 
 ```bash
-.venv/bin/python scripts/live_check.py   # reads ANTHROPIC_API_KEY from your shell or backend/.env
+.venv/bin/python scripts/live_check.py          # the LLM in DINEGRAPH_LLM (gemini by default)
+.venv/bin/python scripts/live_check.py claude   # or name one
 ```
 
-The tests use the offline stand-in and fix the kitchen and payment results in advance, so they need no API key and give the same result on every run. They cover every branch of the graph and every backend endpoint, including stock sharing between customers, restart persistence, recovery from a failed Claude call, tables and dish notes, the order activity log, and the kitchen screen following a slow kitchen.
+The tests use the offline stand-in and fix the kitchen and payment results in advance, so they need no API key and give the same result on every run. They cover every branch of the graph and every backend endpoint, including stock sharing between customers, restart persistence, recovery from a failed LLM call, tables and dish notes, the order activity log, and the kitchen screen following a slow kitchen.
 
 ## Roadmap
 
 - **Production deploy.** Docker images for the backend and frontend, a Docker Compose setup with Postgres, and a hosted deployment.
-- **Live Claude run.** Run `backend/scripts/live_check.py` with a real API key to confirm the Claude path end to end, including dish notes.
+- **Live LLM run.** Run `backend/scripts/live_check.py` with a Gemini key to confirm the Gemini path end to end, including dish notes.

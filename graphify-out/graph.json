@@ -17,19 +17,6 @@
       "source_location": "L33"
     },
     {
-      "id": "backend_dinegraph_llm_rulebasedllm",
-      "label": "RuleBasedLLM",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": "rulebasedllm",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L153"
-    },
-    {
       "id": "backend_dinegraph_state_status",
       "label": "Status",
       "_callable": true,
@@ -53,7 +40,7 @@
       "file_type": "code",
       "norm_label": "chatmessage",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L53"
+      "source_location": "L55"
     },
     {
       "id": "backend_dinegraph_api_counters",
@@ -66,7 +53,7 @@
       "file_type": "code",
       "norm_label": "counters",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L65"
+      "source_location": "L67"
     },
     {
       "id": "backend_dinegraph_api_kitchenticket",
@@ -79,7 +66,7 @@
       "file_type": "code",
       "norm_label": "kitchenticket",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L140"
+      "source_location": "L142"
     },
     {
       "id": "backend_dinegraph_api_menuitem",
@@ -92,7 +79,7 @@
       "file_type": "code",
       "norm_label": "menuitem",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L101"
+      "source_location": "L103"
     },
     {
       "id": "backend_dinegraph_api_menuupdate",
@@ -105,7 +92,7 @@
       "file_type": "code",
       "norm_label": "menuupdate",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L112"
+      "source_location": "L114"
     },
     {
       "id": "backend_dinegraph_api_menuview",
@@ -118,7 +105,7 @@
       "file_type": "code",
       "norm_label": "menuview",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L107"
+      "source_location": "L109"
     },
     {
       "id": "backend_dinegraph_api_newsession",
@@ -131,7 +118,7 @@
       "file_type": "code",
       "norm_label": "newsession",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L93"
+      "source_location": "L95"
     },
     {
       "id": "backend_dinegraph_api_orderevent",
@@ -144,7 +131,7 @@
       "file_type": "code",
       "norm_label": "orderevent",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L130"
+      "source_location": "L132"
     },
     {
       "id": "backend_dinegraph_api_orderline",
@@ -157,7 +144,7 @@
       "file_type": "code",
       "norm_label": "orderline",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L58"
+      "source_location": "L60"
     },
     {
       "id": "backend_dinegraph_api_orderrecord",
@@ -170,7 +157,7 @@
       "file_type": "code",
       "norm_label": "orderrecord",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L117"
+      "source_location": "L119"
     },
     {
       "id": "backend_dinegraph_api_sessionview",
@@ -183,7 +170,7 @@
       "file_type": "code",
       "norm_label": "sessionview",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L72"
+      "source_location": "L74"
     },
     {
       "id": "backend_dinegraph_api_stats",
@@ -196,7 +183,7 @@
       "file_type": "code",
       "norm_label": "stats",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L151"
+      "source_location": "L153"
     },
     {
       "id": "backend_dinegraph_api_usermessage",
@@ -209,7 +196,7 @@
       "file_type": "code",
       "norm_label": "usermessage",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L97"
+      "source_location": "L99"
     },
     {
       "id": "backend_dinegraph_llm_claudellm",
@@ -218,11 +205,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "claudellm",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L83"
+      "source_location": "L89"
     },
     {
       "id": "backend_dinegraph_llm_decision",
@@ -231,11 +218,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "decision",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L34"
+      "source_location": "L36"
     },
     {
       "id": "backend_dinegraph_llm_dishrequest",
@@ -244,11 +231,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "dishrequest",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L22"
+      "source_location": "L24"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm",
+      "label": "GeminiLLM",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "geminillm",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L152"
+    },
+    {
+      "id": "backend_dinegraph_llm_missingkeyerror",
+      "label": "MissingKeyError",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "missingkeyerror",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L54"
     },
     {
       "id": "backend_dinegraph_llm_orderllm",
@@ -257,11 +270,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "orderllm",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L45"
+      "source_location": "L47"
     },
     {
       "id": "backend_dinegraph_llm_parsedorder",
@@ -270,11 +283,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "parsedorder",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "backend_dinegraph_llm_paymentchoice",
@@ -283,11 +296,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "paymentchoice",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L41"
+      "source_location": "L43"
+    },
+    {
+      "id": "backend_dinegraph_llm_rulebasedllm",
+      "label": "RuleBasedLLM",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "rulebasedllm",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L241"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_fakeapi",
+      "label": "FakeAPI",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "fakeapi",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L27"
     },
     {
       "id": "backend_tests_test_claude_wiring_fakeapi",
@@ -295,7 +334,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "fakeapi",
@@ -649,28 +688,16 @@
       "source_location": "L47"
     },
     {
-      "id": "backend_dinegraph_llm_claudellm_compose",
-      "label": ".compose()",
+      "id": "backend_dinegraph_state_initial_state",
+      "label": "initial_state()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "test_scenarios.py",
       "file_type": "code",
-      "norm_label": ".compose()",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L127"
-    },
-    {
-      "id": "backend_dinegraph_llm_rulebasedllm_compose",
-      "label": ".compose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": ".compose()",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L190"
+      "norm_label": "initial_state()",
+      "source_file": "backend/dinegraph/state.py",
+      "source_location": "L60"
     },
     {
       "id": "backend_tests_test_scenarios_run",
@@ -839,18 +866,6 @@
       "norm_label": "test_nothing_available_three_times_ends_with_apology()",
       "source_file": "backend/tests/test_scenarios.py",
       "source_location": "L91"
-    },
-    {
-      "id": "backend_tests_test_scenarios_test_offline_parser_reads_notes_and_number_words",
-      "label": "test_offline_parser_reads_notes_and_number_words()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "code",
-      "norm_label": "test_offline_parser_reads_notes_and_number_words()",
-      "source_file": "backend/tests/test_scenarios.py",
-      "source_location": "L310"
     },
     {
       "id": "backend_tests_test_scenarios_test_partial_on_last_attempt_can_still_be_accepted",
@@ -1102,7 +1117,7 @@
       "file_type": "code",
       "norm_label": "create_app()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L215"
+      "source_location": "L217"
     },
     {
       "id": "backend_dinegraph_api_create_app_busy",
@@ -1114,7 +1129,7 @@
       "file_type": "code",
       "norm_label": "busy()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L297"
+      "source_location": "L299"
     },
     {
       "id": "backend_dinegraph_api_create_app_config",
@@ -1126,7 +1141,7 @@
       "file_type": "code",
       "norm_label": "config()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L254"
+      "source_location": "L256"
     },
     {
       "id": "backend_dinegraph_api_create_app_delete_dish",
@@ -1138,7 +1153,7 @@
       "file_type": "code",
       "norm_label": "delete_dish()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L456"
+      "source_location": "L460"
     },
     {
       "id": "backend_dinegraph_api_create_app_error_text",
@@ -1150,7 +1165,7 @@
       "file_type": "code",
       "norm_label": "error_text()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L301"
+      "source_location": "L303"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_menu",
@@ -1162,7 +1177,7 @@
       "file_type": "code",
       "norm_label": "get_menu()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L364"
+      "source_location": "L368"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_order",
@@ -1174,7 +1189,7 @@
       "file_type": "code",
       "norm_label": "get_order()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L418"
+      "source_location": "L422"
     },
     {
       "id": "backend_dinegraph_api_create_app_get_session",
@@ -1186,7 +1201,7 @@
       "file_type": "code",
       "norm_label": "get_session()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L382"
+      "source_location": "L386"
     },
     {
       "id": "backend_dinegraph_api_create_app_health",
@@ -1198,7 +1213,7 @@
       "file_type": "code",
       "norm_label": "health()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L360"
+      "source_location": "L364"
     },
     {
       "id": "backend_dinegraph_api_create_app_kitchen",
@@ -1210,7 +1225,7 @@
       "file_type": "code",
       "norm_label": "kitchen()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L434"
+      "source_location": "L438"
     },
     {
       "id": "backend_dinegraph_api_create_app_list_orders",
@@ -1222,7 +1237,7 @@
       "file_type": "code",
       "norm_label": "list_orders()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L410"
+      "source_location": "L414"
     },
     {
       "id": "backend_dinegraph_api_create_app_order_events",
@@ -1234,7 +1249,7 @@
       "file_type": "code",
       "norm_label": "order_events()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L425"
+      "source_location": "L429"
     },
     {
       "id": "backend_dinegraph_api_create_app_require_admin",
@@ -1246,7 +1261,7 @@
       "file_type": "code",
       "norm_label": "require_admin()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L293"
+      "source_location": "L295"
     },
     {
       "id": "backend_dinegraph_api_create_app_require_idle",
@@ -1258,7 +1273,7 @@
       "file_type": "code",
       "norm_label": "require_idle()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L353"
+      "source_location": "L357"
     },
     {
       "id": "backend_dinegraph_api_create_app_retry",
@@ -1270,7 +1285,7 @@
       "file_type": "code",
       "norm_label": "retry()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L398"
+      "source_location": "L402"
     },
     {
       "id": "backend_dinegraph_api_create_app_run",
@@ -1282,7 +1297,7 @@
       "file_type": "code",
       "norm_label": "run()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L335"
+      "source_location": "L339"
     },
     {
       "id": "backend_dinegraph_api_create_app_save",
@@ -1294,7 +1309,7 @@
       "file_type": "code",
       "norm_label": "save()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L310"
+      "source_location": "L314"
     },
     {
       "id": "backend_dinegraph_api_create_app_send_message",
@@ -1306,7 +1321,7 @@
       "file_type": "code",
       "norm_label": "send_message()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386"
+      "source_location": "L390"
     },
     {
       "id": "backend_dinegraph_api_create_app_snapshot",
@@ -1318,7 +1333,19 @@
       "file_type": "code",
       "norm_label": "snapshot()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L257"
+      "source_location": "L259"
+    },
+    {
+      "id": "backend_dinegraph_api_create_app_start_session",
+      "label": "start_session()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "start_session()",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L375"
     },
     {
       "id": "backend_dinegraph_api_create_app_stats",
@@ -1330,7 +1357,7 @@
       "file_type": "code",
       "norm_label": "stats()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L461"
+      "source_location": "L465"
     },
     {
       "id": "backend_dinegraph_api_create_app_upsert_dish",
@@ -1342,7 +1369,7 @@
       "file_type": "code",
       "norm_label": "upsert_dish()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L447"
+      "source_location": "L451"
     },
     {
       "id": "backend_dinegraph_api_create_app_view",
@@ -1354,7 +1381,7 @@
       "file_type": "code",
       "norm_label": "view()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L263"
+      "source_location": "L265"
     },
     {
       "id": "backend_dinegraph_api_create_app_work",
@@ -1366,7 +1393,7 @@
       "file_type": "code",
       "norm_label": "work()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L320"
+      "source_location": "L324"
     },
     {
       "id": "backend_dinegraph_api_describe",
@@ -1378,19 +1405,7 @@
       "file_type": "code",
       "norm_label": "describe()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L173"
-    },
-    {
-      "id": "backend_dinegraph_api_getattr",
-      "label": "__getattr__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "api.py",
-      "file_type": "code",
-      "norm_label": "__getattr__()",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L467"
+      "source_location": "L175"
     },
     {
       "id": "backend_dinegraph_api_postgres_checkpointer",
@@ -1402,7 +1417,19 @@
       "file_type": "code",
       "norm_label": "postgres_checkpointer()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L201"
+      "source_location": "L203"
+    },
+    {
+      "id": "backend_dinegraph_main_welcome_text",
+      "label": "welcome_text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "api.py",
+      "file_type": "code",
+      "norm_label": "welcome_text()",
+      "source_file": "backend/dinegraph/main.py",
+      "source_location": "L19"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_classify_decision",
@@ -1410,11 +1437,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".classify_decision()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L115"
+      "source_location": "L121"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_classify_payment",
@@ -1422,11 +1449,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L124"
+      "source_location": "L130"
+    },
+    {
+      "id": "backend_dinegraph_llm_claudellm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L133"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_init",
@@ -1434,11 +1473,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".__init__()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L84"
+      "source_location": "L90"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_parse",
@@ -1446,11 +1485,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "._parse()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L90"
+      "source_location": "L96"
     },
     {
       "id": "backend_dinegraph_llm_claudellm_parse_order",
@@ -1458,11 +1497,119 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".parse_order()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L111"
+      "source_location": "L117"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_classify_decision",
+      "label": ".classify_decision()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".classify_decision()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L198"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_classify_payment",
+      "label": ".classify_payment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".classify_payment()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L207"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_client",
+      "label": ".client()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".client()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L160"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L210"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_generate",
+      "label": "._generate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "._generate()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L172"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L155"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_parse",
+      "label": "._parse()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "._parse()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L182"
+    },
+    {
+      "id": "backend_dinegraph_llm_geminillm_parse_order",
+      "label": ".parse_order()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".parse_order()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L194"
+    },
+    {
+      "id": "backend_dinegraph_llm_make_llm",
+      "label": "make_llm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "make_llm()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L220"
     },
     {
       "id": "backend_dinegraph_llm_orderllm_classify_decision",
@@ -1470,11 +1617,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".classify_decision()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L47"
+      "source_location": "L49"
     },
     {
       "id": "backend_dinegraph_llm_orderllm_classify_payment",
@@ -1482,11 +1629,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L48"
+      "source_location": "L50"
     },
     {
       "id": "backend_dinegraph_llm_orderllm_compose",
@@ -1494,11 +1641,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".compose()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L49"
+      "source_location": "L51"
     },
     {
       "id": "backend_dinegraph_llm_orderllm_parse_order",
@@ -1506,11 +1653,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".parse_order()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L46"
+      "source_location": "L48"
     },
     {
       "id": "backend_dinegraph_llm_rulebasedllm_classify_decision",
@@ -1518,11 +1665,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".classify_decision()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L171"
+      "source_location": "L259"
     },
     {
       "id": "backend_dinegraph_llm_rulebasedllm_classify_payment",
@@ -1530,11 +1677,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".classify_payment()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L182"
+      "source_location": "L270"
+    },
+    {
+      "id": "backend_dinegraph_llm_rulebasedllm_compose",
+      "label": ".compose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".compose()",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L278"
     },
     {
       "id": "backend_dinegraph_llm_rulebasedllm_parse_order",
@@ -1542,18 +1701,210 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": ".parse_order()",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L159"
+      "source_location": "L247"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_fake_restaurant",
+      "label": "fake_restaurant()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "fake_restaurant()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L126"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_fakeapi_call",
+      "label": ".__call__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".__call__()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_fakeapi_client",
+      "label": ".client()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".client()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_fakeapi_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_reply",
+      "label": "reply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "reply()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_schema_of",
+      "label": "schema_of()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "schema_of()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_system_of",
+      "label": "system_of()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "system_of()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_blocked_compose_uses_the_template",
+      "label": "test_blocked_compose_uses_the_template()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_blocked_compose_uses_the_template()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L100"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_blocked_or_bad_replies_fall_back",
+      "label": "test_blocked_or_bad_replies_fall_back()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_blocked_or_bad_replies_fall_back()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L93"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_compose_sends_facts_and_returns_text",
+      "label": "test_compose_sends_facts_and_returns_text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_compose_sends_facts_and_returns_text()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L82"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_decision_and_payment",
+      "label": "test_decision_and_payment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_decision_and_payment()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "label": "test_full_conversation_through_the_graph()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_full_conversation_through_the_graph()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L138"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_make_llm_picks_the_provider",
+      "label": "test_make_llm_picks_the_provider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_make_llm_picks_the_provider()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L115"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_missing_key_is_reported_on_first_call",
+      "label": "test_missing_key_is_reported_on_first_call()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_missing_key_is_reported_on_first_call()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L106"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "label": "test_parse_order_request_and_result()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_parse_order_request_and_result()",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L54"
+    },
+    {
+      "id": "backend_tests_test_scenarios_test_offline_parser_reads_notes_and_number_words",
+      "label": "test_offline_parser_reads_notes_and_number_words()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_offline_parser_reads_notes_and_number_words()",
+      "source_file": "backend/tests/test_scenarios.py",
+      "source_location": "L310"
     },
     {
       "id": "backend_tests_test_claude_wiring_fake_restaurant",
       "label": "fake_restaurant()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "fake_restaurant()",
@@ -1565,7 +1916,7 @@
       "label": ".__call__()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": ".__call__()",
@@ -1577,7 +1928,7 @@
       "label": ".client()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": ".client()",
@@ -1589,7 +1940,7 @@
       "label": ".__init__()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": ".__init__()",
@@ -1601,7 +1952,7 @@
       "label": "reply()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "reply()",
@@ -1613,7 +1964,7 @@
       "label": "schema_of()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "schema_of()",
@@ -1625,7 +1976,7 @@
       "label": "test_compose_returns_text_and_falls_back_when_empty()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "test_compose_returns_text_and_falls_back_when_empty()",
@@ -1637,7 +1988,7 @@
       "label": "test_env_var_picks_the_model()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "test_env_var_picks_the_model()",
@@ -1649,7 +2000,7 @@
       "label": "test_full_conversation_through_the_graph()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "test_full_conversation_through_the_graph()",
@@ -1661,7 +2012,7 @@
       "label": "test_parse_order_request_and_result()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "test_parse_order_request_and_result()",
@@ -1673,36 +2024,12 @@
       "label": "test_refusal_is_treated_as_not_an_order()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "test_refusal_is_treated_as_not_an_order()",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L67"
-    },
-    {
-      "id": "backend_dinegraph_graph_random_outcome",
-      "label": "random_outcome()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "random_outcome",
-      "file_type": "code",
-      "norm_label": "random_outcome()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L44"
-    },
-    {
-      "id": "backend_tests_test_scenarios_test_random_outcome_is_about_forty_percent_failure",
-      "label": "test_random_outcome_is_about_forty_percent_failure()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "random_outcome",
-      "file_type": "code",
-      "norm_label": "test_random_outcome_is_about_forty_percent_failure()",
-      "source_file": "backend/tests/test_scenarios.py",
-      "source_location": "L239"
     },
     {
       "id": "backend_dinegraph_graph_build_graph",
@@ -1921,18 +2248,6 @@
       "source_location": "L101"
     },
     {
-      "id": "backend_dinegraph_graph_build_graph_user_decision",
-      "label": "user_decision()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "build_graph",
-      "file_type": "code",
-      "norm_label": "user_decision()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L152"
-    },
-    {
       "id": "backend_dinegraph_graph_order_facts",
       "label": "_order_facts()",
       "_callable": true,
@@ -1957,16 +2272,28 @@
       "source_location": "L29"
     },
     {
-      "id": "backend_dinegraph_api_create_app_start_session",
-      "label": "start_session()",
+      "id": "backend_dinegraph_api_getattr",
+      "label": "__getattr__()",
       "_callable": true,
       "_origin": "ast",
       "community": 17,
       "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "start_session()",
+      "norm_label": "__getattr__()",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L371"
+      "source_location": "L471"
+    },
+    {
+      "id": "backend_dinegraph_graph_random_outcome",
+      "label": "random_outcome()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "random_outcome()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L44"
     },
     {
       "id": "backend_dinegraph_main_load_env",
@@ -1991,30 +2318,6 @@
       "norm_label": "main()",
       "source_file": "backend/dinegraph/main.py",
       "source_location": "L32"
-    },
-    {
-      "id": "backend_dinegraph_main_welcome_text",
-      "label": "welcome_text()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "welcome_text()",
-      "source_file": "backend/dinegraph/main.py",
-      "source_location": "L19"
-    },
-    {
-      "id": "backend_dinegraph_state_initial_state",
-      "label": "initial_state()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "initial_state()",
-      "source_file": "backend/dinegraph/state.py",
-      "source_location": "L60"
     },
     {
       "id": "backend_scripts_live_check_full_order",
@@ -2051,6 +2354,18 @@
       "norm_label": "main()",
       "source_file": "backend/scripts/live_check.py",
       "source_location": "L73"
+    },
+    {
+      "id": "backend_tests_test_scenarios_test_random_outcome_is_about_forty_percent_failure",
+      "label": "test_random_outcome_is_about_forty_percent_failure()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "test_random_outcome_is_about_forty_percent_failure()",
+      "source_file": "backend/tests/test_scenarios.py",
+      "source_location": "L239"
     },
     {
       "id": "backend_dinegraph_inventory_inventory_menu",
@@ -2557,30 +2872,6 @@
       "source_location": "L74"
     },
     {
-      "id": "backend_dinegraph_graph_build_graph_order_confirm",
-      "label": "order_confirm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "code",
-      "norm_label": "order_confirm()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L116"
-    },
-    {
-      "id": "backend_dinegraph_graph_build_graph_parse_order",
-      "label": "parse_order()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "code",
-      "norm_label": "parse_order()",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L105"
-    },
-    {
       "id": "backend_dinegraph_graph_build_graph_request_payment",
       "label": "request_payment()",
       "_callable": true,
@@ -2593,12 +2884,48 @@
       "source_location": "L212"
     },
     {
+      "id": "backend_dinegraph_graph_build_graph_order_confirm",
+      "label": "order_confirm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "menu.py",
+      "file_type": "code",
+      "norm_label": "order_confirm()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L116"
+    },
+    {
+      "id": "backend_dinegraph_graph_build_graph_parse_order",
+      "label": "parse_order()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "menu.py",
+      "file_type": "code",
+      "norm_label": "parse_order()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L105"
+    },
+    {
+      "id": "backend_dinegraph_graph_build_graph_user_decision",
+      "label": "user_decision()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "menu.py",
+      "file_type": "code",
+      "norm_label": "user_decision()",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L152"
+    },
+    {
       "id": "backend_dinegraph_graph_item",
       "label": "_item()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
+      "community": 30,
+      "community_name": "menu.py",
       "file_type": "code",
       "norm_label": "_item()",
       "source_file": "backend/dinegraph/graph.py",
@@ -2609,8 +2936,8 @@
       "label": "_last_user_text()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
+      "community": 30,
+      "community_name": "menu.py",
       "file_type": "code",
       "norm_label": "_last_user_text()",
       "source_file": "backend/dinegraph/graph.py",
@@ -2621,8 +2948,8 @@
       "label": "lookup()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
+      "community": 30,
+      "community_name": "menu.py",
       "file_type": "code",
       "norm_label": "lookup()",
       "source_file": "backend/dinegraph/menu.py",
@@ -3132,17 +3459,6 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_llm_rationale_154",
-      "label": "Deterministic stand-in for tests and offline runs. Understands inputs like \"2\u2026",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "test_scenarios.py",
-      "file_type": "rationale",
-      "norm_label": "deterministic stand-in for tests and offline runs. understands inputs like \"2...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L154"
-    },
-    {
       "id": "backend_dinegraph_state_rationale_19",
       "label": "Every value the `status` field can take.",
       "_origin": "ast",
@@ -3231,7 +3547,7 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_api_rationale_174",
+      "id": "backend_dinegraph_api_rationale_176",
       "label": "A one-line activity entry for a finished graph step, or None for steps not\u2026",
       "_origin": "ast",
       "community": 1,
@@ -3239,10 +3555,10 @@
       "file_type": "rationale",
       "norm_label": "a one-line activity entry for a finished graph step, or none for steps not...",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L174"
+      "source_location": "L176"
     },
     {
-      "id": "backend_dinegraph_api_rationale_202",
+      "id": "backend_dinegraph_api_rationale_204",
       "label": "A LangGraph checkpointer that keeps sessions in Postgres, creating its tables\u2026",
       "_origin": "ast",
       "community": 1,
@@ -3250,10 +3566,10 @@
       "file_type": "rationale",
       "norm_label": "a langgraph checkpointer that keeps sessions in postgres, creating its tables...",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L202"
+      "source_location": "L204"
     },
     {
-      "id": "backend_dinegraph_api_rationale_224",
+      "id": "backend_dinegraph_api_rationale_226",
       "label": "`menu` and `prices` seed the menu table the first time a database is created.\u2026",
       "_origin": "ast",
       "community": 1,
@@ -3261,25 +3577,25 @@
       "file_type": "rationale",
       "norm_label": "`menu` and `prices` seed the menu table the first time a database is created....",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L224"
+      "source_location": "L226"
     },
     {
-      "id": "anthropic",
-      "label": "Anthropic",
+      "id": "backend_dinegraph_llm",
+      "label": "llm.py",
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
-      "norm_label": "anthropic",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "llm.py",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_dinegraph_llm_py_basemodel",
       "label": "BaseModel",
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "basemodel",
       "source_file": "",
@@ -3290,9 +3606,185 @@
       "label": "Protocol",
       "_origin": "ast",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "file_type": "code",
       "norm_label": "protocol",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring",
+      "label": "test_gemini_wiring.py",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "test_gemini_wiring.py",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_py_request",
+      "label": "Request",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "request",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_py_response",
+      "label": "Response",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "response",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "client",
+      "label": "Client",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "client",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "parametrize",
+      "label": "parametrize",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "parametrize",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "runtimeerror",
+      "label": "RuntimeError",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "code",
+      "norm_label": "runtimeerror",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_1",
+      "label": "The LLM layer. The graph talks to the LLM through three calls: parse_order user\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "the llm layer. the graph talks to the llm through three calls: parse_order user...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_153",
+      "label": "The same calls as ClaudeLLM, on Google's Gemini API. Get a free key at\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "the same calls as claudellm, on google's gemini api. get a free key at...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L153"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_183",
+      "label": "One structured-output call. A blocked or unreadable reply returns ``fallback``.",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "one structured-output call. a blocked or unreadable reply returns ``fallback``.",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L183"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_221",
+      "label": "The LLM named by `provider`, or by DINEGRAPH_LLM (default gemini).",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "the llm named by `provider`, or by dinegraph_llm (default gemini).",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L221"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_242",
+      "label": "Deterministic stand-in for tests and offline runs. Understands inputs like \"2\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "deterministic stand-in for tests and offline runs. understands inputs like \"2...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L242"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_55",
+      "label": "No API key was found for the chosen LLM provider.",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "no api key was found for the chosen llm provider.",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L55"
+    },
+    {
+      "id": "backend_dinegraph_llm_rationale_97",
+      "label": "One structured-output call. A refusal or an unreadable reply returns\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "one structured-output call. a refusal or an unreadable reply returns...",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L97"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_rationale_1",
+      "label": "Runs the real GeminiLLM code against a fake Gemini API. No API key or network\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "runs the real geminillm code against a fake gemini api. no api key or network...",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_tests_test_gemini_wiring_rationale_28",
+      "label": "Answers generateContent from a function of the request body and records every\u2026",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "file_type": "rationale",
+      "norm_label": "answers generatecontent from a function of the request body and records every...",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L28"
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "test_claude_wiring.py",
+      "file_type": "code",
+      "norm_label": "anthropic",
       "source_file": "",
       "source_location": ""
     },
@@ -3300,7 +3792,7 @@
       "id": "backend_tests_test_claude_wiring",
       "label": "test_claude_wiring.py",
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "test_claude_wiring.py",
@@ -3308,10 +3800,10 @@
       "source_location": "L1"
     },
     {
-      "id": "request",
+      "id": "backend_tests_test_claude_wiring_py_request",
       "label": "Request",
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "request",
@@ -3319,10 +3811,10 @@
       "source_location": ""
     },
     {
-      "id": "response",
+      "id": "backend_tests_test_claude_wiring_py_response",
       "label": "Response",
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "code",
       "norm_label": "response",
@@ -3330,21 +3822,10 @@
       "source_location": ""
     },
     {
-      "id": "backend_dinegraph_llm_rationale_91",
-      "label": "One structured-output call. A refusal or an unreadable reply returns\u2026",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "test_claude_wiring.py",
-      "file_type": "rationale",
-      "norm_label": "one structured-output call. a refusal or an unreadable reply returns...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L91"
-    },
-    {
       "id": "backend_tests_test_claude_wiring_rationale_1",
       "label": "Runs the real ClaudeLLM code against a fake Anthropic API. No API key or\u2026",
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "rationale",
       "norm_label": "runs the real claudellm code against a fake anthropic api. no api key or...",
@@ -3355,7 +3836,7 @@
       "id": "backend_tests_test_claude_wiring_rationale_29",
       "label": "Answers /v1/messages from a function of the request body and records every\u2026",
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "rationale",
       "norm_label": "answers /v1/messages from a function of the request body and records every...",
@@ -3366,34 +3847,12 @@
       "id": "backend_tests_test_claude_wiring_rationale_92",
       "label": "Plays Claude for a whole conversation, choosing the reply by the requested\u2026",
       "_origin": "ast",
-      "community": 10,
+      "community": 12,
       "community_name": "test_claude_wiring.py",
       "file_type": "rationale",
       "norm_label": "plays claude for a whole conversation, choosing the reply by the requested...",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L92"
-    },
-    {
-      "id": "backend_dinegraph_graph_py_outcome",
-      "label": "Outcome",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "random_outcome",
-      "file_type": "code",
-      "norm_label": "outcome",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_dinegraph_graph_rationale_45",
-      "label": "The probability function: 40% failure, 60% success.",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "random_outcome",
-      "file_type": "rationale",
-      "norm_label": "the probability function: 40% failure, 60% success.",
-      "source_file": "backend/dinegraph/graph.py",
-      "source_location": "L45"
     },
     {
       "id": "pace",
@@ -3442,15 +3901,15 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_llm",
-      "label": "llm.py",
+      "id": "backend_dinegraph_graph_py_outcome",
+      "label": "Outcome",
       "_origin": "ast",
       "community": 17,
       "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "llm.py",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L1"
+      "norm_label": "outcome",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "backend_dinegraph_main",
@@ -3475,15 +3934,15 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_llm_rationale_1",
-      "label": "The LLM layer. The graph talks to the LLM through three calls: parse_order user\u2026",
+      "id": "backend_dinegraph_graph_rationale_45",
+      "label": "The probability function: 40% failure, 60% success.",
       "_origin": "ast",
       "community": 17,
       "community_name": "main.py",
       "file_type": "rationale",
-      "norm_label": "the llm layer. the graph talks to the llm through three calls: parse_order user...",
-      "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L1"
+      "norm_label": "the probability function: 40% failure, 60% success.",
+      "source_file": "backend/dinegraph/graph.py",
+      "source_location": "L45"
     },
     {
       "id": "backend_dinegraph_main_rationale_1",
@@ -3509,12 +3968,12 @@
     },
     {
       "id": "backend_scripts_live_check_rationale_1",
-      "label": "Live check of DineGraph against the real Claude API. Run it once you have a\u2026",
+      "label": "Live check of DineGraph against a real LLM: Gemini (default) or Claude. Run it\u2026",
       "_origin": "ast",
       "community": 17,
       "community_name": "main.py",
       "file_type": "rationale",
-      "norm_label": "live check of dinegraph against the real claude api. run it once you have a...",
+      "norm_label": "live check of dinegraph against a real llm: gemini (default) or claude. run it...",
       "source_file": "backend/scripts/live_check.py",
       "source_location": "L1"
     },
@@ -4570,17 +5029,6 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_menu",
-      "label": "menu.py",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "code",
-      "norm_label": "menu.py",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_dinegraph_state",
       "label": "state.py",
       "_origin": "ast",
@@ -4625,28 +5073,6 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_dinegraph_menu_rationale_1",
-      "label": "The restaurant menu: dish name -> quantity currently available. Edit this dict\u2026",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "rationale",
-      "norm_label": "the restaurant menu: dish name -> quantity currently available. edit this dict...",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_dinegraph_menu_rationale_20",
-      "label": "Case-insensitive menu lookup. Returns (canonical name, available quantity). A\u2026",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "graph.py",
-      "file_type": "rationale",
-      "norm_label": "case-insensitive menu lookup. returns (canonical name, available quantity). a...",
-      "source_file": "backend/dinegraph/menu.py",
-      "source_location": "L20"
-    },
-    {
       "id": "backend_dinegraph_state_rationale_1",
       "label": "The LangGraph state shared by every node.",
       "_origin": "ast",
@@ -4656,6 +5082,39 @@
       "norm_label": "the langgraph state shared by every node.",
       "source_file": "backend/dinegraph/state.py",
       "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_menu",
+      "label": "menu.py",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "menu.py",
+      "file_type": "code",
+      "norm_label": "menu.py",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_menu_rationale_1",
+      "label": "The restaurant menu: dish name -> quantity currently available. Edit this dict\u2026",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "menu.py",
+      "file_type": "rationale",
+      "norm_label": "the restaurant menu: dish name -> quantity currently available. edit this dict...",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_dinegraph_menu_rationale_20",
+      "label": "Case-insensitive menu lookup. Returns (canonical name, available quantity). A\u2026",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "menu.py",
+      "file_type": "rationale",
+      "norm_label": "case-insensitive menu lookup. returns (canonical name, available quantity). a...",
+      "source_file": "backend/dinegraph/menu.py",
+      "source_location": "L20"
     },
     {
       "id": "backend_tests_test_api",
@@ -4823,7 +5282,19 @@
       "node_kind": "heading",
       "norm_label": "backend",
       "source_file": "README.md",
-      "source_location": "L208"
+      "source_location": "L221"
+    },
+    {
+      "id": "readme_choosing_the_llm",
+      "label": "Choosing the LLM",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DineGraph",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "choosing the llm",
+      "source_file": "README.md",
+      "source_location": "L187"
     },
     {
       "id": "readme_command_line_chat",
@@ -4835,7 +5306,7 @@
       "node_kind": "heading",
       "norm_label": "command-line chat",
       "source_file": "README.md",
-      "source_location": "L186"
+      "source_location": "L199"
     },
     {
       "id": "readme_configuration",
@@ -4847,7 +5318,7 @@
       "node_kind": "heading",
       "norm_label": "configuration",
       "source_file": "README.md",
-      "source_location": "L286"
+      "source_location": "L299"
     },
     {
       "id": "readme_contents",
@@ -4871,7 +5342,7 @@
       "node_kind": "heading",
       "norm_label": "database",
       "source_file": "README.md",
-      "source_location": "L301"
+      "source_location": "L315"
     },
     {
       "id": "readme_dinegraph",
@@ -4907,7 +5378,7 @@
       "node_kind": "heading",
       "norm_label": "getting started",
       "source_file": "README.md",
-      "source_location": "L167"
+      "source_location": "L168"
     },
     {
       "id": "readme_how_the_graph_works",
@@ -4922,16 +5393,16 @@
       "source_location": "L49"
     },
     {
-      "id": "readme_live_check_with_claude",
-      "label": "Live check with Claude",
+      "id": "readme_live_check_with_a_real_llm",
+      "label": "Live check with a real LLM",
       "_origin": "ast",
       "community": 8,
       "community_name": "DineGraph",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "live check with claude",
+      "norm_label": "live check with a real llm",
       "source_file": "README.md",
-      "source_location": "L343"
+      "source_location": "L357"
     },
     {
       "id": "readme_menu",
@@ -4943,7 +5414,7 @@
       "node_kind": "heading",
       "norm_label": "menu",
       "source_file": "README.md",
-      "source_location": "L315"
+      "source_location": "L329"
     },
     {
       "id": "readme_nodes",
@@ -4991,7 +5462,7 @@
       "node_kind": "heading",
       "norm_label": "roadmap",
       "source_file": "README.md",
-      "source_location": "L353"
+      "source_location": "L368"
     },
     {
       "id": "readme_state",
@@ -5027,7 +5498,7 @@
       "node_kind": "heading",
       "norm_label": "tests",
       "source_file": "README.md",
-      "source_location": "L330"
+      "source_location": "L344"
     },
     {
       "id": "readme_web_frontend",
@@ -5039,7 +5510,7 @@
       "node_kind": "heading",
       "norm_label": "web frontend",
       "source_file": "README.md",
-      "source_location": "L258"
+      "source_location": "L271"
     },
     {
       "id": "collections",
@@ -5066,11 +5537,23 @@
       "type": "external"
     },
     {
+      "id": "httpx",
+      "label": "httpx",
+      "_origin": "semantic",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "httpx",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "pydantic",
       "label": "pydantic",
       "_origin": "semantic",
-      "community": 1,
-      "community_name": "api.py",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "pydantic",
@@ -5078,38 +5561,14 @@
       "type": "external"
     },
     {
-      "id": "threading",
-      "label": "threading",
-      "_origin": "semantic",
-      "community": 1,
-      "community_name": "api.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "threading",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "time",
-      "label": "time",
-      "_origin": "semantic",
-      "community": 1,
-      "community_name": "api.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "time",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "httpx2",
-      "label": "httpx2",
+      "id": "re",
+      "label": "re",
       "_origin": "semantic",
       "community": 10,
-      "community_name": "test_claude_wiring.py",
+      "community_name": "test_gemini_wiring.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "httpx2",
+      "norm_label": "re",
       "source_file": "",
       "type": "external"
     },
@@ -5122,6 +5581,30 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "statistics",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "httpx2",
+      "label": "httpx2",
+      "_origin": "semantic",
+      "community": 12,
+      "community_name": "test_claude_wiring.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "httpx2",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "langgraph_checkpoint_memory",
+      "label": "langgraph_checkpoint_memory",
+      "_origin": "semantic",
+      "community": 12,
+      "community_name": "test_claude_wiring.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "langgraph_checkpoint_memory",
       "source_file": "",
       "type": "external"
     },
@@ -5174,18 +5657,6 @@
       "type": "external"
     },
     {
-      "id": "langgraph_checkpoint_memory",
-      "label": "langgraph_checkpoint_memory",
-      "_origin": "semantic",
-      "community": 17,
-      "community_name": "main.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "langgraph_checkpoint_memory",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "langgraph_types",
       "label": "langgraph_types",
       "_origin": "semantic",
@@ -5194,18 +5665,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "langgraph_types",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "os",
-      "label": "os",
-      "_origin": "semantic",
-      "community": 17,
-      "community_name": "main.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "os",
       "source_file": "",
       "type": "external"
     },
@@ -5222,18 +5681,6 @@
       "type": "external"
     },
     {
-      "id": "re",
-      "label": "re",
-      "_origin": "semantic",
-      "community": 17,
-      "community_name": "main.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "re",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "sys",
       "label": "sys",
       "_origin": "semantic",
@@ -5242,6 +5689,42 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "sys",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "time",
+      "label": "time",
+      "_origin": "semantic",
+      "community": 17,
+      "community_name": "main.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "time",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "os",
+      "label": "os",
+      "_origin": "semantic",
+      "community": 19,
+      "community_name": "conftest.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "os",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "psycopg",
+      "label": "psycopg",
+      "_origin": "semantic",
+      "community": 19,
+      "community_name": "conftest.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "psycopg",
       "source_file": "",
       "type": "external"
     },
@@ -5402,6 +5885,18 @@
       "type": "external"
     },
     {
+      "id": "threading",
+      "label": "threading",
+      "_origin": "semantic",
+      "community": 3,
+      "community_name": "graph.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "threading",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "typing",
       "label": "typing",
       "_origin": "semantic",
@@ -5462,18 +5957,6 @@
       "type": "external"
     },
     {
-      "id": "httpx",
-      "label": "httpx",
-      "_origin": "semantic",
-      "community": 6,
-      "community_name": "test_api.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "httpx",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "datetime",
       "label": "datetime",
       "_origin": "semantic",
@@ -5510,6 +5993,18 @@
       "type": "external"
     },
     {
+      "id": "sqlalchemy_dialects_postgresql",
+      "label": "sqlalchemy_dialects_postgresql",
+      "_origin": "semantic",
+      "community": 7,
+      "community_name": "Store",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sqlalchemy_dialects_postgresql",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "math",
       "label": "math",
       "_origin": "semantic",
@@ -5522,24 +6017,24 @@
       "type": "external"
     },
     {
-      "id": "psycopg",
-      "label": "psycopg",
-      "community": 19,
-      "community_name": "conftest.py",
+      "id": "google",
+      "label": "google",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "psycopg",
+      "norm_label": "google",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "sqlalchemy_dialects_postgresql",
-      "label": "sqlalchemy_dialects_postgresql",
-      "community": 7,
-      "community_name": "Store",
+      "id": "google_genai",
+      "label": "google_genai",
+      "community": 10,
+      "community_name": "test_gemini_wiring.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "sqlalchemy_dialects_postgresql",
+      "norm_label": "google_genai",
       "source_file": "",
       "type": "external"
     }
@@ -5547,26 +6042,14 @@
   "links": [
     {
       "source": "backend_dinegraph_api_create_app",
-      "target": "backend_dinegraph_llm_claudellm",
+      "target": "backend_dinegraph_llm_make_llm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L229",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app",
-      "target": "backend_dinegraph_llm_rulebasedllm",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L229",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -5578,7 +6061,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L239",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -5590,7 +6073,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L239",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -5602,7 +6085,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L240",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -5614,7 +6097,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L242",
+      "source_location": "L244",
       "weight": 1.0
     },
     {
@@ -5626,7 +6109,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L242",
+      "source_location": "L244",
       "weight": 1.0
     },
     {
@@ -5638,7 +6121,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L376",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -5650,7 +6133,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L376",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -5662,7 +6145,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L365",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -5674,7 +6157,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L366",
+      "source_location": "L370",
       "weight": 1.0
     },
     {
@@ -5686,7 +6169,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L383",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -5698,7 +6181,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L437",
+      "source_location": "L441",
       "weight": 1.0
     },
     {
@@ -5710,36 +6193,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L354",
+      "source_location": "L358",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_api_create_app_retry",
       "target": "backend_dinegraph_api_create_app_snapshot",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L400",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_retry",
-      "target": "backend_dinegraph_api_create_app_require_idle",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L401",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api_create_app_retry",
-      "target": "backend_dinegraph_api_create_app_run",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5751,7 +6210,7 @@
     },
     {
       "source": "backend_dinegraph_api_create_app_retry",
-      "target": "backend_dinegraph_api_create_app_view",
+      "target": "backend_dinegraph_api_create_app_require_idle",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5759,6 +6218,30 @@
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L405",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_retry",
+      "target": "backend_dinegraph_api_create_app_run",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L408",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api_create_app_retry",
+      "target": "backend_dinegraph_api_create_app_view",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L409",
       "weight": 1.0
     },
     {
@@ -5770,7 +6253,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L348",
+      "source_location": "L352",
       "weight": 1.0
     },
     {
@@ -5782,7 +6265,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L312",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -5794,7 +6277,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L316",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
@@ -5806,7 +6289,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L388",
+      "source_location": "L392",
       "weight": 1.0
     },
     {
@@ -5818,7 +6301,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L389",
+      "source_location": "L393",
       "weight": 1.0
     },
     {
@@ -5830,7 +6313,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L394",
+      "source_location": "L398",
       "weight": 1.0
     },
     {
@@ -5842,7 +6325,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L395",
+      "source_location": "L399",
       "weight": 1.0
     },
     {
@@ -5854,7 +6337,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L258",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -5866,7 +6349,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L376",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -5878,7 +6361,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L376",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -5890,7 +6373,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L376",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -5902,7 +6385,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L379",
+      "source_location": "L383",
       "weight": 1.0
     },
     {
@@ -5914,7 +6397,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L453",
+      "source_location": "L457",
       "weight": 1.0
     },
     {
@@ -5926,7 +6409,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L264",
+      "source_location": "L266",
       "weight": 1.0
     },
     {
@@ -5938,7 +6421,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L270",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -5950,7 +6433,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L271",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -5962,7 +6445,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L277",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
@@ -5974,7 +6457,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L280",
+      "source_location": "L282",
       "weight": 1.0
     },
     {
@@ -5986,7 +6469,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L283",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -5998,7 +6481,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L284",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -6010,7 +6493,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L324",
+      "source_location": "L328",
       "weight": 1.0
     },
     {
@@ -6022,7 +6505,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L328",
+      "source_location": "L332",
       "weight": 1.0
     },
     {
@@ -6034,7 +6517,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L471",
+      "source_location": "L475",
       "weight": 1.0
     },
     {
@@ -6046,7 +6529,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L472",
+      "source_location": "L476",
       "weight": 1.0
     },
     {
@@ -6219,14 +6702,14 @@
     },
     {
       "source": "backend_dinegraph_llm_claudellm_classify_decision",
-      "target": "backend_dinegraph_llm_claudellm_parse",
+      "target": "backend_dinegraph_llm_geminillm_parse",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L121",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -6238,19 +6721,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L122",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_llm_claudellm_classify_payment",
-      "target": "backend_dinegraph_llm_claudellm_parse",
+      "target": "backend_dinegraph_llm_geminillm_parse",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L125",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -6262,7 +6745,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L125",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -6274,19 +6757,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L139",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_llm_claudellm_parse_order",
-      "target": "backend_dinegraph_llm_claudellm_parse",
+      "target": "backend_dinegraph_llm_geminillm_parse",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L112",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -6298,7 +6781,163 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L113",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_classify_decision",
+      "target": "backend_dinegraph_llm_geminillm_parse",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_classify_decision",
+      "target": "backend_dinegraph_llm_decision",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_classify_payment",
+      "target": "backend_dinegraph_llm_geminillm_parse",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_classify_payment",
+      "target": "backend_dinegraph_llm_paymentchoice",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_client",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_compose",
+      "target": "backend_dinegraph_llm_geminillm_generate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_compose",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_parse",
+      "target": "backend_dinegraph_llm_geminillm_generate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_parse_order",
+      "target": "backend_dinegraph_llm_geminillm_parse",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm_parse_order",
+      "target": "backend_dinegraph_llm_parsedorder",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_make_llm",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_make_llm",
+      "target": "backend_dinegraph_llm_claudellm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_make_llm",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -6310,7 +6949,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L175",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -6322,7 +6961,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L187",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -6334,7 +6973,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L168",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -6346,7 +6985,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L169",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -6363,7 +7002,7 @@
     },
     {
       "source": "backend_dinegraph_main_main",
-      "target": "backend_dinegraph_llm_claudellm",
+      "target": "backend_dinegraph_llm_make_llm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6591,14 +7230,14 @@
     },
     {
       "source": "backend_scripts_live_check_main",
-      "target": "backend_dinegraph_llm_claudellm",
+      "target": "backend_dinegraph_llm_make_llm",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/scripts/live_check.py",
-      "source_location": "L78",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -6610,7 +7249,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/scripts/live_check.py",
-      "source_location": "L94",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -7247,6 +7886,318 @@
       "context": "call",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_fake_restaurant",
+      "target": "backend_tests_test_gemini_wiring_schema_of",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_fake_restaurant",
+      "target": "backend_tests_test_gemini_wiring_reply",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_compose_uses_the_template",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_compose_uses_the_template",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_compose_uses_the_template",
+      "target": "backend_tests_test_gemini_wiring_reply",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_compose_uses_the_template",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_or_bad_replies_fall_back",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_compose_sends_facts_and_returns_text",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_compose_sends_facts_and_returns_text",
+      "target": "backend_tests_test_gemini_wiring_reply",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_compose_sends_facts_and_returns_text",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_compose_sends_facts_and_returns_text",
+      "target": "backend_tests_test_gemini_wiring_schema_of",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_decision_and_payment",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_decision_and_payment",
+      "target": "backend_tests_test_gemini_wiring_reply",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_decision_and_payment",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_decision_and_payment",
+      "target": "backend_tests_test_gemini_wiring_system_of",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "target": "backend_dinegraph_graph_build_graph",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "target": "backend_dinegraph_state_initial_state",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_make_llm_picks_the_provider",
+      "target": "backend_dinegraph_llm_make_llm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_missing_key_is_reported_on_first_call",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "target": "backend_tests_test_gemini_wiring_reply",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "target": "backend_tests_test_gemini_wiring_system_of",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "target": "backend_tests_test_gemini_wiring_schema_of",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -8306,6 +9257,18 @@
       "weight": 1.0
     },
     {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_or_bad_replies_fall_back",
+      "target": "parametrize",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_components_orderpanel_props",
       "target": "frontend_src_api_sessionview",
       "relation": "references",
@@ -8338,7 +9301,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -8350,7 +9313,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -8362,7 +9325,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -8374,7 +9337,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -8386,7 +9349,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -8398,7 +9361,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -8410,19 +9373,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_llm_claudellm",
+      "target": "backend_dinegraph_llm_make_llm",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L43",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -8434,19 +9409,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_llm_rulebasedllm",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -8458,7 +9421,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -8470,7 +9433,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -8482,7 +9445,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -8494,7 +9457,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -8506,7 +9469,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -8518,7 +9481,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -8638,7 +9601,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -8650,7 +9613,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -8662,7 +9625,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -8691,7 +9654,7 @@
     },
     {
       "source": "backend_dinegraph_main",
-      "target": "backend_dinegraph_llm_claudellm",
+      "target": "backend_dinegraph_llm_make_llm",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8811,7 +9774,19 @@
     },
     {
       "source": "backend_scripts_live_check",
-      "target": "backend_dinegraph_llm_claudellm",
+      "target": "backend_dinegraph_llm_make_llm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_scripts_live_check",
+      "target": "backend_dinegraph_llm_rulebasedllm",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9046,6 +10021,126 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/tests/test_claude_wiring.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "pytest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_graph_build_graph",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_llm_claudellm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_llm_make_llm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_state_initial_state",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "json",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "httpx",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -9706,7 +10801,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -9718,24 +10813,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "fastapi",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L36",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api",
-      "target": "fastapi_middleware_cors",
+      "target": "google_genai",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9747,7 +10830,7 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "langchain_core_messages",
+      "target": "fastapi",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9759,7 +10842,7 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "langgraph_types",
+      "target": "fastapi_middleware_cors",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9771,7 +10854,7 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "pydantic",
+      "target": "langchain_core_messages",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9783,7 +10866,19 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_graph",
+      "target": "langgraph_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api",
+      "target": "pydantic",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9795,19 +10890,7 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_llm",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "backend/dinegraph/api.py",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_main",
+      "target": "backend_dinegraph_graph",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9819,7 +10902,7 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_state",
+      "target": "backend_dinegraph_llm",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9831,7 +10914,7 @@
     },
     {
       "source": "backend_dinegraph_api",
-      "target": "backend_dinegraph_store",
+      "target": "backend_dinegraph_main",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9839,6 +10922,30 @@
       "context": "import",
       "source_file": "backend/dinegraph/api.py",
       "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api",
+      "target": "backend_dinegraph_state",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_api",
+      "target": "backend_dinegraph_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -9982,7 +11089,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -9994,7 +11101,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10379,6 +11486,90 @@
       "context": "import",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "google",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "google_genai",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_graph",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_llm",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_dinegraph_state",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "langgraph_checkpoint_memory",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "langgraph_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -10774,7 +11965,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L215",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -10815,7 +12006,7 @@
     },
     {
       "source": "backend_tests_test_claude_wiring_fakeapi_call",
-      "target": "request",
+      "target": "backend_tests_test_claude_wiring_py_request",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10823,6 +12014,18 @@
       "context": "parameter_type",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_fakeapi_call",
+      "target": "backend_tests_test_gemini_wiring_py_request",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10834,7 +12037,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L215",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -10850,6 +12053,18 @@
       "weight": 1.0
     },
     {
+      "source": "backend_dinegraph_llm_make_llm",
+      "target": "backend_dinegraph_llm_orderllm",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
       "source": "backend_dinegraph_llm_orderllm_classify_decision",
       "target": "backend_dinegraph_llm_decision",
       "relation": "references",
@@ -10858,7 +12073,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -10870,7 +12085,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -10882,7 +12097,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -10899,7 +12114,7 @@
     },
     {
       "source": "backend_tests_test_claude_wiring_fakeapi_call",
-      "target": "response",
+      "target": "backend_tests_test_claude_wiring_py_response",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10922,6 +12137,30 @@
       "weight": 1.0
     },
     {
+      "source": "backend_tests_test_gemini_wiring_fakeapi_call",
+      "target": "backend_tests_test_gemini_wiring_py_response",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_fakeapi_client",
+      "target": "client",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
       "source": "backend_dinegraph_api",
       "target": "backend_dinegraph_api_menuitem",
       "relation": "contains",
@@ -10929,7 +12168,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L101",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -10940,7 +12179,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L107",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -10951,7 +12190,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L112",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -10962,7 +12201,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L117",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -10973,7 +12212,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L130",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -10984,7 +12223,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L140",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -10995,7 +12234,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L151",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -11006,7 +12245,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L173",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -11017,7 +12256,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L201",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -11028,7 +12267,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L215",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -11039,7 +12278,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L467",
+      "source_location": "L471",
       "weight": 1.0
     },
     {
@@ -11050,7 +12289,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -11061,7 +12300,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -11072,7 +12311,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L65",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -11083,7 +12322,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L72",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -11094,7 +12333,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -11105,7 +12344,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L97",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -11116,7 +12355,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L254",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -11127,7 +12366,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L257",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -11138,7 +12377,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L263",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -11149,7 +12388,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L297",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -11160,7 +12399,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L301",
+      "source_location": "L303",
       "weight": 1.0
     },
     {
@@ -11171,7 +12410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L310",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -11182,7 +12421,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L320",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -11193,7 +12432,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L335",
+      "source_location": "L339",
       "weight": 1.0
     },
     {
@@ -11204,7 +12443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L353",
+      "source_location": "L357",
       "weight": 1.0
     },
     {
@@ -11215,7 +12454,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L360",
+      "source_location": "L364",
       "weight": 1.0
     },
     {
@@ -11226,7 +12465,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L364",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -11237,7 +12476,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L371",
+      "source_location": "L375",
       "weight": 1.0
     },
     {
@@ -11248,7 +12487,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L382",
+      "source_location": "L386",
       "weight": 1.0
     },
     {
@@ -11259,7 +12498,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L386",
+      "source_location": "L390",
       "weight": 1.0
     },
     {
@@ -11270,7 +12509,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L398",
+      "source_location": "L402",
       "weight": 1.0
     },
     {
@@ -11281,7 +12520,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L410",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -11292,7 +12531,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L418",
+      "source_location": "L422",
       "weight": 1.0
     },
     {
@@ -11303,7 +12542,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L425",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -11314,7 +12553,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L434",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -11325,7 +12564,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L447",
+      "source_location": "L451",
       "weight": 1.0
     },
     {
@@ -11336,7 +12575,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L456",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -11347,7 +12586,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L461",
+      "source_location": "L465",
       "weight": 1.0
     },
     {
@@ -11451,13 +12690,24 @@
     },
     {
       "source": "backend_dinegraph_llm",
-      "target": "backend_dinegraph_llm_rulebasedllm",
+      "target": "backend_dinegraph_llm_geminillm",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L153",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm",
+      "target": "backend_dinegraph_llm_make_llm",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -11468,7 +12718,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L22",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -11479,7 +12740,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -11490,7 +12751,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -11501,7 +12762,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -11512,7 +12773,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L45",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -11523,7 +12795,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L83",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -12030,6 +13302,149 @@
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_blocked_compose_uses_the_template",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_missing_key_is_reported_on_first_call",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_make_llm_picks_the_provider",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_fake_restaurant",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_reply",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_system_of",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_schema_of",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_parse_order_request_and_result",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_decision_and_payment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_compose_sends_facts_and_returns_text",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring",
+      "target": "backend_tests_test_gemini_wiring_test_blocked_or_bad_replies_fall_back",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -13646,7 +15061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -13668,7 +15083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L301",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -13679,7 +15094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L315",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -13690,7 +15105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L330",
+      "source_location": "L344",
       "weight": 1.0
     },
     {
@@ -13701,7 +15116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L353",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -13728,13 +15143,24 @@
     },
     {
       "source": "readme_getting_started",
+      "target": "readme_choosing_the_llm",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_getting_started",
       "target": "readme_command_line_chat",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L186",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -13745,7 +15171,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L208",
+      "source_location": "L221",
       "weight": 1.0
     },
     {
@@ -13756,7 +15182,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L258",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -13767,7 +15193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L286",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -13805,13 +15231,13 @@
     },
     {
       "source": "readme_tests",
-      "target": "readme_live_check_with_claude",
+      "target": "readme_live_check_with_a_real_llm",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L343",
+      "source_location": "L357",
       "weight": 1.0
     },
     {
@@ -13822,7 +15248,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -13833,7 +15259,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L65",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -13844,7 +15270,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L140",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -13855,7 +15281,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L101",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -13866,7 +15292,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L112",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -13877,7 +15303,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L107",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -13888,7 +15314,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -13899,7 +15325,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L130",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -13910,7 +15336,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -13921,7 +15347,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L117",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -13932,7 +15358,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L72",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -13943,7 +15369,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L151",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -13954,7 +15380,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L97",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -13976,7 +15402,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -13987,7 +15413,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L22",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_missingkeyerror",
+      "target": "runtimeerror",
+      "relation": "inherits",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -13998,7 +15435,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -14009,7 +15446,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -14020,7 +15457,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -14163,7 +15600,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L111",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -14174,7 +15611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L115",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -14185,7 +15622,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L124",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -14196,7 +15633,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L127",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -14207,7 +15644,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L84",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -14218,7 +15655,95 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L90",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_client",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_generate",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_parse",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_parse_order",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_classify_decision",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_classify_payment",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_geminillm",
+      "target": "backend_dinegraph_llm_geminillm_compose",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -14229,7 +15754,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -14240,7 +15765,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -14251,7 +15776,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -14262,7 +15787,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -14273,7 +15798,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L159",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -14284,7 +15809,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L171",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -14295,7 +15820,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L182",
+      "source_location": "L270",
       "weight": 1.0
     },
     {
@@ -14306,7 +15831,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L190",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -14552,6 +16077,39 @@
       "weight": 1.0
     },
     {
+      "source": "backend_tests_test_gemini_wiring_fakeapi",
+      "target": "backend_tests_test_gemini_wiring_fakeapi_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_fakeapi",
+      "target": "backend_tests_test_gemini_wiring_fakeapi_call",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_fakeapi",
+      "target": "backend_tests_test_gemini_wiring_fakeapi_client",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_api_apierror",
       "target": "frontend_src_api_apierror_constructor",
       "relation": "method",
@@ -14574,36 +16132,36 @@
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_rationale_174",
+      "source": "backend_dinegraph_api_rationale_176",
       "target": "backend_dinegraph_api_describe",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L174",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_rationale_202",
+      "source": "backend_dinegraph_api_rationale_204",
       "target": "backend_dinegraph_api_postgres_checkpointer",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L202",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_api_rationale_224",
+      "source": "backend_dinegraph_api_rationale_226",
       "target": "backend_dinegraph_api_create_app",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L224",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -14717,25 +16275,69 @@
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_llm_rationale_154",
+      "source": "backend_dinegraph_llm_rationale_153",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_rationale_183",
+      "target": "backend_dinegraph_llm_geminillm_parse",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_rationale_221",
+      "target": "backend_dinegraph_llm_make_llm",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_rationale_242",
       "target": "backend_dinegraph_llm_rulebasedllm",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L154",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
-      "source": "backend_dinegraph_llm_rationale_91",
+      "source": "backend_dinegraph_llm_rationale_55",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/dinegraph/llm.py",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_dinegraph_llm_rationale_97",
       "target": "backend_dinegraph_llm_claudellm_parse",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/dinegraph/llm.py",
-      "source_location": "L91",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -14970,6 +16572,28 @@
       "weight": 1.0
     },
     {
+      "source": "backend_tests_test_gemini_wiring_rationale_1",
+      "target": "backend_tests_test_gemini_wiring",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_rationale_28",
+      "target": "backend_tests_test_gemini_wiring_fakeapi",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
       "source": "backend_tests_test_scenarios_rationale_1",
       "target": "backend_tests_test_scenarios",
       "relation": "rationale_for",
@@ -15011,7 +16635,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L444",
+      "source_location": "L448",
       "weight": 1.0
     },
     {
@@ -15023,7 +16647,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L342",
+      "source_location": "L346",
       "weight": 1.0
     },
     {
@@ -15144,6 +16768,18 @@
       "context": "argument",
       "source_file": "backend/tests/test_claude_wiring.py",
       "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_full_conversation_through_the_graph",
+      "target": "backend_tests_test_gemini_wiring_fake_restaurant",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -15383,7 +17019,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L216",
+      "source_location": "L218",
       "weight": 0.8
     },
     {
@@ -15424,13 +17060,24 @@
     },
     {
       "source": "backend_dinegraph_api_create_app",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/dinegraph/api.py",
+      "source_location": "L310",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_dinegraph_api_create_app",
       "target": "backend_dinegraph_state_status",
       "relation": "uses",
       "_origin": "ast",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L377",
+      "source_location": "L381",
       "weight": 0.8
     },
     {
@@ -15441,7 +17088,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/dinegraph/api.py",
-      "source_location": "L180",
+      "source_location": "L182",
       "weight": 0.8
     },
     {
@@ -15464,6 +17111,72 @@
       "confidence_score": 0.95,
       "source_file": "backend/dinegraph/graph.py",
       "source_location": "L108",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_scripts_live_check_main",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/scripts/live_check.py",
+      "source_location": "L76",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_blocked_or_bad_replies_fall_back",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L94",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_make_llm_picks_the_provider",
+      "target": "backend_dinegraph_llm_geminillm",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L117",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_make_llm_picks_the_provider",
+      "target": "backend_dinegraph_llm_rulebasedllm",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L118",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_make_llm_picks_the_provider",
+      "target": "backend_dinegraph_llm_claudellm",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L121",
+      "weight": 0.8
+    },
+    {
+      "source": "backend_tests_test_gemini_wiring_test_missing_key_is_reported_on_first_call",
+      "target": "backend_dinegraph_llm_missingkeyerror",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_gemini_wiring.py",
+      "source_location": "L111",
       "weight": 0.8
     },
     {
@@ -15567,5 +17280,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c355b78e12a1f7add211d2fd7a0df4a5ad9f4236"
+  "built_at_commit": "c8347eeb62de02302429be1a264f9fed4a2e6f2e"
 }

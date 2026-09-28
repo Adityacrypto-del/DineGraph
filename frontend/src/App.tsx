@@ -57,7 +57,7 @@ export default function App() {
           ))}
         </nav>
         <span className={`health ${health === "down" ? "down" : health ? "up" : ""}`}>
-          {health === "down" ? "Server offline" : health ? (health.llm === "RuleBasedLLM" ? "Offline mode" : "Claude") : "Connecting…"}
+          {health === "down" ? "Server offline" : health ? (({ RuleBasedLLM: "Offline mode", GeminiLLM: "Gemini", ClaudeLLM: "Claude" }[health.llm] ?? health.llm)) : "Connecting…"}
         </span>
       </header>
 

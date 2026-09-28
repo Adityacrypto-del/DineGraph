@@ -11,7 +11,7 @@ from langchain_core.messages import AIMessage
 from langgraph.types import Command
 
 from .graph import build_graph, random_outcome
-from .llm import ClaudeLLM, RuleBasedLLM
+from .llm import RuleBasedLLM, make_llm
 from .menu import MENU
 from .state import MAX_DISHES, initial_state
 
@@ -32,11 +32,11 @@ def load_env() -> None:
 def main() -> None:
     load_env()
     parser = argparse.ArgumentParser(description="DineGraph restaurant ordering agent")
-    parser.add_argument("--offline", action="store_true", help="use the rule-based parser instead of Claude")
+    parser.add_argument("--offline", action="store_true", help="use the rule-based parser instead of an LLM")
     parser.add_argument("--seed", type=int, default=None, help="seed the cook/serve failure chance")
     args = parser.parse_args()
 
-    llm = RuleBasedLLM() if args.offline else ClaudeLLM()
+    llm = RuleBasedLLM() if args.offline else make_llm()  # DINEGRAPH_LLM picks the provider
     graph = build_graph(llm, outcome=random_outcome(args.seed))
     config = {"configurable": {"thread_id": str(uuid.uuid4())}, "recursion_limit": 100}
 

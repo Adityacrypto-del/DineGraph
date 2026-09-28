@@ -5,8 +5,10 @@ The graph talks to the LLM through three calls:
   classify_decision  user reply to a partial / unavailable order -> what they want
   compose            facts about the current state -> a message for the customer
 
-ClaudeLLM calls the Claude API. RuleBasedLLM is a deterministic stand-in used by
-the tests and by `--offline`, so the graph can run without an API key.
+GeminiLLM calls Google's Gemini API, which has a free tier. ClaudeLLM calls the
+Claude API. RuleBasedLLM is a deterministic stand-in used by the tests and by
+`--offline`, so the graph can run without an API key. make_llm() picks one from
+the DINEGRAPH_LLM setting.
 """
 
 from __future__ import annotations
@@ -47,6 +49,10 @@ class OrderLLM(Protocol):
     def classify_decision(self, text: str, partial_allowed: bool) -> Decision: ...
     def classify_payment(self, text: str) -> PaymentChoice: ...
     def compose(self, situation: str, facts: dict) -> str: ...
+
+
+class MissingKeyError(RuntimeError):
+    """No API key was found for the chosen LLM provider."""
 
 
 # --------------------------------------------------------------------------- Claude
@@ -139,6 +145,88 @@ class ClaudeLLM:
             return RuleBasedLLM().compose(situation, facts)
         text = "".join(b.text for b in response.content if b.type == "text").strip()
         return text or RuleBasedLLM().compose(situation, facts)
+
+
+# --------------------------------------------------------------------------- Gemini
+
+class GeminiLLM:
+    """The same calls as ClaudeLLM, on Google's Gemini API. Get a free key at aistudio.google.com."""
+
+    def __init__(self, model: str | None = None, client=None):
+        self._client = client
+        self.model = model or os.environ.get("DINEGRAPH_MODEL", "gemini-3.5-flash-lite")
+
+    @property
+    def client(self):
+        # created on first use, so the server starts (and reports a clear error) without a key
+        if self._client is None:
+            from google import genai
+
+            key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+            if not key:
+                raise MissingKeyError("No Gemini API key found. Set GEMINI_API_KEY "
+                                      "(free at https://aistudio.google.com), or use DINEGRAPH_LLM=offline.")
+            self._client = genai.Client(api_key=key)
+        return self._client
+
+    def _generate(self, system: str, text: str, schema=None) -> str | None:
+        from google.genai import types
+
+        config = types.GenerateContentConfig(system_instruction=system, max_output_tokens=2000)
+        if schema is not None:
+            config.response_mime_type = "application/json"
+            config.response_schema = schema
+        response = self.client.models.generate_content(model=self.model, contents=text, config=config)
+        return response.text  # None when the reply was blocked or empty
+
+    def _parse(self, system: str, text: str, schema, fallback):
+        """One structured-output call. A blocked or unreadable reply returns ``fallback``."""
+        import pydantic
+
+        reply = self._generate(system, text, schema)
+        if not reply:
+            return fallback
+        try:
+            return schema.model_validate_json(reply)
+        except pydantic.ValidationError:
+            return fallback
+
+    def parse_order(self, text: str, menu_names: list[str]) -> ParsedOrder:
+        return self._parse(PARSE_SYSTEM.format(menu=", ".join(menu_names)), text, ParsedOrder,
+                           ParsedOrder(is_food_order=False, items=[]))
+
+    def classify_decision(self, text: str, partial_allowed: bool) -> Decision:
+        options = (
+            "They may accept the available part of the order, place a new order, or cancel."
+            if partial_allowed
+            else "Nothing they asked for is available. They may place a new order or cancel."
+        )
+        return self._parse(DECISION_SYSTEM.format(options=options), text, Decision,
+                           Decision(action="unclear", has_order_details=False))
+
+    def classify_payment(self, text: str) -> PaymentChoice:
+        return self._parse(PAYMENT_SYSTEM, text, PaymentChoice, PaymentChoice(method="unclear"))
+
+    def compose(self, situation: str, facts: dict) -> str:
+        reply = self._generate(COMPOSE_SYSTEM, f"Situation: {situation}\nFacts (JSON): {json.dumps(facts)}")
+        return (reply or "").strip() or RuleBasedLLM().compose(situation, facts)
+
+
+# --------------------------------------------------------------------------- choosing one
+
+PROVIDERS = ("gemini", "claude", "offline")
+
+
+def make_llm(provider: str | None = None) -> OrderLLM:
+    """The LLM named by `provider`, or by DINEGRAPH_LLM (default gemini)."""
+    provider = (provider or os.environ.get("DINEGRAPH_LLM") or "gemini").strip().lower()
+    if provider == "gemini":
+        return GeminiLLM()
+    if provider == "claude":
+        return ClaudeLLM()
+    if provider == "offline":
+        return RuleBasedLLM()
+    raise ValueError(f"DINEGRAPH_LLM must be one of {', '.join(PROVIDERS)}, not {provider!r}.")
 
 
 # --------------------------------------------------------------------------- offline
