@@ -1,8 +1,6 @@
 .venv/
 __pycache__/
 .pytest_cache/
-*.sqlite
-*.sqlite-*
 
 # graphify: keep the graph and report, not its caches and snapshots
 graphify-out/cache/
