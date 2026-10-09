@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChefHat, ConciergeBell, CreditCard, LucideIcon } from "lucide-react";
 import { api, KitchenStage, KitchenTicket, rupees } from "../api";
+import PageHero from "./PageHero";
 
 const POLL_MS = 2000;
 
@@ -16,7 +17,16 @@ function age(iso: string, now: number) {
   return secs < 60 ? `${secs}s` : `${Math.floor(secs / 60)} min`;
 }
 
-export default function KitchenView() {
+// How far through its current step a ticket is, from the configured kitchen time.
+function stepProgress(t: KitchenTicket, now: number, seconds: number) {
+  if (t.stage === "paying" || seconds <= 0) return null;
+  const elapsed = (now - new Date(t.updated_at).getTime()) / 1000;
+  return Math.min(1, Math.max(0, elapsed / seconds));
+}
+
+const LATE_MIN = 10;
+
+export default function KitchenView({ kitchenSeconds = 0 }: { kitchenSeconds?: number }) {
   const [tickets, setTickets] = useState<KitchenTicket[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [now, setNow] = useState(Date.now());
@@ -43,16 +53,22 @@ export default function KitchenView() {
 
   return (
     <section className="kitchen">
-      <div className="card-head">
-        <h2>Kitchen</h2>
-        <span className="muted small">Live · refreshes every {POLL_MS / 1000}s</span>
-      </div>
+      <PageHero
+        scene="kitchen"
+        eyebrow="Live board"
+        title="The kitchen pass."
+        lede="Tickets move from the stove to the table to the till as the agent works each order."
+      >
+        <span className="live-chip">
+          <span className="live-dot" aria-hidden /> Live · every {POLL_MS / 1000}s
+        </span>
+      </PageHero>
       {error && <div className="alert alert-bad">{error}</div>}
       <div className="kitchen-board">
-        {COLUMNS.map(({ stage, title, Icon, empty }) => {
+        {COLUMNS.map(({ stage, title, Icon, empty }, col) => {
           const column = (tickets ?? []).filter((t) => t.stage === stage);
           return (
-            <div key={stage} className={`kitchen-col kitchen-${stage}`}>
+            <div key={stage} className={`kitchen-col kitchen-${stage} rise`} style={{ animationDelay: `${200 + col * 90}ms` }}>
               <h3>
                 <Icon size={18} aria-hidden /> {title}
                 <span className="count">{column.length}</span>
@@ -62,8 +78,11 @@ export default function KitchenView() {
               ) : column.length === 0 ? (
                 <p className="empty">{empty}</p>
               ) : (
-                column.map((t) => (
-                  <article key={t.session_id} className="ticket">
+                column.map((t, i) => {
+                  const progress = stepProgress(t, now, kitchenSeconds);
+                  const late = (now - new Date(t.created_at).getTime()) / 60000 > LATE_MIN;
+                  return (
+                  <article key={t.session_id} className={`ticket ${late ? "ticket-late" : ""}`} style={{ animationDelay: `${i * 50}ms` }}>
                     <header>
                       <strong>{t.table ? `Table ${t.table}` : "Takeaway"}</strong>
                       <span className="muted small">
@@ -78,9 +97,15 @@ export default function KitchenView() {
                         </li>
                       ))}
                     </ul>
+                    {progress !== null && (
+                      <div className="ticket-progress" role="progressbar" aria-label={`${title} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)}>
+                        <i style={{ transform: `scaleX(${progress})` }} />
+                      </div>
+                    )}
                     {stage === "paying" && t.bill_total > 0 && <footer>{rupees(t.bill_total)}</footer>}
                   </article>
-                ))
+                  );
+                })
               )}
             </div>
           );

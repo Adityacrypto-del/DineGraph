@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { api, OrderRecord, rupees, statusLabel, statusTone } from "../api";
+import PageHero from "./PageHero";
 
 const FILTERS = ["", "PAID", "FAILED", "CANCELLED", "PAYMENT_PENDING"];
 const PAGE = 25;
@@ -38,9 +39,8 @@ export default function OrdersView() {
   }, [load]);
 
   return (
-    <section className="card wide">
-      <div className="card-head">
-        <h2>Orders</h2>
+    <>
+      <PageHero scene="room" eyebrow="History" title="Every order, told." lede="What each table asked for, what it paid, and how the agent's run ended.">
         <div className="toolbar">
           <select value={status} onChange={(e) => setStatus(e.target.value)} aria-label="Filter by status">
             {FILTERS.map((f) => (
@@ -53,53 +53,55 @@ export default function OrdersView() {
             Refresh
           </button>
         </div>
-      </div>
+      </PageHero>
 
-      {error && <div className="alert alert-bad">{error}</div>}
+      <section className="card wide rise" style={{ animationDelay: "200ms" }}>
+        {error && <div className="alert alert-bad">{error}</div>}
 
-      {rows.length === 0 && !loading ? (
-        <p className="empty">No orders yet.</p>
-      ) : (
-        <div className="table-wrap">
-          <table className="orders">
-            <thead>
-              <tr>
-                <th>Updated</th>
-                <th>Table</th>
-                <th>Items</th>
-                <th className="num">Total</th>
-                <th>Paid with</th>
-                <th>Status</th>
-                <th>Result</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((o) => (
-                <tr key={o.session_id}>
-                  <td className="nowrap">{when(o.updated_at)}</td>
-                  <td>{o.table ?? "—"}</td>
-                  <td>
-                    {o.items.length
-                      ? o.items.map((i) => `${i.required_quantity}× ${i.dish}${i.note ? ` (${i.note})` : ""}`).join(", ")
-                      : "—"}
-                  </td>
-                  <td className="num">{o.bill_total ? rupees(o.bill_total) : "—"}</td>
-                  <td>{o.payment_method ? o.payment_method.toUpperCase() : "—"}</td>
-                  <td>
-                    <span className={`pill pill-${statusTone(o.status)}`}>{statusLabel(o.status)}</span>
-                  </td>
-                  <td className="muted small">{o.final_result ? o.final_result.replace(/_/g, " ") : "In progress"}</td>
+        {rows.length === 0 && !loading ? (
+          <p className="empty">No orders yet.</p>
+        ) : (
+          <div className="table-wrap">
+            <table className="orders">
+              <thead>
+                <tr>
+                  <th>Updated</th>
+                  <th>Table</th>
+                  <th>Items</th>
+                  <th className="num">Total</th>
+                  <th>Paid with</th>
+                  <th>Status</th>
+                  <th>Result</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-      {more && (
-        <button className="btn btn-ghost btn-block" disabled={loading} onClick={() => load(rows.length)}>
-          Load more
-        </button>
-      )}
-    </section>
+              </thead>
+              <tbody>
+                {rows.map((o) => (
+                  <tr key={o.session_id}>
+                    <td className="nowrap">{when(o.updated_at)}</td>
+                    <td>{o.table ?? "—"}</td>
+                    <td>
+                      {o.items.length
+                        ? o.items.map((i) => `${i.required_quantity}× ${i.dish}${i.note ? ` (${i.note})` : ""}`).join(", ")
+                        : "—"}
+                    </td>
+                    <td className="num">{o.bill_total ? rupees(o.bill_total) : "—"}</td>
+                    <td>{o.payment_method ? o.payment_method.toUpperCase() : "—"}</td>
+                    <td>
+                      <span className={`pill pill-${statusTone(o.status)}`}>{statusLabel(o.status)}</span>
+                    </td>
+                    <td className="muted small">{o.final_result ? o.final_result.replace(/_/g, " ") : "In progress"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {more && (
+          <button className="btn btn-ghost btn-block" disabled={loading} onClick={() => load(rows.length)}>
+            Load more
+          </button>
+        )}
+      </section>
+    </>
   );
 }

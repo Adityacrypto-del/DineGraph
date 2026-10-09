@@ -1,5 +1,7 @@
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { api, ApiError, MenuItem, rupees, Stats } from "../api";
+import AnimateDigits from "./fx/AnimateDigits";
+import PageHero from "./PageHero";
 
 const TOKEN_KEY = "dinegraph.adminToken";
 
@@ -81,29 +83,34 @@ export default function AdminView() {
 
   return (
     <div className="admin">
-      <section className="card wide">
-        <div className="card-head">
-          <h2>Admin</h2>
-          <div className="toolbar">
-            <input
-              type="password"
-              placeholder="Admin token (if set)"
-              value={token}
-              onChange={(e) => saveToken(e.target.value)}
-              aria-label="Admin token"
-            />
-            <button className="btn btn-small" onClick={load}>
-              Refresh
-            </button>
-          </div>
+      <PageHero scene="plates" eyebrow="Admin" title="Back of house." lede="Revenue, order outcomes and stock at a glance. Prices and quantities change live.">
+        <div className="toolbar">
+          <input
+            type="password"
+            placeholder="Admin token (if set)"
+            value={token}
+            onChange={(e) => saveToken(e.target.value)}
+            aria-label="Admin token"
+          />
+          <button className="btn btn-small" onClick={load}>
+            Refresh
+          </button>
         </div>
-        {error && <div className="alert alert-bad">{error}</div>}
-        {notice && <div className="alert alert-good">{notice}</div>}
+      </PageHero>
+
+      {error && <div className="alert alert-bad">{error}</div>}
+      {notice && <div className="alert alert-good">{notice}</div>}
+
+      <section className="card wide rise" style={{ animationDelay: "200ms" }}>
+        <div className="card-head">
+          <h2 className="card-title">Takings and outcomes</h2>
+        </div>
+        {!stats && !error && <p className="empty">Loading…</p>}
 
         {stats && (
           <>
             <div className="stats">
-              <Stat label="Revenue" value={rupees(stats.revenue)} />
+              <Stat label="Revenue" value={stats.revenue} format={rupees} />
               <Stat label="Orders" value={stats.total_orders} />
               <Stat label="Completed" value={stats.completed} tone="good" />
               <Stat label="In progress" value={stats.in_progress} />
@@ -116,7 +123,7 @@ export default function AdminView() {
                   <div key={m} className="bar-row">
                     <span>{m.toUpperCase()}</span>
                     <div className="bar">
-                      <i style={{ width: `${(v / maxMethod) * 100}%` }} />
+                      <i style={{ transform: `scaleX(${v / maxMethod})` }} />
                     </div>
                     <span className="num">{rupees(v)}</span>
                   </div>
@@ -127,9 +134,9 @@ export default function AdminView() {
         )}
       </section>
 
-      <section className="card wide">
+      <section className="card wide rise" style={{ animationDelay: "300ms" }}>
         <div className="card-head">
-          <h2>Menu and stock</h2>
+          <h2 className="card-title">Menu and stock</h2>
         </div>
         <div className="table-wrap">
           <table className="orders">
@@ -154,11 +161,13 @@ export default function AdminView() {
   );
 }
 
-function Stat({ label, value, tone }: { label: string; value: string | number; tone?: "good" | "bad" }) {
+function Stat({ label, value, tone, format = String }: { label: string; value: number; tone?: "good" | "bad"; format?: (n: number) => string }) {
   return (
     <div className={`stat ${tone ? `stat-${tone}` : ""}`}>
       <span>{label}</span>
-      <strong>{value}</strong>
+      <strong>
+        <AnimateDigits value={format(value)} />
+      </strong>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { Check, X } from "lucide-react";
+import { Check, Plus, X } from "lucide-react";
 import { api, clock, Counters, MAX_RETRIES, MenuView, OrderEvent, rupees, SessionView, statusLabel, statusTone } from "../api";
+import { dishThumb } from "../lib/dishes";
+import AnimateDigits from "./fx/AnimateDigits";
 
 const STAGES = ["Order", "Confirm", "Cook", "Serve", "Pay"];
 
@@ -60,7 +62,7 @@ export default function OrderPanel({ session, menu, canPick, busy, onPickDish, o
           {session && <span className={`pill pill-${statusTone(session.status)}`}>{statusLabel(session.status)}</span>}
         </div>
 
-        <ol className="pipeline" aria-label="Order progress">
+        <ol className="pipeline" aria-label="Order progress" style={{ ["--progress" as string]: Math.min(stage.index, STAGES.length - 1) / (STAGES.length - 1) }}>
           {STAGES.map((name, i) => {
             const state =
               i < stage.index ? "done" : i === stage.index ? (stage.failed ? "failed" : session?.done ? "done" : "current") : "todo";
@@ -102,7 +104,9 @@ export default function OrderPanel({ session, menu, canPick, busy, onPickDish, o
         {session && session.bill_total > 0 && (
           <div className="bill">
             <span>Bill total</span>
-            <strong>{rupees(session.bill_total)}</strong>
+            <strong>
+              <AnimateDigits value={rupees(session.bill_total)} />
+            </strong>
             {session.payment_method && <span className="muted">via {session.payment_method.toUpperCase()}</span>}
           </div>
         )}
@@ -148,10 +152,16 @@ export default function OrderPanel({ session, menu, canPick, busy, onPickDish, o
                   onClick={() => onPickDish(item.dish)}
                   title={canPick ? `Add ${item.dish} to your message` : undefined}
                 >
-                  <span className="menu-name">{item.dish}</span>
+                  <img className="menu-thumb" src={dishThumb(item.dish)} alt="" loading="lazy" decoding="async" width={52} height={52} />
+                  <span className="menu-text">
+                    <span className="menu-name">{item.dish}</span>
+                    <span className={`stock ${item.available === 0 ? "stock-out" : item.available <= 2 ? "stock-low" : ""}`}>
+                      {item.available === 0 ? "Sold out" : `${item.available} left`}
+                    </span>
+                  </span>
                   <span className="menu-price">{rupees(item.price)}</span>
-                  <span className={`stock ${item.available === 0 ? "stock-out" : item.available <= 2 ? "stock-low" : ""}`}>
-                    {item.available === 0 ? "Sold out" : `${item.available} left`}
+                  <span className="menu-add" aria-hidden>
+                    <Plus size={16} />
                   </span>
                 </button>
               </li>

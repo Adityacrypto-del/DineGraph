@@ -1,7 +1,9 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { api, ApiError, ChatMessage, MenuView, SessionView } from "../api";
-import { Armchair, ChefHat, CircleAlert, CircleCheck, CircleX, ConciergeBell, CreditCard, LucideIcon, UtensilsCrossed } from "lucide-react";
+import { Armchair, Check, ChefHat, CircleAlert, CircleCheck, CircleX, ConciergeBell, Copy, CreditCard, LucideIcon, User, UtensilsCrossed } from "lucide-react";
+import { useReducedMotion } from "../lib/motion";
 import OrderPanel from "./OrderPanel";
+import PageHero from "./PageHero";
 
 const SESSION_KEY = "dinegraph.session";
 const TABLE_KEY = "dinegraph.table";
@@ -53,7 +55,7 @@ function rememberTable(table: number | null) {
   }
 }
 
-export default function OrderView() {
+export default function OrderView({ seed, active = true }: { seed?: { dish: string; n: number } | null; active?: boolean }) {
   const [session, setSession] = useState<SessionView | null>(null);
   const [menu, setMenu] = useState<MenuView | null>(null);
   const [pending, setPending] = useState<string | null>(null); // user text sent but not yet answered
@@ -181,7 +183,26 @@ export default function OrderView() {
     input.current?.focus();
   }
 
+  // A dish picked on the home page lands in the composer once the agent is ready for an order.
+  const seeded = useRef(0);
+  useEffect(() => {
+    if (!seed || seed.n === seeded.current || session?.waiting_for !== "order" || busy || session.busy) return;
+    seeded.current = seed.n;
+    addDish(seed.dish);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [seed, session?.waiting_for, session?.busy, busy]);
+
   const messages: ChatMessage[] = session?.messages ?? [];
+  // The backend keeps no message times, so stamp each message when it first
+  // arrives here. Ones restored from an earlier visit get no time and no typing.
+  const arrived = useRef<{ id: string | null; at: (Date | null)[] }>({ id: null, at: [] });
+  if (session) {
+    const seen = arrived.current;
+    if (seen.id === null) seen.at = messages.map(() => null);
+    else if (seen.id !== session.session_id) seen.at = [];
+    seen.id = session.session_id;
+    while (seen.at.length < messages.length) seen.at.push(new Date());
+  }
   const waiting = session?.waiting_for ?? null;
   const working = busy || serverBusy;
   const canType = !!session && !!waiting && !working;
@@ -200,100 +221,119 @@ export default function OrderView() {
               : "…";
 
   return (
-    <div className="order-layout">
-      <section className="chat card" aria-label="Conversation">
-        <div className="chat-head">
-          <label>
-            <Armchair size={16} aria-hidden />
-            <select value={table ?? ""} onChange={(e) => pickTable(e.target.value)} aria-label="Table">
-              <option value="">Takeaway</option>
-              {TABLES.map((n) => (
-                <option key={n} value={n}>
-                  Table {n}
-                </option>
-              ))}
-            </select>
-          </label>
-          <span className="muted small">
-            {session && (session.table ?? null) !== table ? "Applies to your next order" : "Add notes in brackets: (no onion)"}
-          </span>
-        </div>
-        <div className="chat-scroll" ref={scroller} aria-live="polite">
-          {messages.map((m, i) => (
-            <Message key={i} message={m} />
-          ))}
-          {pending && <Message message={{ role: "user", content: pending }} />}
-          {working && (
-            <div className="msg msg-assistant">
-              <span className="avatar" aria-hidden>
-                {serverBusy ? <ChefHat size={16} /> : <UtensilsCrossed size={16} />}
-              </span>
-              <div className="bubble typing" aria-label={serverBusy ? "The kitchen is working" : "DineGraph is working"}>
-                <i />
-                <i />
-                <i />
-                {serverBusy && <span className="typing-label">{WORKING_LABEL[session?.next_step ?? ""] ?? "Working"}</span>}
+    <>
+      <PageHero
+        compact
+        active={active}
+        scene="dining"
+        eyebrow="Table service"
+        title="What are you craving?"
+        lede="Type it the way you'd say it to a waiter, or tap a dish on the menu."
+      />
+      <div className="order-layout rise" style={{ animationDelay: "150ms" }}>
+        <section className="chat card" aria-label="Conversation">
+          <div className="chat-head">
+            <label>
+              <Armchair size={16} aria-hidden />
+              <select value={table ?? ""} onChange={(e) => pickTable(e.target.value)} aria-label="Table">
+                <option value="">Takeaway</option>
+                {TABLES.map((n) => (
+                  <option key={n} value={n}>
+                    Table {n}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <span className="muted small">
+              {session && (session.table ?? null) !== table ? "Applies to your next order" : "Add notes in brackets: (no onion)"}
+            </span>
+          </div>
+          <div className="chat-scroll" ref={scroller} aria-live="polite">
+            {messages.map((m, i) => (
+              <Message key={`${session?.session_id}-${i}`} message={m} at={arrived.current.at[i] ?? null} />
+            ))}
+            {pending && <Message message={{ role: "user", content: pending }} at={null} />}
+            {working && (
+              <div className="msg msg-assistant">
+                <span className="avatar avatar-live" aria-hidden>
+                  {serverBusy ? <ChefHat size={16} /> : <UtensilsCrossed size={16} />}
+                </span>
+                <div className="bubble typing" aria-label={serverBusy ? "The kitchen is working" : "DineGraph is working"}>
+                  <i />
+                  <i />
+                  <i />
+                  {serverBusy && <span className="typing-label">{WORKING_LABEL[session?.next_step ?? ""] ?? "Working"}</span>}
+                </div>
               </div>
+            )}
+            {session?.done && <FinalBanner session={session} onNew={() => startNew()} />}
+          </div>
+
+          {error && (
+            <div className="alert alert-bad" role="alert">
+              <span>{error}</span>
+              {!session && (
+                <button className="btn btn-small" onClick={() => startNew()}>
+                  Try again
+                </button>
+              )}
             </div>
           )}
-          {session?.done && <FinalBanner session={session} onNew={() => startNew()} />}
-        </div>
-
-        {error && (
-          <div className="alert alert-bad" role="alert">
-            <span>{error}</span>
-            {!session && (
-              <button className="btn btn-small" onClick={() => startNew()}>
-                Try again
+          {session?.stalled && (
+            <div className="alert alert-warn">
+              <span>The last step didn't finish{session.error ? ` (${session.error})` : ""}. Your order is saved.</span>
+              <button className="btn btn-small" disabled={busy} onClick={() => act(() => api.retry(session.session_id))}>
+                Retry step
               </button>
-            )}
-          </div>
-        )}
-        {session?.stalled && (
-          <div className="alert alert-warn">
-            <span>The last step didn't finish{session.error ? ` (${session.error})` : ""}. Your order is saved.</span>
-            <button className="btn btn-small" disabled={busy} onClick={() => act(() => api.retry(session.session_id))}>
-              Retry step
+            </div>
+          )}
+
+          {waiting && QUICK_REPLIES[waiting] && (
+            <div className="quick-replies">
+              {QUICK_REPLIES[waiting].map((q) => (
+                <button key={q} className="chip" disabled={working} onClick={() => send(q)}>
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <form className="composer" onSubmit={onSubmit}>
+            <input
+              ref={input}
+              value={draft}
+              maxLength={1000}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder={placeholder}
+              disabled={!canType}
+              aria-label="Message"
+            />
+            <button className="btn btn-primary" disabled={!canType || !draft.trim()}>
+              Send
             </button>
-          </div>
-        )}
+          </form>
+        </section>
 
-        {waiting && QUICK_REPLIES[waiting] && (
-          <div className="quick-replies">
-            {QUICK_REPLIES[waiting].map((q) => (
-              <button key={q} className="chip" disabled={working} onClick={() => send(q)}>
-                {q}
-              </button>
-            ))}
-          </div>
-        )}
-
-        <form className="composer" onSubmit={onSubmit}>
-          <input
-            ref={input}
-            value={draft}
-            maxLength={1000}
-            onChange={(e) => setDraft(e.target.value)}
-            placeholder={placeholder}
-            disabled={!canType}
-            aria-label="Message"
-          />
-          <button className="btn btn-primary" disabled={!canType || !draft.trim()}>
-            Send
-          </button>
-        </form>
-      </section>
-
-      <OrderPanel session={session} menu={menu} onPickDish={addDish} canPick={waiting === "order" && !working} onNew={() => startNew()} busy={working} />
-    </div>
+        <OrderPanel session={session} menu={menu} onPickDish={addDish} canPick={waiting === "order" && !working} onNew={() => startNew()} busy={working} />
+      </div>
+    </>
   );
 }
 
-function Message({ message }: { message: ChatMessage }) {
+// Bubbles adapted from 21st.dev "AI Message Bubble" (elements-): role avatars,
+// a time under each message, copy on hover, and a cursor while a fresh reply
+// types itself out.
+function Message({ message, at }: { message: ChatMessage; at: Date | null }) {
   if (message.role === "user") {
     return (
-      <div className="msg msg-user">
-        <div className="bubble">{message.content}</div>
+      <div className="msg msg-user" role="article" aria-label="Your message">
+        <div className="bubble">
+          {message.content}
+          {at && <MessageTime at={at} />}
+        </div>
+        <span className="avatar avatar-user" aria-hidden>
+          <User size={15} />
+        </span>
       </div>
     );
   }
@@ -308,12 +348,83 @@ function Message({ message }: { message: ChatMessage }) {
     );
   }
   return (
-    <div className="msg msg-assistant">
+    <div className="msg msg-assistant" role="article" aria-label="DineGraph says">
       <span className="avatar" aria-hidden>
         <meta.Icon size={16} />
       </span>
-      <div className="bubble">{message.content}</div>
+      <div className="bubble">
+        <TypedText text={message.content} animate={at !== null} />
+        {at && <MessageTime at={at} />}
+      </div>
+      <CopyButton text={message.content} />
     </div>
+  );
+}
+
+function MessageTime({ at }: { at: Date }) {
+  return (
+    <time className="msg-time" dateTime={at.toISOString()}>
+      {at.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+    </time>
+  );
+}
+
+// Reveals a new reply over at most ~0.9s. Screen readers get the whole text at
+// once from the hidden copy, not every intermediate frame.
+function TypedText({ text, animate }: { text: string; animate: boolean }) {
+  const reduced = useReducedMotion();
+  const [count, setCount] = useState(animate && !reduced ? 0 : text.length);
+  const cursor = useRef<HTMLSpanElement>(null);
+
+  // The bubble grows as it types; keep the chat pinned to the bottom unless
+  // the reader has scrolled up.
+  useEffect(() => {
+    const box = cursor.current?.closest<HTMLElement>(".chat-scroll");
+    if (box && box.scrollHeight - box.scrollTop - box.clientHeight < 120) box.scrollTop = box.scrollHeight;
+  }, [count]);
+
+  useEffect(() => {
+    if (count >= text.length) return;
+    const total = Math.min(text.length * 14, 900);
+    const start = performance.now() - (count / text.length) * total;
+    let raf = 0;
+    const tick = (now: number) => {
+      const n = Math.min(text.length, Math.ceil(((now - start) / total) * text.length));
+      setCount(n);
+      if (n < text.length) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [text]);
+
+  if (count >= text.length) return <>{text}</>;
+  return (
+    <>
+      <span className="sr-only">{text}</span>
+      <span aria-hidden>
+        {text.slice(0, count)}
+        <span className="msg-cursor" ref={cursor} />
+      </span>
+    </>
+  );
+}
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard access can be refused (http, permissions); nothing to undo.
+    }
+  };
+  return (
+    <button type="button" className="msg-copy" onClick={copy} aria-label={copied ? "Copied" : "Copy message"} title={copied ? "Copied" : "Copy"}>
+      {copied ? <Check size={14} aria-hidden /> : <Copy size={14} aria-hidden />}
+    </button>
   );
 }
 
