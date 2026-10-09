@@ -4,9 +4,15 @@ DineGraph is a restaurant order management agent built with [LangGraph](https://
 
 It comes with a FastAPI backend, a React web app with a live kitchen screen, and an offline mode that runs everything without an API key. The original design notes are in [approch.md](approch.md).
 
+![The home page: headline over a moving corridor of dish photos, with links to order or watch the kitchen](docs/home.png)
+
 ![The order screen: chat with the agent, table picker, order progress, tracking and menu](docs/order.png)
 
 ![The kitchen screen: live tickets for cooking, ready to serve and awaiting payment](docs/kitchen.png)
+
+![The orders screen: every order with its table, items, total, payment method and result](docs/orders.png)
+
+![The admin screen: revenue and order outcomes, plus menu prices and stock](docs/admin.png)
 
 ## Contents
 
